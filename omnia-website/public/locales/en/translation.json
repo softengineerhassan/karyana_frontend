@@ -1,0 +1,753 @@
+{
+  "welcome": {
+    "tagline": "Discover • Experience • Indulge",
+    "badge": "Curated Excellence",
+    "enter": "Enter",
+    "no_login": "No login required.",
+    "explore": "Explore at your leisure.",
+    "auth_note": "Authentication only needed for bookings"
+  },
+  "countdown": {
+    "expired": "Expired",
+    "left": "left"
+  },
+  "perk_modal": {
+    "question": "How would you like to enjoy this perk?",
+    "at": "At",
+    "walk_in": "Walk-In Now",
+    "walk_in_desc": "Activate for immediate use within 24 hours",
+    "book_now": "Book a Reservation",
+    "book_now_desc": "Schedule your visit and secure your perk",
+    "note": "Both options will activate this exclusive perk"
+  },
+  "Welcome Back": "Welcome Back",
+  "Sign in to continue": "Sign in to continue",
+
+  "Create Account": "Create Account",
+  "Join OMNIA today": "Join OMNIA today",
+
+  "Reset Password": "Reset Password",
+  "Enter your email to reset": "Enter your email to reset",
+
+  "Email Address": "Email Address",
+  "Enter your email": "Enter your email",
+  "Password": "Password",
+  "Enter your password": "Enter your password",
+
+  "Full Name": "Full Name",
+  "Phone Number": "Phone Number",
+
+  "Sign In": "Sign In",
+  "Sign Up": "Sign Up",
+  "Create Account Button": "Create Account",
+  "Send Reset Link": "Send Reset Link",
+
+  "Forgot Password?": "Forgot Password?",
+  "Back to Sign In": "Back to Sign In",
+
+  "Don't have an account?": "Don't have an account?",
+  "Already have an account?": "Already have an account?",
+
+  "Sign in to Complete Booking": "Sign in to Complete Booking",
+  "Please sign in or create an account to proceed with your reservation": "Please sign in or create an account to proceed with your reservation",
+  "Home": "Home",
+  "Search": "Search",
+  "Bookings": "Bookings",
+  "Reviews": "Reviews",
+  "Favorites": "Favorites",
+  "Gold Member": "Gold Member",
+  "Member since 2023": "Member since 2023",
+  "Points": "Points",
+  "150 points to Platinum": "150 points to Platinum",
+  "Profile": "Profile",
+  "Edit Profile": "Edit Profile",
+  "My Favorites": "My Favorites",
+  "My Reviews": "My Reviews",
+  "Notifications": "Notifications",
+  "Privacy & Security": "Privacy & Security",
+  "Help & Support": "Help & Support",
+  "Language": "Language",
+  "My Bookings": "My Bookings",
+  "Active": "Active",
+  "Past": "Past",
+  "Next Booking": "Next Booking",
+  "Modify": "Modify",
+  "Cancel": "Cancel",
+  "Cancel Booking": "Cancel Booking",
+  "Cancel Booking?": "Cancel Booking?",
+  "Keep Booking": "Keep Booking",
+  "This action cannot be undone": "This action cannot be undone.",
+  "Booking Cancelled": "Booking Cancelled",
+  "Your booking has been successfully cancelled": "Your booking has been successfully cancelled",
+  "Done": "Done",
+  "Modify Booking": "Modify Booking",
+  "Save Changes": "Save Changes",
+  "View QR Code": "View QR Code",
+  "Your Booking Pass": "Your Booking Pass",
+  "Present this code at the venue": "Present this code at the venue",
+  "featured": "Featured",
+  "exclusive_perks": "Exclusive Perks",
+  "exclusive_perks_subtitle": "Premium benefits for OMNIA members",
+  "tap_to_activate": "Tap to Activate",
+  "book_now": "Book Now",
+  "walk_in_button": "Walk-In",
+  "open_today": "Open Today",
+  "closed_today": "Closed Today",
+  "about": "About",
+  "amenities": "Amenities",
+  "gallery": "Gallery",
+  "contact_hours": "Contact & Hours",
+  "opening_hours": "Opening Hours",
+  "view_menu": "View Menu",
+  "seating_options": "Seating Options",
+  "capacity": "Capacity",
+  "premium": "Premium",
+  "activate": "Activate",
+
+  "filters": "Filters",
+  "all": "All",
+  "venues_available": "venues available",
+  "no_venues": "No venues found",
+  "try_different_filter": "Try selecting a different filter",
+  "view_all": "View All",
+  "featured_venues": "Featured Venues",
+  "all_venues": "All Venues",
+  "reviews": "reviews",
+  
+  "OMNIA Exclusive Perks": "OMNIA Exclusive Perks",
+  "FINAL HOURS": "FINAL HOURS",
+  "ENDING SOON": "ENDING SOON",
+  "LIMITED OFFER": "LIMITED OFFER",
+  "Featured": "Featured",
+  "select": "Select",
+
+  "walk_in": {
+    "select_privilege": "Select Your Privilege",
+    "activate_privilege": "Activate Walk-In Privilege",
+    "review_details": "Review your exclusive perk details before activation",
+    "at_venue": "At This Venue",
+    "your_privilege": "Your Privilege",
+    "valid_24h": "Valid for 24 hours",
+    "important_note": "Important Note",
+    "activate_now": "Activate Now",
+    "maybe_later": "Maybe Later",
+    "preparing": "Preparing Your Privilege",
+    "just_moment": "Just a moment...",
+    "activated_success": "Activated Successfully!",
+    "code": "CODE",
+    "show_staff": "Show to staff",
+    "scan_validate": "Scan to validate",
+    "at": "AT",
+    "next": "NEXT",
+    "visit_24h": "Visit within 24h",
+    "ready": "Perfect, I'm Ready"
+  },
+
+  "venue_not_found": "Venue not found",
+  "active": "Active",
+  "benefits": "Benefits",
+  "optional": "optional",
+  "no_perk": "No perk",
+  "no_preference": "No preference",
+  "personalize_visit": "Personalize Your Visit",
+  "choose_seating_perks": "Choose your seating and perks",
+  "special_request": "Special Request",
+  "special_request_placeholder": "Any dietary restrictions, allergies, or special occasions...",
+  "phone": "Phone",
+  "website": "Website",
+  "address": "Address",
+  "closed": "Closed",
+  "discover_culinary": "Discover our culinary offerings",
+  "full_menu_available": "Full Menu Available",
+  "premium_courts": "Premium Courts & Facilities",
+  "select_view_details": "Select to view details",
+  "more": "more",
+  "select_date": "Select a date",
+  "today": "Today",
+  "tomorrow": "Tomorrow",
+
+  "booking": {
+    "step_1_of_3": "Step 1 of 3",
+    "step_2_of_3": "Step 2 of 3",
+    "step_3_of_3": "Step 3 of 3",
+    "pick_your_court": "Pick Your Perfect Court",
+    "explore_courts": "Explore our courts and find your favorite",
+    "choose_first": "Choose First, Book Later!",
+    "choose_first_desc": "Select your preferred court now, then we'll show you its real-time availability on the next step.",
+    "when_play": "When Would You Like to Play?",
+    "check_availability": "Check availability for",
+    "session_length": "Session Length",
+    "choose_time": "Choose Your Time",
+    "early_bird": "Early Bird",
+    "prime_time": "Prime Time",
+    "golden_hour": "Golden Hour",
+    "peak": "PEAK",
+    "quick_match": "Quick Match",
+    "perfect_session": "Perfect Session",
+    "pro_session": "Pro Session",
+    "almost_there": "Almost There, Champ!",
+    "review_court_time": "Review and lock in your court time",
+    "game_day": "Game Day",
+    "start_time": "Start Time",
+    "session": "Session",
+    "team_size": "Team Size",
+    "for_reference": "For venue reference",
+    "total_investment": "Total Investment",
+    "pay_at_venue": "Pay at venue",
+    "fair_play_policy": "Fair Play Policy",
+    "free_cancellation": "Free cancellation up to 24 hours before",
+    "grace_period": "15-minute grace period for late arrivals",
+    "equipment_included": "Equipment rental included",
+    "back": "Back",
+    "next_step": "Next Step",
+    "lock_it_in": "Lock It In!",
+    "from": "From",
+    "max": "Max",
+    "players": "players",
+    "aed_hr": "AED/hr"
+  },
+
+  "resort": {
+    "beach_day_pass": "Beach Day Pass",
+    "day_in_paradise": "A Day in Paradise",
+    "select_beach_escape": "Select your perfect beach escape",
+    "full_day_pass": "Full Day Pass",
+    "half_day_pass": "Half Day Pass",
+    "kids_pass": "Kids Pass",
+    "full_beach_access": "Full beach access",
+    "morning_afternoon": "Morning or afternoon",
+    "children_under_12": "Children under 12",
+    "select_area": "Select Your Area",
+    "day_pass_includes": "Day Pass Includes",
+    "day_pass_includes_desc": "Full beach & pool access, towel service, changing facilities, and complimentary refreshments. Cabanas include dedicated server and premium amenities.",
+    "beach_day_awaits": "Your Beach Day Awaits",
+    "confirm_escape": "Confirm your perfect escape",
+    "pass_type": "Pass Type",
+    "guests": "Guests",
+    "guest": "Guest",
+    "day_pass_total": "Day Pass Total",
+    "beach_day_details": "Beach Day Pass Details",
+    "full_day_access": "Full-day access from arrival time until sunset",
+    "all_amenities": "All beach amenities and facilities included",
+    "payment_arrival": "Payment at resort upon arrival",
+    "reserve_beach": "Reserve Beach Day!",
+    "continue": "Continue",
+    "weekend": "Weekend",
+    "weekend_rate": "Weekend Rate",
+    "available": "Available",
+    "fully_booked": "FULLY BOOKED",
+    "try_another_time": "Try another time",
+    "popular": "POPULAR",
+    "cabana": "CABANA"
+  },
+
+  "days": {
+    "Sunday": "Sunday",
+    "Monday": "Monday",
+    "Tuesday": "Tuesday",
+    "Wednesday": "Wednesday",
+    "Thursday": "Thursday",
+    "Friday": "Friday",
+    "Saturday": "Saturday"
+  },
+
+  "booking_success": {
+    "full_day": "Full Day",
+    "hour_short": "h",
+    "min_short": "min",
+    "request_placed": "Request Placed",
+    "pending_approval": "Pending Approval",
+    "approved_by_venue": "Approved by Venue",
+    "confirmed": "Confirmed",
+    "no_data": "No booking data found",
+    "go_home": "Go Home",
+    "booking_confirmed": "Booking Confirmed!",
+    "approved": "Approved!",
+    "request_submitted": "Request Submitted",
+    "reservation_ready": "Your reservation is confirmed and ready",
+    "finalizing": "Venue approved, finalizing confirmation...",
+    "awaiting": "Awaiting venue approval...",
+    "booking_status": "Booking Status",
+    "venue_respond": "Venue will respond shortly...",
+    "finalizing_booking": "Finalizing your booking...",
+    "venue_response_time": "The venue typically responds within 3 minutes. You will receive an email and push notification once approved.",
+    "show_qr": "Show this QR code at the venue",
+    "guests": "Guests",
+    "selected_perk": "Selected Perk",
+    "total": "Total",
+    "download": "Download",
+    "share": "Share",
+    "view_bookings": "View My Bookings",
+    "back_home": "Back to Home",
+    "add_calendar": "Don't forget to add this to your calendar!"
+  },
+
+  "Search venues...": "Search venues...",
+  "My Profile": "My Profile",
+  "Settings": "Settings",
+  "Logout": "Logout",
+
+  "home": {
+    "hero": {
+      "curated_experiences": "Curated Experiences",
+      "search_placeholder": "Discover exceptional venues...",
+      "location": "Beirut",
+      "welcome_back": "Welcome back"
+    },
+    "explore": {
+      "title": "Explore",
+      "subtitle": "Five Worlds of Excellence"
+    },
+    "featured": {
+      "title": "Featured",
+      "subtitle": "Handpicked Excellence",
+      "view_all": "View All",
+      "badge": "Featured"
+    },
+    "card": {
+      "swipe": "DOUBLE TAP",
+      "reviews": "Reviews",
+      "exclusive_perks": "OMNIA Exclusive Perks",
+      "premium_offer": "Premium Offer",
+      "activate": "Activate",
+      "omnia_exclusive": "OMNIA Exclusive",
+      "tap_activate": "Tap to Activate",
+      "swipe_return": "DOUBLE TAP to Return"
+    },
+    "trending": {
+      "title": "Trending Now",
+      "subtitle": "What's Popular"
+    }
+  },
+
+  "common": {
+    "actions": {
+      "save": "Save",
+      "cancel": "Cancel",
+      "delete": "Delete",
+      "edit": "Edit",
+      "confirm": "Confirm",
+      "back": "Back",
+      "next": "Next",
+      "submit": "Submit",
+      "close": "Close",
+      "create": "Create",
+      "update": "Update",
+      "remove": "Remove",
+      "add": "Add",
+      "filter": "Filter",
+      "clear": "Clear",
+      "apply": "Apply",
+      "reset": "Reset",
+      "search": "Search",
+      "view": "View",
+      "download": "Download",
+      "upload": "Upload",
+      "copy": "Copy",
+      "share": "Share"
+    },
+    "messages": {
+      "loading": "Loading...",
+      "error": "An error occurred",
+      "success": "Success!",
+      "no_data": "No data available",
+      "coming_soon": "Coming Soon",
+      "saving": "Saving...",
+      "deleting": "Deleting...",
+      "processing": "Processing...",
+      "please_wait": "Please wait...",
+      "operation_successful": "Operation completed successfully",
+      "operation_failed": "Operation failed",
+      "confirm_delete": "Are you sure you want to delete?",
+      "cannot_undo": "This action cannot be undone"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive",
+      "pending": "Pending",
+      "approved": "Approved",
+      "rejected": "Rejected",
+      "completed": "Completed",
+      "cancelled": "Cancelled",
+      "draft": "Draft",
+      "published": "Published"
+    },
+    "time": {
+      "hours": "hours",
+      "minutes": "minutes",
+      "seconds": "seconds",
+      "days": "days",
+      "weeks": "weeks",
+      "months": "months",
+      "years": "years",
+      "today": "Today",
+      "tomorrow": "Tomorrow",
+      "yesterday": "Yesterday",
+      "now": "Now",
+      "soon": "Soon",
+      "recently": "Recently",
+      "hour_short": "h",
+      "minute_short": "m",
+      "second_short": "s",
+      "day_short": "d"
+    },
+    "validation": {
+      "required": "This field is required",
+      "invalid_email": "Invalid email address",
+      "invalid_phone": "Invalid phone number",
+      "min_length": "Minimum {{count}} characters required",
+      "max_length": "Maximum {{count}} characters allowed",
+      "password_mismatch": "Passwords do not match",
+      "invalid_format": "Invalid format"
+    },
+    "placeholders": {
+      "search": "Search...",
+      "select": "Select...",
+      "enter_text": "Enter text...",
+      "choose_option": "Choose an option",
+      "select_date": "Select date",
+      "select_time": "Select time",
+      "search_records": "Search records...",
+      "type_here": "Type here..."
+    }
+  },
+
+  "Curated Experiences": "Curated Experiences",
+  "Discover exceptional venues...": "Discover exceptional venues...",
+  "Explore More Test": "Explore More",
+  "Handpicked Excellence": "Handpicked Excellence",
+
+  "shared": {
+    "page_header": {
+      "create": "Create",
+      "filter": "Filter",
+      "search_placeholder": "Search records..."
+    },
+    "search_bar": {
+      "placeholder": "Search...",
+      "clear": "Clear search"
+    },
+    "confirm_dialog": {
+      "title": "Confirm Action",
+      "message": "Are you sure you want to proceed?",
+      "confirm": "Confirm",
+      "cancel": "Cancel"
+    },
+    "badge": {
+      "new": "New",
+      "hot": "Hot",
+      "sale": "Sale",
+      "featured": "Featured",
+      "exclusive": "Exclusive"
+    }
+  },
+
+  "venue": {
+    "card": {
+      "reviews_count": "{{count}} reviews",
+      "rating": "Rating",
+      "closed": "Closed",
+      "open": "Open",
+      "book_now": "Book Now",
+      "view_details": "View Details",
+      "favorite": "Favorite",
+      "share": "Share"
+    },
+    "details": {
+      "overview": "Overview",
+      "amenities": "Amenities",
+      "location": "Location",
+      "hours": "Hours",
+      "contact": "Contact",
+      "reviews": "Reviews",
+      "menu": "Menu",
+      "gallery": "Gallery",
+      "about": "About"
+    }
+  },
+
+  "category": {
+    "all": "All Categories",
+    "restaurants": "Restaurants",
+    "cafes": "Cafes",
+    "sports": "Sports",
+    "wellness": "Wellness",
+    "entertainment": "Entertainment",
+    "resorts": "Resorts"
+  },
+
+  "errors": {
+    "something_went_wrong": "Something went wrong",
+    "page_not_found": "Page not found",
+    "access_denied": "Access denied",
+    "network_error": "Network error. Please check your connection.",
+    "try_again": "Please try again",
+    "contact_support": "Please contact support if the problem persists"
+  },
+
+  "venue_profile": {
+    "tabs": {
+      "about": "About",
+      "amenities": "Amenities",
+      "gallery": "Gallery",
+      "contact": "Contact & Hours"
+    },
+    "quick_info": {
+      "open_now": "Open Now",
+      "closed_now": "Closed Now",
+      "opens_at": "Opens at",
+      "closes_at": "Closes at"
+    },
+    "description": {
+      "read_more": "Read More",
+      "read_less": "Read Less"
+    },
+    "menu": {
+      "view_full_menu": "View Full Menu",
+      "download_menu": "Download Menu",
+      "categories": "Categories"
+    },
+    "resources": {
+      "title": "Available Resources",
+      "select_resource": "Select a Resource",
+      "availability": "Availability"
+    },
+    "sticky_actions": {
+      "book": "Book",
+      "walk_in": "Walk-In"
+    }
+  },
+
+  "my_bookings": {
+    "tabs": {
+      "active": "Active",
+      "past": "Past",
+      "cancelled": "Cancelled"
+    },
+    "status": {
+      "pending": "Pending Approval",
+      "confirmed": "Confirmed",
+      "completed": "Completed",
+      "cancelled": "Cancelled",
+      "rejected": "Rejected"
+    },
+    "actions": {
+      "view_details": "View Details",
+      "view_qr": "View QR Code",
+      "modify": "Modify",
+      "cancel": "Cancel",
+      "rebook": "Book Again"
+    },
+    "empty": {
+      "no_active": "No active bookings",
+      "no_past": "No past bookings",
+      "no_cancelled": "No cancelled bookings",
+      "start_exploring": "Start exploring venues to make your first booking"
+    },
+    "details": {
+      "booking_id": "Booking ID",
+      "date": "Date",
+      "time": "Time",
+      "guests": "Guests",
+      "resource": "Resource",
+      "perk": "Perk",
+      "total": "Total Amount"
+    }
+  },
+
+  "mybooking": {
+    "qr": {
+      "title": "Your Booking Pass",
+      "date": "Date",
+      "time": "Time",
+      "guests": "Guests",
+      "area": "Area",
+      "booking_id": "Booking ID",
+      "instructions_title": "How to Use",
+      "instructions": "Present this QR code at the venue entrance. Staff will scan it to verify your booking."
+    },
+    "status": {
+      "confirmed": "Confirmed",
+      "pending": "Pending",
+      "active": "Active",
+      "cancelled": "Cancelled"
+    }
+  },
+
+  "profile": {
+    "tabs": {
+      "overview": "Overview",
+      "settings": "Settings",
+      "preferences": "Preferences"
+    },
+    "stats": {
+      "total_bookings": "Total Bookings",
+      "active_bookings": "Active Bookings",
+      "perks_redeemed": "Perks Redeemed",
+      "favorite_venues": "Favorite Venues"
+    },
+    "settings": {
+      "personal_info": "Personal Information",
+      "contact": "Contact Information",
+      "preferences": "Preferences",
+      "notifications": "Notifications",
+      "privacy": "Privacy",
+      "language": "Language",
+      "theme": "Theme"
+    },
+    "actions": {
+      "edit_profile": "Edit Profile",
+      "change_password": "Change Password",
+      "logout": "Logout"
+    }
+  },
+
+  "listing": {
+    "filter": {
+      "all": "All",
+      "sort_by": "Sort By",
+      "price_range": "Price Range",
+      "rating": "Rating",
+      "distance": "Distance",
+      "availability": "Availability"
+    },
+    "sort_options": {
+      "recommended": "Recommended",
+      "price_low_high": "Price: Low to High",
+      "price_high_low": "Price: High to Low",
+      "rating_high_low": "Rating: High to Low",
+      "distance": "Distance"
+    },
+    "results": {
+      "showing": "Showing",
+      "of": "of",
+      "results": "results",
+      "no_results": "No results found",
+      "try_different": "Try different filters"
+    }
+  },
+
+  "form": {
+    "required_field": "This field is required",
+    "invalid_email": "Please enter a valid email",
+    "invalid_phone": "Please enter a valid phone number",
+    "password_min": "Password must be at least 8 characters",
+    "password_match": "Passwords must match",
+    "select_option": "Please select an option",
+    "select_date": "Please select a date",
+    "select_time": "Please select a time"
+  },
+
+  "notification": {
+    "success": {
+      "booking_created": "Booking created successfully",
+      "booking_cancelled": "Booking cancelled",
+      "profile_updated": "Profile updated",
+      "password_changed": "Password changed successfully"
+    },
+    "error": {
+      "something_wrong": "Something went wrong",
+      "try_again": "Please try again",
+      "network_error": "Network error. Check your connection"
+    }
+  },
+
+  "modal": {
+    "confirm": {
+      "title": "Confirm Action",
+      "cancel_booking": "Cancel this booking?",
+      "delete": "Delete this item?",
+      "logout": "Are you sure you want to logout?",
+      "cannot_undo": "This action cannot be undone"
+    },
+    "buttons": {
+      "confirm": "Confirm",
+      "cancel": "Cancel",
+      "yes": "Yes",
+      "no": "No",
+      "ok": "OK",
+      "close": "Close"
+    }
+  },
+
+  "booking": {
+    "stage_1": "STAGE 1",
+    "stage_2": "STAGE 2",
+    "when_where": "When & Where",
+    "personalize": "Personalize",
+    "when_where_title": "When & Where",
+    "when_where_subtitle": "Select your preferred date, time, and party details for a seamless experience",
+    "select_date": "Select Your Date",
+    "choose_perfect_day": "Choose the perfect day",
+    "choose_time": "Choose Your Time",
+    "find_ideal_moment": "Find the ideal moment",
+    "guests": "Guests",
+    "personalize_title": "Personalize Experience",
+    "personalize_subtitle": "Add special touches and exclusive perks to elevate your reservation",
+    "exclusive_privileges": "Exclusive Privileges",
+    "elevate_experience": "Elevate your experience",
+    "special_requests": "Special Requests",
+    "let_us_know": "Let us know how we can make your experience perfect",
+    "occasion": "OCCASION",
+    "additional_notes": "ADDITIONAL NOTES",
+    "notes_placeholder": "Dietary preferences, accessibility needs, special decorations...",
+    "continue_personalization": "Continue to Personalization",
+    "confirm_reservation": "Confirm Reservation",
+    "select_time_error": "Please select a time",
+    "select_date_error": "Please select a date",
+    "submitted_title": "Request Submitted",
+    "submitted_subtitle": "Awaiting venue approval...",
+    "confirmed_title": "Booking Confirmed!",
+    "confirmed_subtitle": "Your reservation is confirmed and ready",
+    "booking_status": "Booking Status",
+    "request_placed": "Request Placed",
+    "pending_approval": "Pending Approval",
+    "venue_respond": "Venue will respond shortly...",
+    "approved_venue": "Approved by Venue",
+    "confirmed_status": "Confirmed",
+    "response_note": "The venue typically responds within 3 minutes. You will receive an email and push notification once approved.",
+    "show_qr": "Show this QR code at the venue",
+    "guests_label": "Guests",
+    "download": "Download",
+    "share": "Share",
+    "view_bookings": "View My Bookings",
+    "back_home": "Back to Home",
+    "step_1_of_3": "STEP 1 OF 3",
+    "step_2_of_3": "STEP 2 OF 3",
+    "step_3_of_3": "STEP 3 OF 3",
+    "pick_your_court": "Pick Your Perfect Court",
+    "explore_courts": "Explore our courts and find your favorite",
+    "max": "Max",
+    "players": "players",
+    "from": "FROM",
+    "aed_hr": "AED/HR",
+    "choose_first": "Choose First, Book Later!",
+    "choose_first_desc": "Select your preferred court now, then we'll show you its real-time availability on the next step.",
+    "when_play": "When Would You Like to Play?",
+    "check_availability": "Check availability for",
+    "session_length": "Session Length",
+    "quick_match": "QUICK MATCH",
+    "perfect_session": "PERFECT SESSION",
+    "pro_session": "PRO SESSION",
+    "early_bird": "EARLY BIRD",
+    "prime_time": "PRIME TIME",
+    "golden_hour": "GOLDEN HOUR",
+    "peak": "PEAK",
+    "almost_there": "Almost There, Champ!",
+    "review_court_time": "Review and lock in your court time",
+    "game_day": "Game Day",
+    "start_time": "Start Time",
+    "session": "Session",
+    "team_size": "Team Size",
+    "for_reference": "For venue reference",
+    "total_investment": "Total Investment",
+    "pay_at_venue": "Pay at venue",
+    "fair_play_policy": "Fair Play Policy",
+    "free_cancellation": "Free cancellation up to 24 hours before",
+    "grace_period": "15-minute grace period for late arrivals",
+    "equipment_included": "Equipment rental included",
+    "back": "Back",
+    "next_step": "Next Step",
+    "lock_it_in": "Lock It In!"
+  }
+}

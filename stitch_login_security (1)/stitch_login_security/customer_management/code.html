@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Precision Merchant - Customers</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-highest": "#cdddfe",
+              "outline-variant": "#a2adc4",
+              "secondary-fixed": "#d5e3fd",
+              "on-primary-container": "#005b2a",
+              "on-tertiary-container": "#60136d",
+              "tertiary-container": "#f39cfb",
+              "on-surface": "#242f41",
+              "surface-container-lowest": "#ffffff",
+              "on-surface-variant": "#515c70",
+              "on-tertiary-fixed-variant": "#6a1f77",
+              "primary-container": "#50fa8c",
+              "primary-fixed": "#50fa8c",
+              "primary-dim": "#005d2b",
+              "surface": "#f4f6ff",
+              "surface-dim": "#c3d5f8",
+              "on-error-container": "#570008",
+              "on-tertiary-fixed": "#41004d",
+              "tertiary-fixed-dim": "#e48fed",
+              "tertiary-dim": "#7a2f86",
+              "error-container": "#fb5151",
+              "tertiary": "#883c93",
+              "surface-bright": "#f4f6ff",
+              "on-primary-fixed-variant": "#006630",
+              "surface-container": "#dee8ff",
+              "error": "#b31b25",
+              "inverse-surface": "#040e1f",
+              "inverse-primary": "#50fa8c",
+              "outline": "#6c778c",
+              "inverse-on-surface": "#929db4",
+              "surface-container-high": "#d5e3ff",
+              "on-primary": "#cdffd3",
+              "on-secondary": "#eef3ff",
+              "on-tertiary": "#ffeefb",
+              "secondary": "#4e5c71",
+              "on-error": "#ffefee",
+              "secondary-container": "#d5e3fd",
+              "on-background": "#242f41",
+              "primary-fixed-dim": "#3deb80",
+              "surface-container-low": "#ecf1ff",
+              "on-secondary-fixed": "#324054",
+              "surface-variant": "#cdddfe",
+              "on-primary-fixed": "#00461f",
+              "tertiary-fixed": "#f39cfb",
+              "on-secondary-fixed-variant": "#4e5c71",
+              "error-dim": "#9f0519",
+              "primary": "#006a32",
+              "background": "#f4f6ff",
+              "secondary-fixed-dim": "#c7d5ee",
+              "on-secondary-container": "#455367",
+              "secondary-dim": "#425065",
+              "surface-tint": "#006a32"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body { font-family: 'Inter', sans-serif; }
+      .font-manrope { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- SideNavBar Shell -->
+<aside class="h-screen w-64 fixed left-0 top-0 border-r-0 bg-slate-100 flex flex-col py-6 px-4 z-50">
+<div class="mb-8 px-4">
+<h1 class="text-xl font-bold text-slate-900 font-manrope tracking-tight">Precision POS</h1>
+<p class="text-xs text-slate-500 font-medium">Main Terminal</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-200 transition-colors rounded-lg font-manrope tracking-tight font-semibold" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-200 transition-colors rounded-lg font-manrope tracking-tight font-semibold" href="#">
+<span class="material-symbols-outlined" data-icon="point_of_sale">point_of_sale</span>
+<span>POS Terminal</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-200 transition-colors rounded-lg font-manrope tracking-tight font-semibold" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span>Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-200 transition-colors rounded-lg font-manrope tracking-tight font-semibold" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span>Sales</span>
+</a>
+<!-- Active Tab: Customers -->
+<a class="flex items-center gap-3 px-4 py-3 bg-emerald-50 text-emerald-700 rounded-lg border-l-4 border-emerald-600 font-manrope tracking-tight font-semibold" href="#">
+<span class="material-symbols-outlined" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
+<span>Customers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-200 transition-colors rounded-lg font-manrope tracking-tight font-semibold" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-slate-200 space-y-1">
+<button class="w-full flex items-center gap-3 px-4 py-3 text-emerald-800 font-manrope font-bold hover:bg-emerald-50 transition-all scale-95 active:scale-90 rounded-xl mb-4 bg-emerald-100">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+<span>New Sale</span>
+</button>
+<a class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-200 transition-colors rounded-lg text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="help">help</span>
+<span>Help</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-200 transition-colors rounded-lg text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="logout">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- TopNavBar Shell -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] z-40 bg-white/80 backdrop-blur-md border-b border-slate-100 h-16 px-8 flex justify-between items-center shadow-sm">
+<div class="flex items-center gap-6 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-lg text-sm focus:ring-2 focus:ring-primary/20" placeholder="Search customers by name, email or ID..." type="text"/>
+</div>
+<div class="flex items-center gap-2 text-slate-500 font-inter text-sm font-medium">
+<span class="material-symbols-outlined text-emerald-700" data-icon="location_on">location_on</span>
+<span>Store Location: Downtown</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-4 py-2 bg-primary text-white text-sm font-bold rounded-lg hover:opacity-90 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="person_add">person_add</span>
+                Add New Customer
+            </button>
+<div class="h-8 w-[1px] bg-slate-200 mx-2"></div>
+<button class="p-2 text-slate-500 hover:bg-slate-100 rounded-full transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+</button>
+<img alt="Manager Avatar" class="w-10 h-10 rounded-full object-cover border-2 border-white" data-alt="Professional headshot of a business manager with a friendly expression in a modern office environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMQDSh6b_ZJdEhcxNJ9PKw_jHqXDkmz52ZYHb_mIjcyUHfiKCWOG91pKQ8ybxpXkr3LMGFE0I_vKvHCXte7skBSmBKqX_RR-mkr8iyeRknNVUbbkuXO-AxN6KWjiRnnu6EvanRvyQJxSp6P_Pomhb9hlFocEzQSNWrYSFVZwg8VnHIOK2EvPl9p18pA4gqJNY4GYKEZ9GXH6fgRyNeZIbJvOl5I07DYozxT2rVEyXxHP6-WYJAAl3AWgxat9lJt3oUb_x0aiEtRQU"/>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-16 min-h-screen">
+<div class="p-8 max-w-[1600px] mx-auto">
+<!-- Relationship Management Header -->
+<div class="mb-8 flex justify-between items-end">
+<div>
+<h2 class="text-3xl font-manrope font-extrabold text-slate-900 tracking-tight">Customer Relations</h2>
+<p class="text-on-surface-variant font-medium mt-1">Manage your 2,482 loyal patrons and their purchase history.</p>
+</div>
+<div class="flex gap-3">
+<div class="bg-surface-container-high px-4 py-2 rounded-xl flex items-center gap-3">
+<div class="p-2 bg-primary-container rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="loyalty" style="font-variation-settings: 'FILL' 1;">loyalty</span>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-wider font-bold text-slate-500">Average Loyalty</p>
+<p class="font-manrope font-bold text-slate-900">1,240 pts</p>
+</div>
+</div>
+<div class="bg-surface-container-high px-4 py-2 rounded-xl flex items-center gap-3">
+<div class="p-2 bg-tertiary-container rounded-lg">
+<span class="material-symbols-outlined text-tertiary" data-icon="trending_up">trending_up</span>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-wider font-bold text-slate-500">Monthly Retention</p>
+<p class="font-manrope font-bold text-slate-900">+12.4%</p>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-8">
+<!-- Searchable List (Asymmetric Layout) -->
+<div class="col-span-12 lg:col-span-7 space-y-4">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-manrope font-bold text-slate-900">Recent Activity</h3>
+<div class="flex gap-2">
+<button class="px-3 py-1.5 text-xs font-bold bg-white border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors">All</button>
+<button class="px-3 py-1.5 text-xs font-bold text-slate-500 hover:text-primary transition-colors">VIP</button>
+<button class="px-3 py-1.5 text-xs font-bold text-slate-500 hover:text-primary transition-colors">New</button>
+</div>
+</div>
+<!-- Customer Cards -->
+<div class="grid gap-3">
+<!-- Card 1: Active/Selected -->
+<div class="group bg-surface-container-lowest p-4 rounded-xl shadow-sm border-l-4 border-primary ring-1 ring-primary/10 flex items-center justify-between transition-all hover:scale-[1.01]">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-primary font-bold text-lg">EC</div>
+<div>
+<h4 class="font-manrope font-bold text-slate-900">Eleanor Campbell</h4>
+<p class="text-xs text-slate-500">eleanor.c@example.com</p>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-8 text-right pr-4">
+<div>
+<p class="text-[10px] uppercase font-bold text-slate-400">Total Spend</p>
+<p class="font-manrope font-bold text-emerald-700">$4,290.50</p>
+</div>
+<div>
+<p class="text-[10px] uppercase font-bold text-slate-400">Points</p>
+<p class="font-manrope font-bold text-tertiary">2,850</p>
+</div>
+<div>
+<p class="text-[10px] uppercase font-bold text-slate-400">Last Visit</p>
+<p class="font-inter font-medium text-slate-900">Today</p>
+</div>
+</div>
+<button class="p-2 text-slate-300 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<!-- Card 2 -->
+<div class="group bg-surface-container-low p-4 rounded-xl flex items-center justify-between transition-all hover:bg-white hover:shadow-md">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-sm">
+<img alt="Marcus Thorne" class="w-full h-full object-cover" data-alt="Portrait of a middle-aged man with glasses and a kind smile, clean professional lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANIjUIC_d8ely9WO1HbCOazLVtL_9hGMbLgHONZG1kH6aeIefbl_b9AQIz4LwrK1axBI5GAps-usPA447MdO3tF5hZNjbVYIzNsGOmo0w6wS06BpgMu3h_ym-rRPFYWyGix8fk-1MA-BBYMSWBhpfhvft3zQ-B7nWsfy_WnD8JQypja27YXyU7BkIOnqdZLd166s24f6zX2lncy_uXMxir_n8wZL_KkhSL843_o8dMnHx69B_ID234lQeBU26gow2UyB6Jn-tDj-I"/>
+</div>
+<div>
+<h4 class="font-manrope font-bold text-slate-900">Marcus Thorne</h4>
+<p class="text-xs text-slate-500">m.thorne@techflow.io</p>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-8 text-right pr-4">
+<div>
+<p class="text-[10px] uppercase font-bold text-slate-400">Total Spend</p>
+<p class="font-manrope font-bold text-slate-900">$1,120.00</p>
+</div>
+<div>
+<p class="text-[10px] uppercase font-bold text-slate-400">Points</p>
+<p class="font-manrope font-bold text-slate-900">840</p>
+</div>
+<div>
+<p class="text-[10px] uppercase font-bold text-slate-400">Last Visit</p>
+<p class="font-inter font-medium text-slate-900">Oct 24, 2023</p>
+</div>
+</div>
+<button class="p-2 text-slate-300 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<!-- Card 3 -->
+<div class="group bg-surface-container-low p-4 rounded-xl flex items-center justify-between transition-all hover:bg-white hover:shadow-md">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-secondary font-bold text-lg">JW</div>
+<div>
+<h4 class="font-manrope font-bold text-slate-900">Juliet Wong</h4>
+<p class="text-xs text-slate-500">jwong.design@gmail.com</p>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-8 text-right pr-4">
+<div>
+<p class="text-[10px] uppercase font-bold text-slate-400">Total Spend</p>
+<p class="font-manrope font-bold text-slate-900">$845.20</p>
+</div>
+<div>
+<p class="text-[10px] uppercase font-bold text-slate-400">Points</p>
+<p class="font-manrope font-bold text-slate-900">412</p>
+</div>
+<div>
+<p class="text-[10px] uppercase font-bold text-slate-400">Last Visit</p>
+<p class="font-inter font-medium text-slate-900">Oct 21, 2023</p>
+</div>
+</div>
+<button class="p-2 text-slate-300 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<!-- Card 4 -->
+<div class="group bg-surface-container-low p-4 rounded-xl flex items-center justify-between transition-all hover:bg-white hover:shadow-md">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-sm">
+<img alt="Sarah Jenkins" class="w-full h-full object-cover" data-alt="Modern professional woman of color in a smart casual blazer, soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3ZNL2U2uSfTYRMTPMGswSOM3T1_cKk9dacJ5rg0xDJmPxbGku68mfFxygrwWfLQWi4GYXdx0BY_TZv7L2-bYVoE8dLHwyvlQkqmi9Z6m_1fq9mWqJm8La4Y9YX9HpPmnxYMguJiFon9x_HOM0OepGRsPaxavHTlLw5EJ8iB7j6YBTDyvwkLYOQvS-wQ5eBxveBwRxDtZZj4tOveFVsCS7m3dOUJX_q3foXkrI3wLlSLQXw8XcUgQehpOWnjWqhWaTZ0tB2vLUaUY"/>
+</div>
+<div>
+<h4 class="font-manrope font-bold text-slate-900">Sarah Jenkins</h4>
+<p class="text-xs text-slate-500">s.jenkins@legalcorp.com</p>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-8 text-right pr-4">
+<div>
+<p class="text-[10px] uppercase font-bold text-slate-400">Total Spend</p>
+<p class="font-manrope font-bold text-slate-900">$6,810.00</p>
+</div>
+<div>
+<p class="text-[10px] uppercase font-bold text-slate-400">Points</p>
+<p class="font-manrope font-bold text-slate-900">5,200</p>
+</div>
+<div>
+<p class="text-[10px] uppercase font-bold text-slate-400">Last Visit</p>
+<p class="font-inter font-medium text-slate-900">Oct 19, 2023</p>
+</div>
+</div>
+<button class="p-2 text-slate-300 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex justify-center mt-6">
+<button class="text-sm font-bold text-primary hover:underline px-4 py-2">Load 20 More Customers</button>
+</div>
+</div>
+<!-- Individual Profile View (Bento Grid Style) -->
+<div class="col-span-12 lg:col-span-5">
+<div class="sticky top-24 space-y-6">
+<!-- Profile Card -->
+<div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+<div class="flex justify-between items-start mb-6">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center text-primary font-bold text-2xl">EC</div>
+<div>
+<h3 class="text-xl font-manrope font-extrabold text-slate-900 tracking-tight">Eleanor Campbell</h3>
+<p class="text-sm text-slate-500">Customer ID: #PR-88219</p>
+</div>
+</div>
+<button class="p-2 hover:bg-slate-100 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-slate-400" data-icon="edit">edit</span>
+</button>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="bg-surface-container-low p-4 rounded-xl">
+<p class="text-[10px] uppercase tracking-wider font-bold text-slate-500 mb-1">Loyalty Tier</p>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-600 text-lg" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-manrope font-bold text-slate-900">Platinum Member</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl">
+<p class="text-[10px] uppercase tracking-wider font-bold text-slate-500 mb-1">Member Since</p>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400 text-lg" data-icon="calendar_today">calendar_today</span>
+<span class="font-manrope font-bold text-slate-900">Jan 2021</span>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="text-sm font-bold text-slate-900 px-1">Contact Details</h4>
+<div class="space-y-3">
+<div class="flex items-center gap-3 px-1">
+<span class="material-symbols-outlined text-slate-400" data-icon="mail">mail</span>
+<span class="text-sm font-medium text-slate-600">eleanor.c@example.com</span>
+</div>
+<div class="flex items-center gap-3 px-1">
+<span class="material-symbols-outlined text-slate-400" data-icon="call">call</span>
+<span class="text-sm font-medium text-slate-600">+1 (555) 012-3456</span>
+</div>
+<div class="flex items-center gap-3 px-1">
+<span class="material-symbols-outlined text-slate-400" data-icon="location_on">location_on</span>
+<span class="text-sm font-medium text-slate-600">4228 Oakwood Dr, Downtown</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Stats Bento -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-emerald-900 text-white p-5 rounded-2xl relative overflow-hidden">
+<div class="relative z-10">
+<p class="text-[10px] uppercase font-bold opacity-70 mb-1">Available Points</p>
+<p class="text-2xl font-manrope font-extrabold tracking-tight">2,850</p>
+<button class="mt-4 text-xs font-bold bg-white/20 px-3 py-1.5 rounded-lg hover:bg-white/30 transition-colors">Redeem Pts</button>
+</div>
+<span class="material-symbols-outlined absolute -bottom-4 -right-4 text-7xl opacity-10" data-icon="stars" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+<div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm flex flex-col justify-between">
+<div>
+<p class="text-[10px] uppercase font-bold text-slate-400 mb-1">Avg. Ticket Size</p>
+<p class="text-2xl font-manrope font-extrabold tracking-tight text-slate-900">$184.20</p>
+</div>
+<p class="text-xs font-medium text-emerald-600 mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="arrow_upward">arrow_upward</span>
+                                    8% vs last year
+                                </p>
+</div>
+</div>
+<!-- Purchase History -->
+<div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+<h4 class="text-sm font-bold text-slate-900 mb-4 flex items-center justify-between">
+                                Recent Purchases
+                                <a class="text-xs text-primary font-bold hover:underline" href="#">View All</a>
+</h4>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-500" data-icon="shopping_bag">shopping_bag</span>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900">Premium Leather Tote</p>
+<p class="text-xs text-slate-500">Oct 26, 2023 • #INV-9920</p>
+</div>
+</div>
+<p class="text-sm font-bold text-slate-900">$420.00</p>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-500" data-icon="shopping_bag">shopping_bag</span>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900">Silk Scarf (Summer Ed.)</p>
+<p class="text-xs text-slate-500">Oct 12, 2023 • #INV-9854</p>
+</div>
+</div>
+<p class="text-sm font-bold text-slate-900">$125.00</p>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-500" data-icon="shopping_bag">shopping_bag</span>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900">Wool Blend Overcoat</p>
+<p class="text-xs text-slate-500">Sep 28, 2023 • #INV-9712</p>
+</div>
+</div>
+<p class="text-sm font-bold text-slate-900">$890.00</p>
+</div>
+</div>
+<button class="w-full mt-6 py-2.5 bg-surface-container-low text-slate-600 font-bold text-sm rounded-xl hover:bg-slate-200 transition-colors">Generate Statement</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,281 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-gold-primary: #d4af37;
+  --color-gold-secondary: #cd7f32;
+  --color-gold-danger: #b85450;
+  --color-gold-light: rgba(212, 175, 55, 0.1);
+  --color-luxury-success: #4a7c2c;
+  --color-luxury-warning: #c49a3a;
+  --color-luxury-neutral: #c8c3b8;
+  --color-luxury-text-dim: #5c5850;
+  --color-luxury-gray: #8b8680;
+  --color-border: var(--border-color);
+  --color-background: var(--bg-color);
+  --color-foreground: var(--text-color);
+  --color-luxury-card: var(--card-color);
+  --color-luxury-border: var(--border-color);
+
+  /* Resort/Beach Theme Colors */
+  --color-resort-primary: #b8956a;
+  --color-resort-secondary: #d4b896;
+  --color-resort-light: #f8f6f1;
+
+  /* Sports Theme Colors */
+  --color-padel-primary: #4a7c2c;
+  --color-padel-secondary: #5c9234;
+  --color-basketball-primary: #e85d04;
+  --color-basketball-secondary: #d56f3e;
+  --color-football-primary: #1e40af;
+  --color-football-secondary: #2563eb;
+
+  /* Urgency Colors */
+  --color-urgency-critical: #c77b7b;
+  --color-urgency-warning: #ff8c42;
+  --color-urgency-active: #d4af37;
+
+  --background-image-gold-gradient: linear-gradient(to right, #d4af37, #cd7f32);
+  --background-image-resort-gradient: linear-gradient(to right, #b8956a, #d4af37);
+  --background-image-gold-faded-line: linear-gradient(to right,
+      transparent,
+      var(--color-gold-primary),
+      transparent);
+  --animate-float: float 20s ease-in-out infinite;
+  --animate-float-delayed: float-delayed 25s ease-in-out infinite;
+}
+
+:root {
+  --bg-color: #fdfbf7;
+  --text-color: #1a1a1c;
+  --card-color: #ffffff;
+  --border-color: rgba(212, 175, 55, 0.2);
+}
+
+.dark {
+  --bg-color: #0f0f10;
+  --text-color: #fdfbf7;
+  --card-color: #1a1a1c;
+  --border-color: rgba(212, 175, 55, 0.3);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-none;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+      transform: translate(30px, -30px) scale(1.1);
+    }
+  }
+
+  @keyframes float-delayed {
+
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+      transform: translate(-30px, 30px) scale(1.1);
+    }
+  }
+
+  * {
+    outline: none;
+  }
+
+  input:focus,
+  input:focus-visible {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+@layer utilities {
+
+  /* Hide scrollbar but keep functionality */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Scroll snap for horizontal scrolling */
+  .scroll-snap-x {
+    scroll-snap-type: x mandatory;
+  }
+
+  .scroll-snap-center {
+    scroll-snap-align: center;
+  }
+
+  .scroll-snap-start {
+    scroll-snap-align: start;
+  }
+
+  /* Smooth scrolling on mobile */
+  .scroll-smooth-mobile {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* 3D Card Flip Utilities */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+
+  /* Transition utilities */
+  .transition-luxury {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .transition-luxury-fast {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Gold gradient background */
+  .bg-gold-gradient {
+    background-image: linear-gradient(to right, #d4af37, #cd7f32);
+  }
+
+  /* ===== RTL Support Utilities ===== */
+  
+  /* Base RTL Direction */
+  [dir="rtl"] {
+    direction: rtl;
+  }
+
+  [dir="ltr"] {
+    direction: ltr;
+  }
+
+  /* RTL Text Alignment */
+  [dir="rtl"] .text-start {
+    text-align: right;
+  }
+
+  [dir="rtl"] .text-end {
+    text-align: left;
+  }
+
+  /* RTL Animations - Flip horizontal movements */
+  @keyframes slide-in-left-rtl {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-in-right-rtl {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  [dir="rtl"] .animate-slide-in-left {
+    animation: slide-in-left-rtl 0.3s ease-out;
+  }
+
+  [dir="rtl"] .animate-slide-in-right {
+    animation: slide-in-right-rtl 0.3s ease-out;
+  }
+
+  /* RTL Float Animation */
+  [dir="rtl"] .float,
+  [dir="rtl"] .float-delayed {
+    animation-direction: reverse;
+  }
+
+  /* Icon Mirroring for RTL */
+  [dir="rtl"] .mirror-rtl {
+    transform: scaleX(-1);
+  }
+
+  /* Arrows and directional icons that should flip */
+  [dir="rtl"] .rtl-flip {
+    transform: scaleX(-1);
+  }
+
+  /* Flex direction reversal */
+  [dir="rtl"] .flex-row {
+    flex-direction: row-reverse;
+  }
+
+  /* Grid RTL Support */
+  [dir="rtl"] .grid {
+    direction: rtl;
+  }
+
+  /* Preserve LTR for certain elements (numbers, emails, etc.) */
+  .ltr-content {
+    direction: ltr !important;
+    text-align: left !important;
+  }
+
+  /* RTL-aware shadows */
+  [dir="rtl"] .shadow-left {
+    box-shadow: 4px 0 6px -1px rgb(0 0 0 / 0.1);
+  }
+
+  [dir="rtl"] .shadow-right {
+    box-shadow: -4px 0 6px -1px rgb(0 0 0 / 0.1);
+  }
+
+  /* RTL Card Positioning */
+  [dir="rtl"] .absolute.left-0 {
+    left: auto;
+    right: 0;
+  }
+
+  [dir="rtl"] .absolute.right-0 {
+    right: auto;
+    left: 0;
+  }
+
+  /* RTL Transforms */
+  [dir="rtl"] .translate-x-full {
+    transform: translateX(-100%);
+  }
+
+  [dir="rtl"] .-translate-x-full {
+    transform: translateX(100%);
+  }
+}

@@ -1,0 +1,712 @@
+{
+  "welcome": {
+    "tagline": "Découvrir • Vivre • Savourer",
+    "badge": "Excellence Sélectionnée",
+    "enter": "Entrer",
+    "no_login": "Pas de connexion requise.",
+    "explore": "Explorez à votre rythme.",
+    "auth_note": "Authentification nécessaire uniquement pour les réservations"
+  },
+  "countdown": {
+    "expired": "Expiré",
+    "left": "restant"
+  },
+  "perk_modal": {
+    "question": "Comment souhaitez-vous profiter de cet avantage ?",
+    "at": "À",
+    "walk_in": "Sans Réservation",
+    "walk_in_desc": "Activer pour une utilisation immédiate dans les 24 heures",
+    "book_now": "Réserver",
+    "book_now_desc": "Planifiez votre visite et sécurisez votre avantage",
+    "note": "Les deux options activeront cet avantage exclusif"
+  },
+  "Welcome Back": "Bon Retour",
+  "Sign in to continue": "Connectez-vous pour continuer",
+
+  "Create Account": "Créer un Compte",
+  "Join OMNIA today": "Rejoignez OMNIA aujourd'hui",
+
+  "Reset Password": "Réinitialiser le Mot de Passe",
+  "Enter your email to reset": "Entrez votre e-mail pour réinitialiser",
+
+  "Email Address": "Adresse E-mail",
+  "Enter your email": "Entrez votre e-mail",
+  "Password": "Mot de Passe",
+  "Enter your password": "Entrez votre mot de passe",
+
+  "Full Name": "Nom Complet",
+  "Phone Number": "Numéro de Téléphone",
+
+  "Sign In": "Se Connecter",
+  "Sign Up": "S'inscrire",
+  "Create Account Button": "Créer un Compte",
+  "Send Reset Link": "Envoyer le Lien de Réinitialisation",
+
+  "Forgot Password?": "Mot de Passe Oublié ?",
+  "Back to Sign In": "Retour à la Connexion",
+
+  "Don't have an account?": "Vous n'avez pas de compte ?",
+  "Already have an account?": "Vous avez déjà un compte ?",
+
+  "Sign in to Complete Booking": "Connectez-vous pour Finaliser la Réservation",
+  "Please sign in or create an account to proceed with your reservation": "Veuillez vous connecter ou créer un compte pour procéder à votre réservation",
+  "Home": "Accueil",
+  "Search": "Rechercher",
+  "Bookings": "Réservations",
+  "Reviews": "Avis",
+  "Favorites": "Favoris",
+  "Gold Member": "Membre Or",
+  "Member since 2023": "Membre depuis 2023",
+  "Points": "Points",
+  "150 points to Platinum": "150 points pour atteindre Platine",
+  "Profile": "Profil",
+  "Edit Profile": "Modifier le Profil",
+  "My Favorites": "Mes Favoris",
+  "My Reviews": "Mes Avis",
+  "Notifications": "Notifications",
+  "Privacy & Security": "Confidentialité et Sécurité",
+  "Help & Support": "Aide et Support",
+  "Language": "Langue",
+  "My Bookings": "Mes Réservations",
+  "Active": "Actives",
+  "Past": "Passées",
+  "Next Booking": "Prochaine Réservation",
+  "Modify": "Modifier",
+  "Cancel": "Annuler",
+  "Cancel Booking": "Annuler la Réservation",
+  "Cancel Booking?": "Annuler la Réservation ?",
+  "Keep Booking": "Garder la Réservation",
+  "This action cannot be undone": "Cette action est irréversible.",
+  "Booking Cancelled": "Réservation Annulée",
+  "Your booking has been successfully cancelled": "Votre réservation a été annulée avec succès",
+  "Done": "Terminé",
+  "Modify Booking": "Modifier la Réservation",
+  "Save Changes": "Enregistrer les Modifications",
+  "View QR Code": "Voir le Code QR",
+  "Your Booking Pass": "Votre Pass de Réservation",
+  "Present this code at the venue": "Présentez ce code au lieu",
+  "featured": "En Vedette",
+  "exclusive_perks": "Avantages Exclusifs",
+  "exclusive_perks_subtitle": "Avantages premium pour les membres OMNIA",
+  "tap_to_activate": "Appuyez pour Activer",
+  "book_now": "Réserver",
+  "walk_in_button": "Sans Réservation",
+  "open_today": "Ouvert Aujourd'hui",
+  "closed_today": "Fermé Aujourd'hui",
+  "about": "À Propos",
+  "amenities": "Équipements",
+  "gallery": "Galerie",
+  "contact_hours": "Contact et Horaires",
+  "opening_hours": "Horaires d'Ouverture",
+  "view_menu": "Voir le Menu",
+  "seating_options": "Options de Places",
+  "capacity": "Capacité",
+  "premium": "Premium",
+  "activate": "Activer",
+
+  "filters": "Filtres",
+  "all": "Tout",
+  "venues_available": "lieux disponibles",
+  "no_venues": "Aucun lieu trouvé",
+  "try_different_filter": "Essayez un filtre différent",
+  "view_all": "Voir Tout",
+  "featured_venues": "Lieux en Vedette",
+  "all_venues": "Tous les Lieux",
+  "reviews": "avis",
+
+  "OMNIA Exclusive Perks": "Avantages Exclusifs OMNIA",
+  "FINAL HOURS": "DERNIÈRES HEURES",
+  "ENDING SOON": "BIENTÔT TERMINÉ",
+  "LIMITED OFFER": "OFFRE LIMITÉE",
+  "Featured": "En Vedette",
+  "select": "Sélectionner",
+
+  "walk_in": {
+    "select_privilege": "Sélectionnez Votre Privilège",
+    "activate_privilege": "Activer le Privilège Sans Réservation",
+    "review_details": "Vérifiez les détails de votre avantage exclusif avant l'activation",
+    "at_venue": "Dans Ce Lieu",
+    "your_privilege": "Votre Privilège",
+    "valid_24h": "Valable 24 heures",
+    "important_note": "Note Importante",
+    "activate_now": "Activer Maintenant",
+    "maybe_later": "Peut-être Plus Tard",
+    "preparing": "Préparation de Votre Privilège",
+    "just_moment": "Un instant...",
+    "activated_success": "Activé avec Succès !",
+    "code": "CODE",
+    "show_staff": "Montrer au personnel",
+    "scan_validate": "Scanner pour valider",
+    "at": "À",
+    "next": "SUIVANT",
+    "visit_24h": "Visitez dans les 24h",
+    "ready": "Parfait, Je Suis Prêt"
+  },
+
+  "venue_not_found": "Lieu non trouvé",
+  "active": "Actif",
+  "benefits": "Avantages",
+  "optional": "optionnel",
+  "no_perk": "Aucun avantage",
+  "no_preference": "Aucune préférence",
+  "personalize_visit": "Personnalisez Votre Visite",
+  "choose_seating_perks": "Choisissez vos places et avantages",
+  "special_request": "Demande Spéciale",
+  "special_request_placeholder": "Restrictions alimentaires, allergies ou occasions spéciales...",
+  "phone": "Téléphone",
+  "website": "Site Web",
+  "address": "Adresse",
+  "closed": "Fermé",
+  "discover_culinary": "Découvrez nos offres culinaires",
+  "full_menu_available": "Menu Complet Disponible",
+  "premium_courts": "Courts et Installations Premium",
+  "select_view_details": "Sélectionnez pour voir les détails",
+  "more": "plus",
+  "select_date": "Sélectionnez une date",
+  "today": "Aujourd'hui",
+  "tomorrow": "Demain",
+
+  "booking": {
+    "step_1_of_3": "Étape 1 sur 3",
+    "step_2_of_3": "Étape 2 sur 3",
+    "step_3_of_3": "Étape 3 sur 3",
+    "pick_your_court": "Choisissez Votre Court Idéal",
+    "explore_courts": "Explorez nos courts et trouvez votre favori",
+    "choose_first": "Choisissez D'abord, Réservez Ensuite !",
+    "choose_first_desc": "Sélectionnez votre court préféré maintenant, puis nous vous montrerons sa disponibilité en temps réel à l'étape suivante.",
+    "when_play": "Quand Souhaitez-Vous Jouer ?",
+    "check_availability": "Vérifier la disponibilité pour",
+    "session_length": "Durée de la Session",
+    "choose_time": "Choisissez Votre Heure",
+    "early_bird": "Matinale",
+    "prime_time": "Heure de Pointe",
+    "golden_hour": "Heure Dorée",
+    "peak": "POINTE",
+    "quick_match": "Match Rapide",
+    "perfect_session": "Session Parfaite",
+    "pro_session": "Session Pro",
+    "almost_there": "Presque Fini, Champion !",
+    "review_court_time": "Vérifiez et confirmez votre créneau",
+    "game_day": "Jour du Match",
+    "start_time": "Heure de Début",
+    "session": "Session",
+    "team_size": "Taille de l'Équipe",
+    "for_reference": "Pour référence du lieu",
+    "total_investment": "Investissement Total",
+    "pay_at_venue": "Paiement sur place",
+    "fair_play_policy": "Politique de Fair-Play",
+    "free_cancellation": "Annulation gratuite jusqu'à 24 heures avant",
+    "grace_period": "Période de grâce de 15 minutes pour les retards",
+    "equipment_included": "Location d'équipement incluse",
+    "back": "Retour",
+    "next_step": "Étape Suivante",
+    "lock_it_in": "Confirmez !",
+    "from": "À partir de",
+    "max": "Max",
+    "players": "joueurs",
+    "aed_hr": "AED/h",
+    "stage_1": "ÉTAPE 1",
+    "stage_2": "ÉTAPE 2",
+    "when_where": "Quand et Où",
+    "personalize": "Personnaliser",
+    "when_where_title": "Quand et Où",
+    "when_where_subtitle": "Sélectionnez votre date, heure et détails préférés pour une expérience parfaite",
+    "select_date": "Sélectionnez Votre Date",
+    "choose_perfect_day": "Choisissez le jour parfait",
+    "find_ideal_moment": "Trouvez le moment idéal",
+    "guests": "Invités",
+    "personalize_title": "Personnaliser l'Expérience",
+    "personalize_subtitle": "Ajoutez des touches spéciales et des avantages exclusifs pour sublimer votre réservation",
+    "exclusive_privileges": "Privilèges Exclusifs",
+    "elevate_experience": "Sublimez votre expérience",
+    "special_requests": "Demandes Spéciales",
+    "let_us_know": "Dites-nous comment rendre votre expérience parfaite",
+    "occasion": "OCCASION",
+    "additional_notes": "NOTES SUPPLÉMENTAIRES",
+    "notes_placeholder": "Préférences alimentaires, besoins d'accessibilité, décorations spéciales...",
+    "continue_personalization": "Continuer la Personnalisation",
+    "confirm_reservation": "Confirmer la Réservation",
+    "select_time_error": "Veuillez sélectionner une heure",
+    "select_date_error": "Veuillez sélectionner une date",
+    "submitted_title": "Demande Soumise",
+    "submitted_subtitle": "En attente de l'approbation du lieu...",
+    "confirmed_title": "Réservation Confirmée !",
+    "confirmed_subtitle": "Votre réservation est confirmée et prête",
+    "booking_status": "Statut de la Réservation",
+    "request_placed": "Demande Envoyée",
+    "pending_approval": "En Attente d'Approbation",
+    "venue_respond": "Le lieu répondra sous peu...",
+    "approved_venue": "Approuvée par le Lieu",
+    "confirmed_status": "Confirmée",
+    "response_note": "Le lieu répond généralement dans les 3 minutes. Vous recevrez un e-mail et une notification push une fois approuvé.",
+    "show_qr": "Présentez ce code QR au lieu",
+    "guests_label": "Invités",
+    "download": "Télécharger",
+    "share": "Partager",
+    "view_bookings": "Voir Mes Réservations",
+    "back_home": "Retour à l'Accueil"
+  },
+
+  "resort": {
+    "beach_day_pass": "Pass Journée Plage",
+    "day_in_paradise": "Une Journée au Paradis",
+    "select_beach_escape": "Sélectionnez votre escapade plage idéale",
+    "full_day_pass": "Pass Journée Complète",
+    "half_day_pass": "Pass Demi-Journée",
+    "kids_pass": "Pass Enfants",
+    "full_beach_access": "Accès complet à la plage",
+    "morning_afternoon": "Matin ou après-midi",
+    "children_under_12": "Enfants de moins de 12 ans",
+    "select_area": "Sélectionnez Votre Zone",
+    "day_pass_includes": "Le Pass Journée Comprend",
+    "day_pass_includes_desc": "Accès complet à la plage et à la piscine, service de serviettes, vestiaires et rafraîchissements offerts. Les cabanas incluent un serveur dédié et des équipements premium.",
+    "beach_day_awaits": "Votre Journée Plage Vous Attend",
+    "confirm_escape": "Confirmez votre escapade parfaite",
+    "pass_type": "Type de Pass",
+    "guests": "Invités",
+    "guest": "Invité",
+    "day_pass_total": "Total Pass Journée",
+    "beach_day_details": "Détails du Pass Journée Plage",
+    "full_day_access": "Accès journée complète de l'arrivée au coucher du soleil",
+    "all_amenities": "Tous les équipements et installations de plage inclus",
+    "payment_arrival": "Paiement au resort à l'arrivée",
+    "reserve_beach": "Réserver la Journée Plage !",
+    "continue": "Continuer",
+    "weekend": "Week-end",
+    "weekend_rate": "Tarif Week-end",
+    "available": "Disponible",
+    "fully_booked": "COMPLET",
+    "try_another_time": "Essayez un autre créneau",
+    "popular": "POPULAIRE",
+    "cabana": "CABANA"
+  },
+
+  "days": {
+    "Sunday": "Dimanche",
+    "Monday": "Lundi",
+    "Tuesday": "Mardi",
+    "Wednesday": "Mercredi",
+    "Thursday": "Jeudi",
+    "Friday": "Vendredi",
+    "Saturday": "Samedi"
+  },
+
+  "booking_success": {
+    "full_day": "Journée Complète",
+    "hour_short": "h",
+    "min_short": "min",
+    "request_placed": "Demande Envoyée",
+    "pending_approval": "En Attente d'Approbation",
+    "approved_by_venue": "Approuvée par le Lieu",
+    "confirmed": "Confirmée",
+    "no_data": "Aucune donnée de réservation trouvée",
+    "go_home": "Accueil",
+    "booking_confirmed": "Réservation Confirmée !",
+    "approved": "Approuvée !",
+    "request_submitted": "Demande Soumise",
+    "reservation_ready": "Votre réservation est confirmée et prête",
+    "finalizing": "Le lieu a approuvé, finalisation de la confirmation...",
+    "awaiting": "En attente de l'approbation du lieu...",
+    "booking_status": "Statut de la Réservation",
+    "venue_respond": "Le lieu répondra sous peu...",
+    "finalizing_booking": "Finalisation de votre réservation...",
+    "venue_response_time": "Le lieu répond généralement dans les 3 minutes. Vous recevrez un e-mail et une notification push une fois approuvé.",
+    "show_qr": "Présentez ce code QR au lieu",
+    "guests": "Invités",
+    "selected_perk": "Avantage Sélectionné",
+    "total": "Total",
+    "download": "Télécharger",
+    "share": "Partager",
+    "view_bookings": "Voir Mes Réservations",
+    "back_home": "Retour à l'Accueil",
+    "add_calendar": "N'oubliez pas d'ajouter ceci à votre calendrier !"
+  },
+
+  "Search venues...": "Rechercher des lieux...",
+  "My Profile": "Mon Profil",
+  "Settings": "Paramètres",
+  "Logout": "Déconnexion",
+
+  "home": {
+    "hero": {
+      "curated_experiences": "Expériences Sélectionnées",
+      "search_placeholder": "Découvrez des lieux exceptionnels...",
+      "location": "Beyrouth",
+      "welcome_back": "Bon retour"
+    },
+    "explore": {
+      "title": "Explorer Plus",
+      "subtitle": "Découvrir par Catégorie"
+    },
+    "featured": {
+      "title": "En Vedette",
+      "subtitle": "Excellence Sélectionnée",
+      "view_all": "Voir Tout",
+      "badge": "En Vedette"
+    },
+    "card": {
+      "swipe": "Glissez",
+      "reviews": "Avis",
+      "exclusive_perks": "Avantages Exclusifs OMNIA",
+      "premium_offer": "Offre Premium",
+      "activate": "Activer",
+      "omnia_exclusive": "Exclusivité OMNIA",
+      "tap_activate": "Appuyez pour Activer",
+      "swipe_return": "Glissez pour Revenir"
+    },
+    "trending": {
+      "title": "Tendances",
+      "subtitle": "Les Plus Populaires"
+    }
+  },
+
+  "common": {
+    "actions": {
+      "save": "Enregistrer",
+      "cancel": "Annuler",
+      "delete": "Supprimer",
+      "edit": "Modifier",
+      "confirm": "Confirmer",
+      "back": "Retour",
+      "next": "Suivant",
+      "submit": "Soumettre",
+      "close": "Fermer",
+      "create": "Créer",
+      "update": "Mettre à jour",
+      "remove": "Supprimer",
+      "add": "Ajouter",
+      "filter": "Filtrer",
+      "clear": "Effacer",
+      "apply": "Appliquer",
+      "reset": "Réinitialiser",
+      "search": "Rechercher",
+      "view": "Voir",
+      "download": "Télécharger",
+      "upload": "Téléverser",
+      "copy": "Copier",
+      "share": "Partager"
+    },
+    "messages": {
+      "loading": "Chargement...",
+      "error": "Une erreur est survenue",
+      "success": "Succès !",
+      "no_data": "Aucune donnée disponible",
+      "coming_soon": "Bientôt Disponible",
+      "saving": "Enregistrement...",
+      "deleting": "Suppression...",
+      "processing": "Traitement...",
+      "please_wait": "Veuillez patienter...",
+      "operation_successful": "Opération réussie",
+      "operation_failed": "Opération échouée",
+      "confirm_delete": "Êtes-vous sûr de vouloir supprimer ?",
+      "cannot_undo": "Cette action est irréversible"
+    },
+    "status": {
+      "active": "Actif",
+      "inactive": "Inactif",
+      "pending": "En Attente",
+      "approved": "Approuvé",
+      "rejected": "Rejeté",
+      "completed": "Terminé",
+      "cancelled": "Annulé",
+      "draft": "Brouillon",
+      "published": "Publié"
+    },
+    "time": {
+      "hours": "heures",
+      "minutes": "minutes",
+      "seconds": "secondes",
+      "days": "jours",
+      "weeks": "semaines",
+      "months": "mois",
+      "years": "années",
+      "today": "Aujourd'hui",
+      "tomorrow": "Demain",
+      "yesterday": "Hier",
+      "now": "Maintenant",
+      "soon": "Bientôt",
+      "recently": "Récemment",
+      "hour_short": "h",
+      "minute_short": "m",
+      "second_short": "s",
+      "day_short": "j"
+    },
+    "validation": {
+      "required": "Ce champ est obligatoire",
+      "invalid_email": "Adresse e-mail invalide",
+      "invalid_phone": "Numéro de téléphone invalide",
+      "min_length": "Minimum {{count}} caractères requis",
+      "max_length": "Maximum {{count}} caractères autorisés",
+      "password_mismatch": "Les mots de passe ne correspondent pas",
+      "invalid_format": "Format invalide"
+    },
+    "placeholders": {
+      "search": "Rechercher...",
+      "select": "Sélectionner...",
+      "enter_text": "Entrez le texte...",
+      "choose_option": "Choisissez une option",
+      "select_date": "Sélectionnez une date",
+      "select_time": "Sélectionnez une heure",
+      "search_records": "Rechercher des enregistrements...",
+      "type_here": "Tapez ici..."
+    }
+  },
+
+  "Curated Experiences": "Expériences Sélectionnées",
+  "Discover exceptional venues...": "Découvrez des lieux exceptionnels...",
+  "Explore More Test": "Explorer Plus",
+  "Handpicked Excellence": "Excellence Sélectionnée",
+
+  "shared": {
+    "page_header": {
+      "create": "Créer",
+      "filter": "Filtrer",
+      "search_placeholder": "Rechercher des enregistrements..."
+    },
+    "search_bar": {
+      "placeholder": "Rechercher...",
+      "clear": "Effacer la recherche"
+    },
+    "confirm_dialog": {
+      "title": "Confirmer l'Action",
+      "message": "Êtes-vous sûr de vouloir continuer ?",
+      "confirm": "Confirmer",
+      "cancel": "Annuler"
+    },
+    "badge": {
+      "new": "Nouveau",
+      "hot": "Tendance",
+      "sale": "Promo",
+      "featured": "En Vedette",
+      "exclusive": "Exclusif"
+    }
+  },
+
+  "venue": {
+    "card": {
+      "reviews_count": "{{count}} avis",
+      "rating": "Note",
+      "closed": "Fermé",
+      "open": "Ouvert",
+      "book_now": "Réserver",
+      "view_details": "Voir les Détails",
+      "favorite": "Favori",
+      "share": "Partager"
+    },
+    "details": {
+      "overview": "Aperçu",
+      "amenities": "Équipements",
+      "location": "Emplacement",
+      "hours": "Horaires",
+      "contact": "Contact",
+      "reviews": "Avis",
+      "menu": "Menu",
+      "gallery": "Galerie",
+      "about": "À Propos"
+    }
+  },
+
+  "category": {
+    "all": "Toutes les Catégories",
+    "restaurants": "Restaurants",
+    "cafes": "Cafés",
+    "sports": "Sports",
+    "wellness": "Bien-être",
+    "entertainment": "Divertissement",
+    "resorts": "Stations Balnéaires"
+  },
+
+  "errors": {
+    "something_went_wrong": "Une erreur est survenue",
+    "page_not_found": "Page non trouvée",
+    "access_denied": "Accès refusé",
+    "network_error": "Erreur réseau. Veuillez vérifier votre connexion.",
+    "try_again": "Veuillez réessayer",
+    "contact_support": "Veuillez contacter le support si le problème persiste"
+  },
+
+  "venue_profile": {
+    "tabs": {
+      "about": "À Propos",
+      "amenities": "Équipements",
+      "gallery": "Galerie",
+      "contact": "Contact et Horaires"
+    },
+    "quick_info": {
+      "open_now": "Ouvert Maintenant",
+      "closed_now": "Fermé Maintenant",
+      "opens_at": "Ouvre à",
+      "closes_at": "Ferme à"
+    },
+    "description": {
+      "read_more": "Lire Plus",
+      "read_less": "Lire Moins"
+    },
+    "menu": {
+      "view_full_menu": "Voir le Menu Complet",
+      "download_menu": "Télécharger le Menu",
+      "categories": "Catégories"
+    },
+    "resources": {
+      "title": "Ressources Disponibles",
+      "select_resource": "Sélectionnez une Ressource",
+      "availability": "Disponibilité"
+    },
+    "sticky_actions": {
+      "book": "Réserver",
+      "walk_in": "Sans Réservation"
+    }
+  },
+
+  "my_bookings": {
+    "tabs": {
+      "active": "Actives",
+      "past": "Passées",
+      "cancelled": "Annulées"
+    },
+    "status": {
+      "pending": "En Attente d'Approbation",
+      "confirmed": "Confirmée",
+      "completed": "Terminée",
+      "cancelled": "Annulée",
+      "rejected": "Rejetée"
+    },
+    "actions": {
+      "view_details": "Voir les Détails",
+      "view_qr": "Voir le Code QR",
+      "modify": "Modifier",
+      "cancel": "Annuler",
+      "rebook": "Réserver à Nouveau"
+    },
+    "empty": {
+      "no_active": "Aucune réservation active",
+      "no_past": "Aucune réservation passée",
+      "no_cancelled": "Aucune réservation annulée",
+      "start_exploring": "Commencez à explorer les lieux pour effectuer votre première réservation"
+    },
+    "details": {
+      "booking_id": "ID de Réservation",
+      "date": "Date",
+      "time": "Heure",
+      "guests": "Invités",
+      "resource": "Ressource",
+      "perk": "Avantage",
+      "total": "Montant Total"
+    }
+  },
+
+  "mybooking": {
+    "qr": {
+      "title": "Votre Pass Réservation",
+      "date": "Date",
+      "time": "Heure",
+      "guests": "Invités",
+      "area": "Zone",
+      "booking_id": "N° de Réservation",
+      "instructions_title": "Comment Utiliser",
+      "instructions": "Présentez ce code QR à l'entrée du lieu. Le personnel le scannera pour vérifier votre réservation."
+    },
+    "status": {
+      "confirmed": "Confirmé",
+      "pending": "En Attente",
+      "active": "Actif",
+      "cancelled": "Annulé"
+    }
+  },
+
+  "profile": {
+    "tabs": {
+      "overview": "Aperçu",
+      "settings": "Paramètres",
+      "preferences": "Préférences"
+    },
+    "stats": {
+      "total_bookings": "Total des Réservations",
+      "active_bookings": "Réservations Actives",
+      "perks_redeemed": "Avantages Utilisés",
+      "favorite_venues": "Lieux Favoris"
+    },
+    "settings": {
+      "personal_info": "Informations Personnelles",
+      "contact": "Coordonnées",
+      "preferences": "Préférences",
+      "notifications": "Notifications",
+      "privacy": "Confidentialité",
+      "language": "Langue",
+      "theme": "Thème"
+    },
+    "actions": {
+      "edit_profile": "Modifier le Profil",
+      "change_password": "Changer le Mot de Passe",
+      "logout": "Déconnexion"
+    }
+  },
+
+  "listing": {
+    "filter": {
+      "all": "Tout",
+      "sort_by": "Trier Par",
+      "price_range": "Gamme de Prix",
+      "rating": "Note",
+      "distance": "Distance",
+      "availability": "Disponibilité"
+    },
+    "sort_options": {
+      "recommended": "Recommandé",
+      "price_low_high": "Prix : Croissant",
+      "price_high_low": "Prix : Décroissant",
+      "rating_high_low": "Note : Décroissante",
+      "distance": "Distance"
+    },
+    "results": {
+      "showing": "Affichage de",
+      "of": "sur",
+      "results": "résultats",
+      "no_results": "Aucun résultat trouvé",
+      "try_different": "Essayez des filtres différents"
+    }
+  },
+
+  "form": {
+    "required_field": "Ce champ est obligatoire",
+    "invalid_email": "Veuillez entrer un e-mail valide",
+    "invalid_phone": "Veuillez entrer un numéro de téléphone valide",
+    "password_min": "Le mot de passe doit contenir au moins 8 caractères",
+    "password_match": "Les mots de passe doivent correspondre",
+    "select_option": "Veuillez sélectionner une option",
+    "select_date": "Veuillez sélectionner une date",
+    "select_time": "Veuillez sélectionner une heure"
+  },
+
+  "notification": {
+    "success": {
+      "booking_created": "Réservation créée avec succès",
+      "booking_cancelled": "Réservation annulée",
+      "profile_updated": "Profil mis à jour",
+      "password_changed": "Mot de passe changé avec succès"
+    },
+    "error": {
+      "something_wrong": "Une erreur est survenue",
+      "try_again": "Veuillez réessayer",
+      "network_error": "Erreur réseau. Vérifiez votre connexion"
+    }
+  },
+
+  "modal": {
+    "confirm": {
+      "title": "Confirmer l'Action",
+      "cancel_booking": "Annuler cette réservation ?",
+      "delete": "Supprimer cet élément ?",
+      "logout": "Êtes-vous sûr de vouloir vous déconnecter ?",
+      "cannot_undo": "Cette action est irréversible"
+    },
+    "buttons": {
+      "confirm": "Confirmer",
+      "cancel": "Annuler",
+      "yes": "Oui",
+      "no": "Non",
+      "ok": "OK",
+      "close": "Fermer"
+    }
+  }
+}

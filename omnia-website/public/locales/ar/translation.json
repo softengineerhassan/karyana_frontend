@@ -1,0 +1,753 @@
+{
+  "welcome": {
+    "tagline": "اكتشف • اختبر • استمتع",
+    "badge": "تميز منتقى بعناية",
+    "enter": "ادخل",
+    "no_login": "لا يتطلب تسجيل الدخول.",
+    "explore": "استكشف براحتك.",
+    "auth_note": "المصادقة مطلوبة فقط للحجوزات"
+  },
+  "countdown": {
+    "expired": "منتهي",
+    "left": "متبقي"
+  },
+  "perk_modal": {
+    "question": "كيف تود الاستمتاع بهذا الامتياز؟",
+    "at": "في",
+    "walk_in": "زيارة مباشرة الآن",
+    "walk_in_desc": "فعّل للاستخدام الفوري خلال 24 ساعة",
+    "book_now": "احجز موعداً",
+    "book_now_desc": "حدد موعد زيارتك واحجز امتيازك",
+    "note": "كلا الخيارين سيفعل هذا الامتياز الحصري"
+  },
+  "Welcome Back": "مرحباً بعودتك",
+  "Sign in to continue": "قم بتسجيل الدخول للمتابعة",
+
+  "Create Account": "إنشاء حساب",
+  "Join OMNIA today": "انضم إلى OMNIA اليوم",
+
+  "Reset Password": "إعادة تعيين كلمة المرور",
+  "Enter your email to reset": "أدخل بريدك الإلكتروني لإعادة التعيين",
+
+  "Email Address": "عنوان البريد الإلكتروني",
+  "Enter your email": "أدخل بريدك الإلكتروني",
+  "Password": "كلمة المرور",
+  "Enter your password": "أدخل كلمة المرور",
+
+  "Full Name": "الاسم الكامل",
+  "Phone Number": "رقم الهاتف",
+
+  "Sign In": "تسجيل الدخول",
+  "Sign Up": "إنشاء حساب",
+  "Create Account Button": "إنشاء حساب",
+  "Send Reset Link": "إرسال رابط إعادة التعيين",
+
+  "Forgot Password?": "نسيت كلمة المرور؟",
+  "Back to Sign In": "العودة إلى تسجيل الدخول",
+
+  "Don't have an account?": "ليس لديك حساب؟",
+  "Already have an account?": "هل لديك حساب؟",
+
+  "Sign in to Complete Booking": "سجل الدخول لإكمال الحجز",
+  "Please sign in or create an account to proceed with your reservation": "يرجى تسجيل الدخول أو إنشاء حساب للمتابعة مع حجزك",
+  "Home": "الرئيسية",
+  "Search": "بحث",
+  "Bookings": "الحجوزات",
+  "Reviews": "التقييمات",
+  "Favorites": "المفضلة",
+  "Gold Member": "عضو ذهبي",
+  "Member since 2023": "عضو منذ 2023",
+  "Points": "نقاط",
+  "150 points to Platinum": "150 نقطة للوصول إلى البلاتيني",
+  "Profile": "الملف الشخصي",
+  "Edit Profile": "تعديل الملف الشخصي",
+  "My Favorites": "المفضلة",
+  "My Reviews": "تقييماتي",
+  "Notifications": "الإشعارات",
+  "Privacy & Security": "الخصوصية والأمان",
+  "Help & Support": "المساعدة والدعم",
+  "Language": "اللغة",
+  "My Bookings": "حجوزاتي",
+  "Active": "نشط",
+  "Past": "السابق",
+  "Next Booking": "الحجز القادم",
+  "Modify": "تعديل",
+  "Cancel": "إلغاء",
+  "Cancel Booking": "إلغاء الحجز",
+  "Cancel Booking?": "إلغاء الحجز؟",
+  "Keep Booking": "الاحتفاظ بالحجز",
+  "This action cannot be undone": "لا يمكن التراجع عن هذا الإجراء",
+  "Booking Cancelled": "تم إلغاء الحجز",
+  "Your booking has been successfully cancelled": "تم إلغاء حجزك بنجاح",
+  "Done": "تم",
+  "Modify Booking": "تعديل الحجز",
+  "Save Changes": "حفظ التغييرات",
+  "View QR Code": "عرض رمز الاستجابة",
+  "Your Booking Pass": "تصريح الحجز",
+  "Present this code at the venue": "قدم هذا الرمز في المكان",
+  "featured": "مميز",
+  "exclusive_perks": "مزايا حصرية",
+  "exclusive_perks_subtitle": "مزايا مميزة لأعضاء أومنيا",
+  "tap_to_activate": "اضغط للتفعيل",
+  "book_now": "احجز الآن",
+  "walk_in_button": "زيارة مباشرة",
+  "open_today": "مفتوح اليوم",
+  "closed_today": "مغلق اليوم",
+  "about": "عن المكان",
+  "amenities": "المرافق",
+  "gallery": "المعرض",
+  "contact_hours": "التواصل والساعات",
+  "opening_hours": "ساعات العمل",
+  "view_menu": "عرض القائمة",
+  "seating_options": "خيارات الجلوس",
+  "capacity": "السعة",
+  "premium": "بريميوم",
+  "activate": "تفعيل",
+
+  "filters": "الفلاتر",
+  "all": "الكل",
+  "venues_available": "أماكن متاحة",
+  "no_venues": "لا توجد أماكن",
+  "try_different_filter": "حاول تحديد فلتر مختلف",
+  "view_all": "عرض الكل",
+  "featured_venues": "أماكن مميزة",
+  "all_venues": "جميع الأماكن",
+  "reviews": "تقييم",
+  
+  "OMNIA Exclusive Perks": "امتيازات OMNIA الحصرية",
+  "FINAL HOURS": "ساعات أخيرة",
+  "ENDING SOON": "ينتهي قريباً",
+  "LIMITED OFFER": "عرض محدود",
+  "Featured": "مميز",
+  "select": "اختر",
+
+  "walk_in": {
+    "select_privilege": "اختر امتيازك",
+    "activate_privilege": "تفعيل امتياز الزيارة المباشرة",
+    "review_details": "راجع تفاصيل امتيازك الحصري قبل التفعيل",
+    "at_venue": "في هذا المكان",
+    "your_privilege": "امتيازك",
+    "valid_24h": "صالح 24 ساعة",
+    "important_note": "ملاحظة هامة",
+    "activate_now": "تفعيل الآن",
+    "maybe_later": "ربما لاحقاً",
+    "preparing": "جاري تحضير امتيازك",
+    "just_moment": "لحظة واحدة...",
+    "activated_success": "تم التفعيل بنجاح!",
+    "code": "الرمز",
+    "show_staff": "أظهر للموظفين",
+    "scan_validate": "امسح للتحقق",
+    "at": "في",
+    "next": "التالي",
+    "visit_24h": "زر خلال 24 ساعة",
+    "ready": "رائع، أنا جاهز"
+  },
+
+  "venue_not_found": "المكان غير موجود",
+  "active": "نشط",
+  "benefits": "ميزة",
+  "optional": "اختياري",
+  "no_perk": "بدون مزايا",
+  "no_preference": "بدون تفضيل",
+  "personalize_visit": "خصص زيارتك",
+  "choose_seating_perks": "اختر مقعدك والمزايا",
+  "special_request": "طلب خاص",
+  "special_request_placeholder": "أي قيود غذائية، حساسية، أو مناسبات خاصة...",
+  "phone": "الهاتف",
+  "website": "الموقع",
+  "address": "العنوان",
+  "closed": "مغلق",
+  "discover_culinary": "اكتشف عروضنا الطهوية",
+  "full_menu_available": "القائمة الكاملة متاحة",
+  "premium_courts": "الملاعب والمرافق المتميزة",
+  "select_view_details": "اختر لعرض التفاصيل",
+  "more": "المزيد",
+  "select_date": "اختر تاريخ",
+  "today": "اليوم",
+  "tomorrow": "غداً",
+
+  "booking": {
+    "step_1_of_3": "الخطوة 1 من 3",
+    "step_2_of_3": "الخطوة 2 من 3",
+    "step_3_of_3": "الخطوة 3 من 3",
+    "pick_your_court": "اختر ملعبك المثالي",
+    "explore_courts": "استكشف ملاعبنا واعثر على المفضل لديك",
+    "choose_first": "اختر أولاً، احجز لاحقاً!",
+    "choose_first_desc": "اختر ملعبك المفضل الآن، ثم سنريك توفره الفعلي في الخطوة التالية.",
+    "when_play": "متى تريد اللعب؟",
+    "check_availability": "تحقق من توفر",
+    "session_length": "مدة الجلسة",
+    "choose_time": "اختر وقتك",
+    "early_bird": "الطيور المبكرة",
+    "prime_time": "الوقت المثالي",
+    "golden_hour": "الساعة الذهبية",
+    "peak": "ذروة",
+    "quick_match": "مباراة سريعة",
+    "perfect_session": "جلسة مثالية",
+    "pro_session": "جلسة احترافية",
+    "almost_there": "على وشك الانتهاء، بطل!",
+    "review_court_time": "راجع وقت ملعبك",
+    "game_day": "يوم اللعبة",
+    "start_time": "وقت البدء",
+    "session": "الجلسة",
+    "team_size": "حجم الفريق",
+    "for_reference": "للإشارة فقط",
+    "total_investment": "المبلغ الإجمالي",
+    "pay_at_venue": "الدفع في المكان",
+    "fair_play_policy": "سياسة اللعب النظيف",
+    "free_cancellation": "إلغاء مجاني حتى 24 ساعة قبل",
+    "grace_period": "فترة سماح 15 دقيقة للتأخر",
+    "equipment_included": "تأجير المعدات مشمول",
+    "back": "رجوع",
+    "next_step": "الخطوة التالية",
+    "lock_it_in": "أكد الحجز!",
+    "from": "من",
+    "max": "حتى",
+    "players": "لاعبين",
+    "aed_hr": "درهم/ساعة"
+  },
+
+  "resort": {
+    "beach_day_pass": "تذكرة يوم على الشاطئ",
+    "day_in_paradise": "يوم في الجنة",
+    "select_beach_escape": "اختر هروبك المثالي على الشاطئ",
+    "full_day_pass": "تذكرة يوم كامل",
+    "half_day_pass": "تذكرة نصف يوم",
+    "kids_pass": "تذكرة أطفال",
+    "full_beach_access": "وصول كامل للشاطئ",
+    "morning_afternoon": "صباحي أو مسائي",
+    "children_under_12": "أطفال تحت 12 سنة",
+    "select_area": "اختر منطقتك",
+    "day_pass_includes": "تشمل تذكرة اليوم",
+    "day_pass_includes_desc": "الوصول الكامل للشاطئ والمسبح، خدمة المناشف، غرف تبديل الملابس، والمرطبات المجانية. تشمل الكابانا خادمًا مخصصًا ومرافق متميزة.",
+    "beach_day_awaits": "يوم الشاطئ في انتظارك",
+    "confirm_escape": "أكد هروبك المثالي",
+    "pass_type": "نوع التذكرة",
+    "guests": "ضيوف",
+    "guest": "ضيف",
+    "day_pass_total": "إجمالي تذكرة اليوم",
+    "beach_day_details": "تفاصيل تذكرة يوم الشاطئ",
+    "full_day_access": "دخول طوال اليوم من وقت الوصول حتى الغروب",
+    "all_amenities": "جميع مرافق الشاطئ مشمولة",
+    "payment_arrival": "الدفع في المنتجع عند الوصول",
+    "reserve_beach": "احجز يوم الشاطئ!",
+    "continue": "متابعة",
+    "weekend": "نهاية الأسبوع",
+    "weekend_rate": "سعر نهاية الأسبوع",
+    "available": "متاح",
+    "fully_booked": "محجوز بالكامل",
+    "try_another_time": "جرب وقت آخر",
+    "popular": "شائع",
+    "cabana": "كابانا"
+  },
+
+  "days": {
+    "Sunday": "الأحد",
+    "Monday": "الإثنين",
+    "Tuesday": "الثلاثاء",
+    "Wednesday": "الأربعاء",
+    "Thursday": "الخميس",
+    "Friday": "الجمعة",
+    "Saturday": "السبت"
+  },
+
+  "booking_success": {
+    "full_day": "يوم كامل",
+    "hour_short": "س",
+    "min_short": "د",
+    "request_placed": "تم تقديم الطلب",
+    "pending_approval": "في انتظار الموافقة",
+    "approved_by_venue": "تمت الموافقة من المكان",
+    "confirmed": "مؤكد",
+    "no_data": "لم يتم العثور على بيانات حجز",
+    "go_home": "الذهاب للرئيسية",
+    "booking_confirmed": "تم تأكيد الحجز!",
+    "approved": "تمت الموافقة!",
+    "request_submitted": "تم إرسال الطلب",
+    "reservation_ready": "حجزك مؤكد وجاهز",
+    "finalizing": "تمت الموافقة، جارٍ إتمام التأكيد...",
+    "awaiting": "في انتظار موافقة المكان...",
+    "booking_status": "حالة الحجز",
+    "venue_respond": "سيرد المكان قريبًا...",
+    "finalizing_booking": "جارٍ إنهاء حجزك...",
+    "venue_response_time": "يستجيب المكان عادةً في غضون 3 دقائق. ستتلقى بريدًا إلكترونيًا وإشعارًا فور الموافقة.",
+    "show_qr": "أظهر رمز الاستجابة السريعة هذا في المكان",
+    "guests": "ضيوف",
+    "selected_perk": "الميزة المختارة",
+    "total": "الإجمالي",
+    "download": "تنزيل",
+    "share": "مشاركة",
+    "view_bookings": "عرض حجوزاتي",
+    "back_home": "العودة للرئيسية",
+    "add_calendar": "لا تنسى إضافة هذا إلى تقويمك!"
+  },
+
+  "Search venues...": "ابحث عن الأماكن...",
+  "My Profile": "ملفي الشخصي",
+  "Settings": "الإعدادات",
+  "Logout": "تسجيل الخروج",
+
+  "home": {
+    "hero": {
+      "curated_experiences": "تجارب منتقاة بعناية",
+      "search_placeholder": "اكتشف أماكن استثنائية...",
+      "location": "بيروت",
+      "welcome_back": "مرحباً بعودتك"
+    },
+    "explore": {
+      "title": "استكشف المزيد",
+      "subtitle": "اكتشف حسب الفئة"
+    },
+    "featured": {
+      "title": "مميز",
+      "subtitle": "تميز منتقى بعناية",
+      "view_all": "عرض الكل",
+      "badge": "مميز"
+    },
+    "card": {
+      "swipe": "اسحب",
+      "reviews": "تقييمات",
+      "exclusive_perks": "امتيازات OMNIA الحصرية",
+      "premium_offer": "عرض مميز",
+      "activate": "تفعيل",
+      "omnia_exclusive": "حصري من OMNIA",
+      "tap_activate": "انقر للتفعيل",
+      "swipe_return": "اسحب للعودة"
+    },
+    "trending": {
+      "title": "الأكثر رواجاً",
+      "subtitle": "الأكثر شعبية"
+    }
+  },
+
+  "common": {
+    "actions": {
+      "save": "حفظ",
+      "cancel": "إلغاء",
+      "delete": "حذف",
+      "edit": "تعديل",
+      "confirm": "تأكيد",
+      "back": "رجوع",
+      "next": "التالي",
+      "submit": "إرسال",
+      "close": "إغلاق",
+      "create": "إنشاء",
+      "update": "تحديث",
+      "remove": "إزالة",
+      "add": "إضافة",
+      "filter": "فلترة",
+      "clear": "مسح",
+      "apply": "تطبيق",
+      "reset": "إعادة تعيين",
+      "search": "بحث",
+      "view": "عرض",
+      "download": "تنزيل",
+      "upload": "رفع",
+      "copy": "نسخ",
+      "share": "مشاركة"
+    },
+    "messages": {
+      "loading": "جاري التحميل...",
+      "error": "حدث خطأ",
+      "success": "نجح!",
+      "no_data": "لا توجد بيانات متاحة",
+      "coming_soon": "قريباً",
+      "saving": "جاري الحفظ...",
+      "deleting": "جاري الحذف...",
+      "processing": "جاري المعالجة...",
+      "please_wait": "يرجى الانتظار...",
+      "operation_successful": "تمت العملية بنجاح",
+      "operation_failed": "فشلت العملية",
+      "confirm_delete": "هل أنت متأكد من الحذف؟",
+      "cannot_undo": "لا يمكن التراجع عن هذا الإجراء"
+    },
+    "status": {
+      "active": "نشط",
+      "inactive": "غير نشط",
+      "pending": "قيد الانتظار",
+      "approved": "تمت الموافقة",
+      "rejected": "مرفوض",
+      "completed": "مكتمل",
+      "cancelled": "ملغى",
+      "draft": "مسودة",
+      "published": "منشور"
+    },
+    "time": {
+      "hours": "ساعات",
+      "minutes": "دقائق",
+      "seconds": "ثواني",
+      "days": "أيام",
+      "weeks": "أسابيع",
+      "months": "شهور",
+      "years": "سنوات",
+      "today": "اليوم",
+      "tomorrow": "غداً",
+      "yesterday": "أمس",
+      "now": "الآن",
+      "soon": "قريباً",
+      "recently": "مؤخراً",
+      "hour_short": "س",
+      "minute_short": "د",
+      "second_short": "ث",
+      "day_short": "ي"
+    },
+    "validation": {
+      "required": "هذا الحقل مطلوب",
+      "invalid_email": "عنوان البريد الإلكتروني غير صالح",
+      "invalid_phone": "رقم الهاتف غير صالح",
+      "min_length": "الحد الأدنى {{count}} حرفاً",
+      "max_length": "الحد الأقصى {{count}} حرفاً",
+      "password_mismatch": "كلمتا المرور غير متطابقتين",
+      "invalid_format": "صيغة غير صالحة"
+    },
+    "placeholders": {
+      "search": "بحث...",
+      "select": "اختر...",
+      "enter_text": "أدخل النص...",
+      "choose_option": "اختر خياراً",
+      "select_date": "اختر التاريخ",
+      "select_time": "اختر الوقت",
+      "search_records": "ابحث في السجلات...",
+      "type_here": "اكتب هنا..."
+    }
+  },
+
+  "Curated Experiences": "تجارب منتقاة بعناية",
+  "Discover exceptional venues...": "اكتشف أماكن استثنائية...",
+  "Explore More Test": "استكشف المزيد",
+  "Handpicked Excellence": "تميز منتقى بعناية",
+
+  "shared": {
+    "page_header": {
+      "create": "إنشاء",
+      "filter": "فلترة",
+      "search_placeholder": "ابحث في السجلات..."
+    },
+    "search_bar": {
+      "placeholder": "بحث...",
+      "clear": "مسح البحث"
+    },
+    "confirm_dialog": {
+      "title": "تأكيد العملية",
+      "message": "هل أنت متأكد من المتابعة؟",
+      "confirm": "تأكيد",
+      "cancel": "إلغاء"
+    },
+    "badge": {
+      "new": "جديد",
+      "hot": "ساخن",
+      "sale": "تخفيض",
+      "featured": "مميز",
+      "exclusive": "حصري"
+    }
+  },
+
+  "venue": {
+    "card": {
+      "reviews_count": "{{count}} تقييم",
+      "rating": "التقييم",
+      "closed": "مغلق",
+      "open": "مفتوح",
+      "book_now": "احجز الآن",
+      "view_details": "عرض التفاصيل",
+      "favorite": "المفضلة",
+      "share": "مشاركة"
+    },
+    "details": {
+      "overview": "نظرة عامة",
+      "amenities": "المرافق",
+      "location": "الموقع",
+      "hours": "الساعات",
+      "contact": "التواصل",
+      "reviews": "التقييمات",
+      "menu": "القائمة",
+      "gallery": "المعرض",
+      "about": "عن المكان"
+    }
+  },
+
+  "category": {
+    "all": "جميع الفئات",
+    "restaurants": "مطاعم",
+    "cafes": "مقاهي",
+    "sports": "رياضة",
+    "wellness": "صحة وعافية",
+    "entertainment": "ترفيه",
+    "resorts": "منتجعات"
+  },
+
+  "errors": {
+    "something_went_wrong": "حدث خطأ ما",
+    "page_not_found": "الصفحة غير موجودة",
+    "access_denied": "تم رفض الوصول",
+    "network_error": "خطأ في الشبكة. يرجى التحقق من اتصالك.",
+    "try_again": "يرجى المحاولة مرة أخرى",
+    "contact_support": "يرجى الاتصال بالدعم إذا استمرت المشكلة"
+  },
+
+  "venue_profile": {
+    "tabs": {
+      "about": "عن المكان",
+      "amenities": "المرافق",
+      "gallery": "المعرض",
+      "contact": "التواصل والساعات"
+    },
+    "quick_info": {
+      "open_now": "مفتوح الآن",
+      "closed_now": "مغلق الآن",
+      "opens_at": "يفتح في",
+      "closes_at": "يغلق في"
+    },
+    "description": {
+      "read_more": "اقرأ المزيد",
+      "read_less": "اقرأ أقل"
+    },
+    "menu": {
+      "view_full_menu": "عرض القائمة الكاملة",
+      "download_menu": "تنزيل القائمة",
+      "categories": "الفئات"
+    },
+    "resources": {
+      "title": "الموارد المتاحة",
+      "select_resource": "اختر مورداً",
+      "availability": "التوفر"
+    },
+    "sticky_actions": {
+      "book": "احجز",
+      "walk_in": "زيارة مباشرة"
+    }
+  },
+
+  "my_bookings": {
+    "tabs": {
+      "active": "نشط",
+      "past": "السابق",
+      "cancelled": "ملغي"
+    },
+    "status": {
+      "pending": "في انتظار الموافقة",
+      "confirmed": "مؤكد",
+      "completed": "مكتمل",
+      "cancelled": "ملغي",
+      "rejected": "مرفوض"
+    },
+    "actions": {
+      "view_details": "عرض التفاصيل",
+      "view_qr": "عرض رمز الاستجابة",
+      "modify": "تعديل",
+      "cancel": "إلغاء",
+      "rebook": "احجز مجدداً"
+    },
+    "empty": {
+      "no_active": "لا توجد حجوزات نشطة",
+      "no_past": "لا توجد حجوزات سابقة",
+      "no_cancelled": "لا توجد حجوزات ملغاة",
+      "start_exploring": "ابدأ باستكشاف الأماكن لإجراء أول حجز"
+    },
+    "details": {
+      "booking_id": "رقم الحجز",
+      "date": "التاريخ",
+      "time": "الوقت",
+      "guests": "الضيوف",
+      "resource": "المورد",
+      "perk": "الميزة",
+      "total": "المبلغ الإجمالي"
+    }
+  },
+
+  "mybooking": {
+    "qr": {
+      "title": "بطاقة حجزك",
+      "date": "التاريخ",
+      "time": "الوقت",
+      "guests": "الضيوف",
+      "area": "المنطقة",
+      "booking_id": "رقم الحجز",
+      "instructions_title": "كيفية الاستخدام",
+      "instructions": "قدم رمز QR هذا عند مدخل المكان. سيقوم الموظفون بمسحه للتحقق من حجزك."
+    },
+    "status": {
+      "confirmed": "مؤكد",
+      "pending": "قيد الانتظار",
+      "active": "نشط",
+      "cancelled": "ملغى"
+    }
+  },
+
+  "profile": {
+    "tabs": {
+      "overview": "نظرة عامة",
+      "settings": "الإعدادات",
+      "preferences": "التفضيلات"
+    },
+    "stats": {
+      "total_bookings": "إجمالي الحجوزات",
+      "active_bookings": "الحجوزات النشطة",
+      "perks_redeemed": "المزايا المستخدمة",
+      "favorite_venues": "الأماكن المفضلة"
+    },
+    "settings": {
+      "personal_info": "المعلومات الشخصية",
+      "contact": "معلومات الاتصال",
+      "preferences": "التفضيلات",
+      "notifications": "الإشعارات",
+      "privacy": "الخصوصية",
+      "language": "اللغة",
+      "theme": "المظهر"
+    },
+    "actions": {
+      "edit_profile": "تعديل الملف الشخصي",
+      "change_password": "تغيير كلمة المرور",
+      "logout": "تسجيل الخروج"
+    }
+  },
+
+  "listing": {
+    "filter": {
+      "all": "الكل",
+      "sort_by": "ترتيب حسب",
+      "price_range": "نطاق السعر",
+      "rating": "التقييم",
+      "distance": "المسافة",
+      "availability": "التوفر"
+    },
+    "sort_options": {
+      "recommended": "موصى به",
+      "price_low_high": "السعر: من الأقل للأعلى",
+      "price_high_low": "السعر: من الأعلى للأقل",
+      "rating_high_low": "التقييم: من الأعلى للأقل",
+      "distance": "المسافة"
+    },
+    "results": {
+      "showing": "عرض",
+      "of": "من",
+      "results": "نتائج",
+      "no_results": "لم يتم العثور على نتائج",
+      "try_different": "جرب فلاتر مختلفة"
+    }
+  },
+
+  "form": {
+    "required_field": "هذا الحقل مطلوب",
+    "invalid_email": "يرجى إدخال بريد إلكتروني صحيح",
+    "invalid_phone": "يرجى إدخال رقم هاتف صحيح",
+    "password_min": "يجب أن تكون كلمة المرور 8 أحرف على الأقل",
+    "password_match": "يجب أن تتطابق كلمات المرور",
+    "select_option": "يرجى اختيار خيار",
+    "select_date": "يرجى اختيار تاريخ",
+    "select_time": "يرجى اختيار وقت"
+  },
+
+  "notification": {
+    "success": {
+      "booking_created": "تم إنشاء الحجز بنجاح",
+      "booking_cancelled": "تم إلغاء الحجز",
+      "profile_updated": "تم تحديث الملف الشخصي",
+      "password_changed": "تم تغيير كلمة المرور بنجاح"
+    },
+    "error": {
+      "something_wrong": "حدث خطأ ما",
+      "try_again": "يرجى المحاولة مرة أخرى",
+      "network_error": "خطأ في الشبكة. تحقق من اتصالك"
+    }
+  },
+
+  "modal": {
+    "confirm": {
+      "title": "تأكيد العملية",
+      "cancel_booking": "إلغاء هذا الحجز؟",
+      "delete": "حذف هذا العنصر؟",
+      "logout": "هل أنت متأكد من تسجيل الخروج؟",
+      "cannot_undo": "لا يمكن التراجع عن هذا الإجراء"
+    },
+    "buttons": {
+      "confirm": "تأكيد",
+      "cancel": "إلغاء",
+      "yes": "نعم",
+      "no": "لا",
+      "ok": "حسناً",
+      "close": "إغلاق"
+    }
+  },
+
+  "booking": {
+    "stage_1": "المرحلة 1",
+    "stage_2": "المرحلة 2",
+    "when_where": "متى وأين",
+    "personalize": "التخصيص",
+    "when_where_title": "متى وأين",
+    "when_where_subtitle": "اختر التاريخ والوقت وتفاصيل الضيوف المفضلة لديك لتجربة سلسة",
+    "select_date": "اختر التاريخ",
+    "choose_perfect_day": "اختر اليوم المثالي",
+    "choose_time": "اختر الوقت",
+    "find_ideal_moment": "اعثر على اللحظة المثالية",
+    "guests": "الضيوف",
+    "personalize_title": "تخصيص التجربة",
+    "personalize_subtitle": "أضف لمسات خاصة ومزايا حصرية لرفع مستوى حجزك",
+    "exclusive_privileges": "المزايا الحصرية",
+    "elevate_experience": "ارتقِ بتجربتك",
+    "special_requests": "طلبات خاصة",
+    "let_us_know": "أخبرنا كيف يمكننا جعل تجربتك مثالية",
+    "occasion": "المناسبة",
+    "additional_notes": "ملاحظات إضافية",
+    "notes_placeholder": "تفضيلات الطعام، احتياجات الوصول، زينة خاصة...",
+    "continue_personalization": "المتابعة للتخصيص",
+    "confirm_reservation": "تأكيد الحجز",
+    "select_time_error": "يرجى اختيار الوقت",
+    "select_date_error": "يرجى اختيار التاريخ",
+    "submitted_title": "تم إرسال الطلب",
+    "submitted_subtitle": "في انتظار موافقة المكان...",
+    "confirmed_title": "تم تأكيد الحجز!",
+    "confirmed_subtitle": "حجزك مؤكد وجاهز",
+    "booking_status": "حالة الحجز",
+    "request_placed": "تم تقديم الطلب",
+    "pending_approval": "في انتظار الموافقة",
+    "venue_respond": "سيرد المكان قريباً...",
+    "approved_venue": "تمت الموافقة من المكان",
+    "confirmed_status": "مؤكد",
+    "response_note": "يستجيب المكان عادةً خلال 3 دقائق. ستتلقى بريداً إلكترونياً وإشعاراً عند الموافقة.",
+    "show_qr": "اعرض رمز QR هذا في المكان",
+    "guests_label": "ضيوف",
+    "download": "تحميل",
+    "share": "مشاركة",
+    "view_bookings": "عرض حجوزاتي",
+    "back_home": "العودة للرئيسية",
+    "step_1_of_3": "الخطوة 1 من 3",
+    "step_2_of_3": "الخطوة 2 من 3",
+    "step_3_of_3": "الخطوة 3 من 3",
+    "pick_your_court": "اختر ملعبك المثالي",
+    "explore_courts": "استكشف ملاعبنا واعثر على المفضل لديك",
+    "max": "الحد الأقصى",
+    "players": "لاعبين",
+    "from": "من",
+    "aed_hr": "درهم/ساعة",
+    "choose_first": "اختر أولاً، احجز لاحقاً!",
+    "choose_first_desc": "اختر الملعب المفضل لديك الآن، ثم سنعرض لك توفره في الوقت الفعلي في الخطوة التالية.",
+    "when_play": "متى تريد اللعب؟",
+    "check_availability": "تحقق من التوفر لـ",
+    "session_length": "مدة الجلسة",
+    "quick_match": "مباراة سريعة",
+    "perfect_session": "جلسة مثالية",
+    "pro_session": "جلسة احترافية",
+    "early_bird": "الصباح الباكر",
+    "prime_time": "الوقت الذهبي",
+    "golden_hour": "الساعة الذهبية",
+    "peak": "ذروة",
+    "almost_there": "أوشكت على الانتهاء!",
+    "review_court_time": "راجع واحجز وقت ملعبك",
+    "game_day": "يوم المباراة",
+    "start_time": "وقت البداية",
+    "session": "الجلسة",
+    "team_size": "حجم الفريق",
+    "for_reference": "للإشارة في المكان",
+    "total_investment": "إجمالي التكلفة",
+    "pay_at_venue": "الدفع في المكان",
+    "fair_play_policy": "سياسة اللعب النظيف",
+    "free_cancellation": "إلغاء مجاني حتى 24 ساعة قبل الموعد",
+    "grace_period": "فترة سماح 15 دقيقة للوصول المتأخر",
+    "equipment_included": "تأجير المعدات مشمول",
+    "back": "رجوع",
+    "next_step": "الخطوة التالية",
+    "lock_it_in": "احجز الآن!"
+  }
+}

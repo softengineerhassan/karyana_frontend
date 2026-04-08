@@ -1,0 +1,929 @@
+[
+  {
+    "key": "150 points to Platinum",
+    "files": [
+      "src/Pages/Profile/components/MembershipCard.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Account Security",
+    "files": [
+      "src/Pages/Profile/PrivacySecurity.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "actionFailed",
+    "files": [
+      "src/components/ui/ConfirmActionDialog.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "actionSuccess",
+    "files": [
+      "src/components/ui/ConfirmActionDialog.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Add an extra layer of security",
+    "files": [
+      "src/Pages/Profile/PrivacySecurity.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "addNewTag",
+    "files": [
+      "src/components/ui/TagInputField.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "All rights reserved.",
+    "files": [
+      "src/Pages/Profile/HelpSupport.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Allow sharing data with partners",
+    "files": [
+      "src/Pages/Profile/PrivacySecurity.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Available 24/7",
+    "files": [
+      "src/Pages/Profile/HelpSupport.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Beach Day",
+    "files": [
+      "src/Pages/Booking/components/ResortBookingFlow.jsx"
+    ],
+    "fallback": "يوم الشاطئ"
+  },
+  {
+    "key": "Call Us",
+    "files": [
+      "src/Pages/Profile/HelpSupport.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "cancel",
+    "files": [
+      "src/components/ui/ConfirmActionDialog.jsx",
+      "src/components/ui/DeleteDialog.jsx",
+      "src/components/ui/DialogFooterButton.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Change Password",
+    "files": [
+      "src/Pages/Profile/PrivacySecurity.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Chat with our support team",
+    "files": [
+      "src/Pages/Profile/HelpSupport.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "confirm",
+    "files": [
+      "src/components/ui/ConfirmActionDialog.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "confirmAction",
+    "files": [
+      "src/components/ui/ConfirmActionDialog.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "confirmDelete",
+    "files": [
+      "src/components/ui/DeleteDialog.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Contact Us",
+    "files": [
+      "src/Pages/Profile/HelpSupport.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "create",
+    "files": [
+      "src/components/ui/DialogFooterButton.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "creating",
+    "files": [
+      "src/components/ui/DialogFooterButton.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Data Management",
+    "files": [
+      "src/Pages/Profile/PrivacySecurity.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Data Sharing",
+    "files": [
+      "src/Pages/Profile/PrivacySecurity.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Date of Birth",
+    "files": [
+      "src/Pages/Profile/EditProfile.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "delete",
+    "files": [
+      "src/components/ui/DeleteDialog.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Delete",
+    "files": [
+      "src/Pages/Profile/MyReviews.jsx",
+      "src/Pages/Profile/PrivacySecurity.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Delete Account",
+    "files": [
+      "src/Pages/Profile/PrivacySecurity.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "deleteItemMessage",
+    "files": [
+      "src/components/ui/DeleteDialog.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "deleting",
+    "files": [
+      "src/components/ui/DeleteDialog.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Don",
+    "files": [
+      "src/Pages/Auth/SignIn.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Download My Data",
+    "files": [
+      "src/Pages/Profile/PrivacySecurity.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "dropOrClickUpload",
+    "files": [
+      "src/components/ui/ImageUploadField.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Edit",
+    "files": [
+      "src/Pages/Profile/MyReviews.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Email Support",
+    "files": [
+      "src/Pages/Profile/HelpSupport.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Enable location-based features",
+    "files": [
+      "src/Pages/Profile/PrivacySecurity.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "endDate",
+    "files": [
+      "src/components/ui/DateField.jsx",
+      "src/Shared/DateField.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Enter your full name",
+    "files": [
+      "src/Pages/Profile/EditProfile.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Enter your location",
+    "files": [
+      "src/Pages/Profile/EditProfile.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Enter your phone number",
+    "files": [
+      "src/Pages/Profile/EditProfile.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "favorite venues",
+    "files": [
+      "src/Pages/Favorites/Favorites.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Favorites",
+    "files": [
+      "src/Pages/Profile/components/ProfileStats.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "fileFormats",
+    "files": [
+      "src/components/ui/ImageUploadField.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Filters",
+    "files": [
+      "src/Pages/CategoryListing/components/CategoryHeader.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "found helpful",
+    "files": [
+      "src/Pages/Profile/MyReviews.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Frequently Asked Questions",
+    "files": [
+      "src/Pages/Profile/HelpSupport.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Gender",
+    "files": [
+      "src/Pages/Profile/EditProfile.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Get a copy of your data",
+    "files": [
+      "src/Pages/Profile/PrivacySecurity.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Get help via email",
+    "files": [
+      "src/Pages/Profile/HelpSupport.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Get notified of new sign-ins",
+    "files": [
+      "src/Pages/Profile/PrivacySecurity.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Gold Member",
+    "files": [
+      "src/Pages/Profile/components/MembershipCard.jsx",
+      "src/Pages/Profile/EditProfile.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "home.card.activate",
+    "files": [
+      "src/Pages/Home/components/FlippableVenueCard.jsx"
+    ],
+    "fallback": "Activate"
+  },
+  {
+    "key": "home.card.exclusive_perks",
+    "files": [
+      "src/Pages/Home/components/FlippableVenueCard.jsx"
+    ],
+    "fallback": "OMNIA Exclusive Perks"
+  },
+  {
+    "key": "home.card.omnia_exclusive",
+    "files": [
+      "src/Pages/Home/components/FlippableVenueCard.jsx"
+    ],
+    "fallback": "OMNIA Exclusive"
+  },
+  {
+    "key": "home.card.premium_offer",
+    "files": [
+      "src/Pages/Home/components/FlippableVenueCard.jsx"
+    ],
+    "fallback": "Premium Offer"
+  },
+  {
+    "key": "home.card.reviews",
+    "files": [
+      "src/Pages/Home/components/FlippableVenueCard.jsx"
+    ],
+    "fallback": "reviews"
+  },
+  {
+    "key": "home.card.swipe",
+    "files": [
+      "src/Pages/Home/components/FlippableVenueCard.jsx"
+    ],
+    "fallback": "Swipe"
+  },
+  {
+    "key": "home.card.swipe_return",
+    "files": [
+      "src/Pages/Home/components/FlippableVenueCard.jsx"
+    ],
+    "fallback": "Swipe to Return"
+  },
+  {
+    "key": "home.card.tap_activate",
+    "files": [
+      "src/Pages/Home/components/FlippableVenueCard.jsx"
+    ],
+    "fallback": "Tap to Activate"
+  },
+  {
+    "key": "home.featured.badge",
+    "files": [
+      "src/Pages/Home/components/FlippableVenueCard.jsx"
+    ],
+    "fallback": "Featured"
+  },
+  {
+    "key": "home.featured.view_all",
+    "files": [
+      "src/Pages/Home/components/FeaturedSection.jsx"
+    ],
+    "fallback": "View All"
+  },
+  {
+    "key": "home.hero.welcome_back",
+    "files": [
+      "src/Pages/Home/components/HeroSection.jsx"
+    ],
+    "fallback": "Welcome back"
+  },
+  {
+    "key": "image",
+    "files": [
+      "src/components/ui/ImageUploadField.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Included Perks",
+    "files": [
+      "src/Pages/MyBooking/components/BookingPerks.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Legal & Policies",
+    "files": [
+      "src/Pages/Profile/HelpSupport.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Live Chat",
+    "files": [
+      "src/Pages/Profile/HelpSupport.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Location",
+    "files": [
+      "src/Pages/Profile/EditProfile.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Location Tracking",
+    "files": [
+      "src/Pages/Profile/PrivacySecurity.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Login Alerts",
+    "files": [
+      "src/Pages/Profile/PrivacySecurity.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Manage notification preferences in Privacy & Security settings",
+    "files": [
+      "src/Pages/Profile/Notifications.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Mark all read",
+    "files": [
+      "src/Pages/Profile/Notifications.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Member since 2023",
+    "files": [
+      "src/Pages/Profile/components/MembershipCard.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Member since January 2024",
+    "files": [
+      "src/Pages/Profile/EditProfile.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "mybooking.qr.area",
+    "files": [
+      "src/Pages/MyBooking/components/QRModal.jsx"
+    ],
+    "fallback": "Area"
+  },
+  {
+    "key": "mybooking.qr.booking_id",
+    "files": [
+      "src/Pages/MyBooking/components/QRModal.jsx"
+    ],
+    "fallback": "Booking ID"
+  },
+  {
+    "key": "mybooking.qr.date",
+    "files": [
+      "src/Pages/MyBooking/components/QRModal.jsx"
+    ],
+    "fallback": "Date"
+  },
+  {
+    "key": "mybooking.qr.guests",
+    "files": [
+      "src/Pages/MyBooking/components/QRModal.jsx"
+    ],
+    "fallback": "Guests"
+  },
+  {
+    "key": "mybooking.qr.instructions",
+    "files": [
+      "src/Pages/MyBooking/components/QRModal.jsx"
+    ],
+    "fallback": "Present this QR code at the venue entrance. Staff will scan it to verify your booking."
+  },
+  {
+    "key": "mybooking.qr.instructions_title",
+    "files": [
+      "src/Pages/MyBooking/components/QRModal.jsx"
+    ],
+    "fallback": "How to Use"
+  },
+  {
+    "key": "mybooking.qr.time",
+    "files": [
+      "src/Pages/MyBooking/components/QRModal.jsx"
+    ],
+    "fallback": "Time"
+  },
+  {
+    "key": "mybooking.qr.title",
+    "files": [
+      "src/Pages/MyBooking/components/QRModal.jsx"
+    ],
+    "fallback": "Your Booking Pass"
+  },
+  {
+    "key": "mybooking.status.active",
+    "files": [
+      "src/Pages/MyBooking/components/QRModal.jsx"
+    ],
+    "fallback": "Active"
+  },
+  {
+    "key": "mybooking.status.cancelled",
+    "files": [
+      "src/Pages/MyBooking/components/QRModal.jsx"
+    ],
+    "fallback": "Cancelled"
+  },
+  {
+    "key": "mybooking.status.confirmed",
+    "files": [
+      "src/Pages/MyBooking/components/QRModal.jsx"
+    ],
+    "fallback": "Confirmed"
+  },
+  {
+    "key": "mybooking.status.pending",
+    "files": [
+      "src/Pages/MyBooking/components/QRModal.jsx"
+    ],
+    "fallback": "Pending"
+  },
+  {
+    "key": "new",
+    "files": [
+      "src/Pages/Profile/Notifications.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "No availability for this time",
+    "files": [
+      "src/Pages/Booking/components/ResortBookingFlow.jsx"
+    ],
+    "fallback": "لا توجد أماكن متاحة"
+  },
+  {
+    "key": "No courts available",
+    "files": [
+      "src/Pages/Booking/components/SportsBookingFlow.jsx"
+    ],
+    "fallback": "لا توجد ملاعب متاحة"
+  },
+  {
+    "key": "No favorites yet",
+    "files": [
+      "src/Pages/Favorites/Favorites.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "No notifications",
+    "files": [
+      "src/Pages/Profile/Notifications.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "No reviews yet",
+    "files": [
+      "src/Pages/Profile/MyReviews.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "noOptions",
+    "files": [
+      "src/components/ui/DropdownField.jsx",
+      "src/components/ui/FilterDropdown.jsx",
+      "src/components/ui/MultiSelectDropdown.jsx",
+      "src/components/ui/SimpleDropdown.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Other Venues",
+    "files": [
+      "src/Pages/Favorites/Favorites.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Permanently delete your account",
+    "files": [
+      "src/Pages/Profile/PrivacySecurity.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Personalized Ads",
+    "files": [
+      "src/Pages/Profile/PrivacySecurity.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Points",
+    "files": [
+      "src/Pages/Profile/components/MembershipCard.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "preview",
+    "files": [
+      "src/components/ui/ImageUploadField.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Privacy Policy",
+    "files": [
+      "src/Pages/Profile/HelpSupport.jsx",
+      "src/Pages/Profile/PrivacySecurity.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Privacy Settings",
+    "files": [
+      "src/Pages/Profile/PrivacySecurity.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "processing",
+    "files": [
+      "src/components/ui/ConfirmActionDialog.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Profile updated successfully!",
+    "files": [
+      "src/Pages/Profile/EditProfile.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Refund Policy",
+    "files": [
+      "src/Pages/Profile/HelpSupport.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Request",
+    "files": [
+      "src/Pages/Profile/PrivacySecurity.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Reviews",
+    "files": [
+      "src/Pages/Profile/components/ProfileStats.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "reviews written",
+    "files": [
+      "src/Pages/Profile/MyReviews.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Save",
+    "files": [
+      "src/Pages/Profile/EditProfile.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Saving...",
+    "files": [
+      "src/Pages/Profile/EditProfile.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "search",
+    "files": [
+      "src/components/ui/DropdownField.jsx",
+      "src/components/ui/FilterDropdown.jsx",
+      "src/components/ui/MultiSelectDropdown.jsx",
+      "src/components/ui/SimpleDropdown.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Select Your Pass",
+    "files": [
+      "src/Pages/Booking/components/ResortBookingFlow.jsx"
+    ],
+    "fallback": "اختر تذكرتك"
+  },
+  {
+    "key": "selectEndDate",
+    "files": [
+      "src/components/ui/DateField.jsx",
+      "src/Shared/DateField.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "selectOption",
+    "files": [
+      "src/components/ui/DropdownField.jsx",
+      "src/components/ui/MultiSelectDropdown.jsx",
+      "src/components/ui/SimpleDropdown.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "selectStartDate",
+    "files": [
+      "src/components/ui/DateField.jsx",
+      "src/Shared/DateField.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Settings updated",
+    "files": [
+      "src/Pages/Profile/PrivacySecurity.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Share your experiences by leaving reviews at venues you",
+    "files": [
+      "src/Pages/Profile/MyReviews.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Show ads based on your interests",
+    "files": [
+      "src/Pages/Profile/PrivacySecurity.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Speak to a representative",
+    "files": [
+      "src/Pages/Profile/HelpSupport.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Start exploring and add venues to your favorites by tapping the heart icon",
+    "files": [
+      "src/Pages/Favorites/Favorites.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "startDate",
+    "files": [
+      "src/components/ui/DateField.jsx",
+      "src/Shared/DateField.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Sun - Thu",
+    "files": [
+      "src/Pages/Profile/HelpSupport.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "tagRequired",
+    "files": [
+      "src/components/ui/TagInputField.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Tap to change photo",
+    "files": [
+      "src/Pages/Profile/EditProfile.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Terms of Service",
+    "files": [
+      "src/Pages/Profile/HelpSupport.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "total notifications",
+    "files": [
+      "src/Pages/Profile/Notifications.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Two-Factor Authentication",
+    "files": [
+      "src/Pages/Profile/PrivacySecurity.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "update",
+    "files": [
+      "src/components/ui/DialogFooterButton.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Update your account password",
+    "files": [
+      "src/Pages/Profile/PrivacySecurity.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "updating",
+    "files": [
+      "src/components/ui/DialogFooterButton.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "venues available",
+    "files": [
+      "src/Pages/CategoryListing/components/CategoryHeader.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Visit Our Office",
+    "files": [
+      "src/Pages/Profile/HelpSupport.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "You",
+    "files": [
+      "src/Pages/Profile/Notifications.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Your membership tier is based on your activity and cannot be changed manually.",
+    "files": [
+      "src/Pages/Profile/EditProfile.jsx"
+    ],
+    "fallback": ""
+  },
+  {
+    "key": "Your privacy is important to us. We never share your personal information without your consent. For more details, view our",
+    "files": [
+      "src/Pages/Profile/PrivacySecurity.jsx"
+    ],
+    "fallback": ""
+  }
+]

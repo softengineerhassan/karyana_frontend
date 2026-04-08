@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Precision Merchant - POS Terminal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-highest": "#cdddfe",
+              "outline-variant": "#a2adc4",
+              "secondary-fixed": "#d5e3fd",
+              "on-primary-container": "#005b2a",
+              "on-tertiary-container": "#60136d",
+              "tertiary-container": "#f39cfb",
+              "on-surface": "#242f41",
+              "surface-container-lowest": "#ffffff",
+              "on-surface-variant": "#515c70",
+              "on-tertiary-fixed-variant": "#6a1f77",
+              "primary-container": "#50fa8c",
+              "primary-fixed": "#50fa8c",
+              "primary-dim": "#005d2b",
+              "surface": "#f4f6ff",
+              "surface-dim": "#c3d5f8",
+              "on-error-container": "#570008",
+              "on-tertiary-fixed": "#41004d",
+              "tertiary-fixed-dim": "#e48fed",
+              "tertiary-dim": "#7a2f86",
+              "error-container": "#fb5151",
+              "tertiary": "#883c93",
+              "surface-bright": "#f4f6ff",
+              "on-primary-fixed-variant": "#006630",
+              "surface-container": "#dee8ff",
+              "error": "#b31b25",
+              "inverse-surface": "#040e1f",
+              "inverse-primary": "#50fa8c",
+              "outline": "#6c778c",
+              "inverse-on-surface": "#929db4",
+              "surface-container-high": "#d5e3ff",
+              "on-primary": "#cdffd3",
+              "on-secondary": "#eef3ff",
+              "on-tertiary": "#ffeefb",
+              "secondary": "#4e5c71",
+              "on-error": "#ffefee",
+              "secondary-container": "#d5e3fd",
+              "on-background": "#242f41",
+              "primary-fixed-dim": "#3deb80",
+              "surface-container-low": "#ecf1ff",
+              "on-secondary-fixed": "#324054",
+              "surface-variant": "#cdddfe",
+              "on-primary-fixed": "#00461f",
+              "tertiary-fixed": "#f39cfb",
+              "on-secondary-fixed-variant": "#4e5c71",
+              "error-dim": "#9f0519",
+              "primary": "#006a32",
+              "background": "#f4f6ff",
+              "secondary-fixed-dim": "#c7d5ee",
+              "on-secondary-container": "#455367",
+              "secondary-dim": "#425065",
+              "surface-tint": "#006a32"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .font-manrope { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface flex min-h-screen overflow-hidden">
+<!-- Predicted SideNavBar (Rail) -->
+<aside class="h-screen w-64 fixed left-0 top-0 border-r-0 bg-slate-100 dark:bg-slate-900 flex flex-col py-6 px-4 z-50">
+<div class="mb-10 px-2">
+<h1 class="text-xl font-bold text-slate-900 dark:text-white font-manrope">Precision POS</h1>
+<p class="text-xs text-slate-500 font-medium">Main Terminal</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors font-manrope tracking-tight font-semibold" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 rounded-lg border-l-4 border-emerald-600 transition-all duration-200 ease-in-out font-manrope tracking-tight font-semibold" href="#">
+<span class="material-symbols-outlined">point_of_sale</span>
+                POS Terminal
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors font-manrope tracking-tight font-semibold" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+                Inventory
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors font-manrope tracking-tight font-semibold" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+                Sales
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors font-manrope tracking-tight font-semibold" href="#">
+<span class="material-symbols-outlined">group</span>
+                Customers
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors font-manrope tracking-tight font-semibold" href="#">
+<span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+</nav>
+<div class="mt-auto space-y-1">
+<button class="w-full mb-4 py-3 px-4 bg-emerald-800 text-white rounded-xl font-bold flex items-center justify-center gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">add</span>
+                New Sale
+            </button>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors font-manrope tracking-tight font-semibold" href="#">
+<span class="material-symbols-outlined">help</span>
+                Help
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors font-manrope tracking-tight font-semibold" href="#">
+<span class="material-symbols-outlined">logout</span>
+                Logout
+            </a>
+</div>
+</aside>
+<!-- Main Workspace -->
+<main class="ml-64 flex-1 flex flex-col relative">
+<!-- Predicted TopNavBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] z-40 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-100 dark:border-slate-800 shadow-sm dark:shadow-none flex justify-between items-center h-16 px-8 transition-all duration-200 ease-in-out">
+<div class="flex items-center gap-6 flex-1">
+<div class="relative w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-lg pl-10 pr-4 py-2 focus:ring-2 focus:ring-primary/20 text-sm font-medium" placeholder="Search products, SKUs, or barcodes..." type="text"/>
+</div>
+<div class="text-slate-500 font-inter text-sm font-medium">
+                    Store Location: Downtown
+                </div>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-4 py-2 text-emerald-700 font-bold hover:text-emerald-600 transition-colors text-sm">Quick Refresh</button>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-primary-dim transition-colors">
+<span class="material-symbols-outlined text-sm">add_box</span>
+                    Add Product
+                </button>
+<div class="flex items-center gap-2 ml-4 border-l border-slate-200 pl-4">
+<button class="p-2 text-slate-500 hover:bg-slate-100 rounded-full transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden bg-surface-container">
+<img alt="Manager Avatar" class="w-full h-full object-cover" data-alt="professional portrait of a store manager in a clean retail uniform smiling confidently" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBs22-JnEjFLwXnPNSyAmA3oPHCzPB5qx9qngs91vnVdWTmyaQDyodYEsaVT0KXhL6UMhOl1naYQcEPLdrlGT__2OCyw7WRNXx1l_6cAUc4gqZ6D4glyRbHQy9T2RCCLCcW0ubbVYlH74Vohhn3s_1-3_lyJ_CpnG2xk_1NzNRIfs7SWNySWtBaK7LIibP_g_FNbF0P6Z3w98jEzVdGLvCODyEv-_F8mob2QscG_u2NalDjs_FgWU5Z3s9IadZ6d6fzz4sGD_MJXlM"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Grid Area -->
+<section class="mt-16 p-8 flex-1 overflow-y-auto bg-surface pb-32">
+<div class="flex items-center justify-between mb-8">
+<div class="flex gap-2">
+<button class="px-4 py-2 rounded-full bg-primary text-on-primary text-xs font-bold">All Products</button>
+<button class="px-4 py-2 rounded-full bg-surface-container text-on-surface-variant text-xs font-semibold hover:bg-surface-container-high transition-colors">Apparel</button>
+<button class="px-4 py-2 rounded-full bg-surface-container text-on-surface-variant text-xs font-semibold hover:bg-surface-container-high transition-colors">Electronics</button>
+<button class="px-4 py-2 rounded-full bg-surface-container text-on-surface-variant text-xs font-semibold hover:bg-surface-container-high transition-colors">Accessories</button>
+<button class="px-4 py-2 rounded-full bg-surface-container text-on-surface-variant text-xs font-semibold hover:bg-surface-container-high transition-colors">Home Decor</button>
+</div>
+<button class="flex items-center gap-2 text-outline text-sm font-semibold">
+<span class="material-symbols-outlined">filter_list</span>
+                    Filter By
+                </button>
+</div>
+<!-- Bento Grid of Products -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6">
+<!-- Product Card (Active State Example) -->
+<div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden hover:scale-[1.02] transition-all duration-300 ring-4 ring-primary-container shadow-sm">
+<div class="aspect-square bg-surface-container-low relative">
+<img alt="Premium Smartwatch" class="w-full h-full object-cover" data-alt="modern luxury minimalist smartwatch with leather strap on soft grey background with architectural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8GSOdgQhXUfHCtbsbAwFajQxTrPtigOdfAkljrBIRD5E9xBsDVOa4rcSRCPO-F7DYtofReLv7HjMCmdC2-uXVgz1VPUfoYioXPjPv6PLnI0XjkB5RvPmxvoweaG1CWgCX5N3d4W9MnatbG4JvhC6nu7p_C79VD8KDGWTZ0QP9OPiC2igpnF2ub6-38Cb6xCRNSrRjInE4gk5mDu5B54IgUG_CAKiQSuuBMvbCyY8VesrKpj5klZ_z_eTpQXq0kTjkWfxl20zNCOM"/>
+<div class="absolute top-2 right-2">
+<span class="px-2 py-1 rounded-full bg-secondary-fixed-dim text-[10px] font-bold text-on-secondary-fixed uppercase tracking-wider">In Stock</span>
+</div>
+</div>
+<div class="p-4">
+<p class="text-[10px] text-outline font-bold uppercase tracking-widest mb-1">Electronics</p>
+<h3 class="font-manrope font-bold text-on-surface mb-2">Nordic Smartwatch v2</h3>
+<div class="flex justify-between items-center">
+<span class="font-manrope font-extrabold text-primary">$249.00</span>
+<span class="text-[10px] text-outline-variant">SKU: NORD-442</span>
+</div>
+</div>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="bg-primary text-white p-3 rounded-full shadow-lg">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</span>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden hover:scale-[1.02] transition-all duration-300">
+<div class="aspect-square bg-surface-container-low">
+<img alt="Athletic Shoes" class="w-full h-full object-cover" data-alt="vibrant red professional running shoes on dark reflective surface with cinematic highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7KoJlQ6irWQMnqhWA6WnutW-KDXruSFJDmEMX3HzQa4wewxcMYLjmzKQyikLSq7Pa2s6TcOGbxP17TYO4KHtB4MUYgozmWZ01b6-LpwTlKuimi6pPjEDypiX3vjJinPv5iGrMpQd4r0uew7iqxXjwUCNdCPLxRM-kUyzeN-CFWTQ59gna766lIpX2DENojokpPHJUeE1RoQ_iYW0vfqPkn1cNL-Uhf_S0x7mF_ulQpLvq_5xsdAKP8JZGBtvCl8tqjF-bR0FxHRk"/>
+<div class="absolute top-2 right-2">
+<span class="px-2 py-1 rounded-full bg-error-container text-[10px] font-bold text-on-error-container uppercase tracking-wider">Low Stock</span>
+</div>
+</div>
+<div class="p-4">
+<p class="text-[10px] text-outline font-bold uppercase tracking-widest mb-1">Apparel</p>
+<h3 class="font-manrope font-bold text-on-surface mb-2">Crimson Runner Pro</h3>
+<div class="flex justify-between items-center">
+<span class="font-manrope font-extrabold text-primary">$120.50</span>
+<span class="text-[10px] text-outline-variant">SKU: RUN-99</span>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden hover:scale-[1.02] transition-all duration-300">
+<div class="aspect-square bg-surface-container-low">
+<img alt="Studio Headphones" class="w-full h-full object-cover" data-alt="sleek matte black studio headphones in mid-air with soft bokeh lighting and professional studio feel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLhd2ztxNpZ2CrGR2CEUF3-9JpCJsho3JG4p_pkQHERr2CFUvsSTKZDZ9xA60mF7QgF7_uYEDF51QIQm-mTqd8IwiEX_IF6il0G6xhOBpsUEN0ti3GClLIy3SZ4GzMhkaIpffirahDZCMoJu1clotNtt2Ya-WAzmi-U1IuFHn1RF4V8KycZsSQYfKKygDKjVG_QAyCiN54NoAKoy0RrA4LODCuTkshNHKhVtdcJ8wx9DPCTRjMDjbg1nLFMZVZZcKWBu-40si6k_0"/>
+</div>
+<div class="p-4">
+<p class="text-[10px] text-outline font-bold uppercase tracking-widest mb-1">Electronics</p>
+<h3 class="font-manrope font-bold text-on-surface mb-2">Sonic Studio Over-Ear</h3>
+<div class="flex justify-between items-center">
+<span class="font-manrope font-extrabold text-primary">$350.00</span>
+<span class="text-[10px] text-outline-variant">SKU: SON-STU</span>
+</div>
+</div>
+</div>
+<!-- More cards for density -->
+<div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden hover:scale-[1.02] transition-all duration-300">
+<div class="aspect-square bg-surface-container-low">
+<img alt="Vintage Camera" class="w-full h-full object-cover" data-alt="classic vintage film camera on a dark wooden table with warm ambient evening light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLWwNsLvCPHnZTj3wZynXdnqPJ4kXGFmshk1F4rZo_w0KYDjM6TpnWpYfftAcLjQR57Wyg6teGO2AbD_vBYsFbpXYgnMKOIQZBDhgHDxQ7ZJiS4Aeuf4993lZnVR_dDA0wlpDJ7KOYOJ3CZ_2q3jFspUIrErSlGZvrmthZE5GbFC2ulWktQBAqHHKMtWRVKvSupXbJgsVX67AzvSlcQEKb-obWp7YiQPlPBB2PPCXQFCSNNzFYQQB90RI8JEazEZZwAyTirjG01jA"/>
+</div>
+<div class="p-4">
+<p class="text-[10px] text-outline font-bold uppercase tracking-widest mb-1">Photography</p>
+<h3 class="font-manrope font-bold text-on-surface mb-2">Retro Lens 35mm</h3>
+<div class="flex justify-between items-center">
+<span class="font-manrope font-extrabold text-primary">$89.00</span>
+<span class="text-[10px] text-outline-variant">SKU: RET-35</span>
+</div>
+</div>
+</div>
+<div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden hover:scale-[1.02] transition-all duration-300">
+<div class="aspect-square bg-surface-container-low">
+<img alt="Sunglasses" class="w-full h-full object-cover" data-alt="designer black sunglasses on a marble surface with bright clean daylight and sharp shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdQoLjzI9MggEvoFIb0N9Qq0bQl-9_IToiSvsEZmYVs7PCFGAxiVcYCTGoiSYM0fdjaYARMuLXb7oOnitZbsenRf3go0CLCNlA4jrN1UcY6nx-27msBz0Smvz-3MGjYEe7twtH8HHo7KiRCsctez9bmWQfdt0e0S3acLPN0yjvNmjWMWOHGYuraZFnzY91y0rEhuovLLmGZ-fxui7zJoNrozQJVBARGGuYnxDM51ZCuathkOYOQRjUguOgmbevFzemKthGpXQjZ4M"/>
+</div>
+<div class="p-4">
+<p class="text-[10px] text-outline font-bold uppercase tracking-widest mb-1">Accessories</p>
+<h3 class="font-manrope font-bold text-on-surface mb-2">Aviator Stealth</h3>
+<div class="flex justify-between items-center">
+<span class="font-manrope font-extrabold text-primary">$155.00</span>
+<span class="text-[10px] text-outline-variant">SKU: AVI-BLK</span>
+</div>
+</div>
+</div>
+<!-- Empty state placeholders to show density -->
+<div class="group relative bg-surface-container-lowest/50 border border-dashed border-outline-variant/30 rounded-xl flex items-center justify-center p-8 opacity-60">
+<div class="text-center">
+<span class="material-symbols-outlined text-outline-variant mb-2">inventory</span>
+<p class="text-[10px] font-bold uppercase tracking-widest">Restocking soon</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Checkout Sidebar (Right) -->
+<aside class="w-[380px] bg-surface-container-low h-screen border-l border-slate-200/50 flex flex-col fixed right-0 top-0 z-50">
+<div class="p-6 border-b border-slate-200/50">
+<h2 class="font-manrope font-extrabold text-xl mb-4">Current Order</h2>
+<div class="relative">
+<label class="block text-[10px] font-bold text-outline-variant uppercase mb-1">Customer</label>
+<div class="flex items-center justify-between bg-surface-container-lowest px-4 py-3 rounded-xl border border-outline-variant/20">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-emerald-600">account_circle</span>
+<span class="font-semibold text-sm">Walk-in Customer</span>
+</div>
+<span class="material-symbols-outlined text-outline">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Cart Items -->
+<div class="flex-1 overflow-y-auto px-6 py-4 space-y-4">
+<!-- Cart Item 1 -->
+<div class="bg-surface-container-lowest p-3 rounded-xl flex gap-3 transition-transform active:scale-[0.98]">
+<div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Item Thumbnail" class="w-full h-full object-cover" data-alt="smartwatch thumbnail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLwixFMlQyvzDi5ygUea1O8qU_Q_1W-YQZNwC0Q7KMXDd2ZRKuGVwqT-xvZNsCll4O15Hv-61PJVJc92ptsyk6U9vtFS-AjtLu3Yrs2nJk2viLVA1OuBpmCQ7itqAmvkM2aI8cYBW1byNVkNRO2tI2KzKQaaHMRttXgsWgq0hs5zKWVapIMsXS7GK9TZfA0aARNWz2ulYzd4wa7NI77PZG46Ct3T22_GMSVBK2zszA78LveDyAuzi7KOLsY6mdZeYDVgxhF8INxA8"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="text-sm font-bold font-manrope">Nordic Smartwatch</h4>
+<p class="text-[10px] text-outline font-medium">$249.00 / unit</p>
+</div>
+<button class="text-error-dim hover:bg-error-container/20 p-1 rounded-md transition-colors">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+<div class="flex justify-between items-center mt-2">
+<div class="flex items-center bg-surface-container rounded-lg px-2 py-1 gap-4">
+<button class="w-6 h-6 flex items-center justify-center bg-surface-container-lowest rounded-md shadow-sm">
+<span class="material-symbols-outlined text-sm">remove</span>
+</button>
+<span class="text-sm font-bold">1</span>
+<button class="w-6 h-6 flex items-center justify-center bg-surface-container-lowest rounded-md shadow-sm">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<span class="text-sm font-bold font-manrope">$249.00</span>
+</div>
+</div>
+</div>
+<!-- Cart Item 2 -->
+<div class="bg-surface-container-lowest p-3 rounded-xl flex gap-3">
+<div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Item Thumbnail" class="w-full h-full object-cover" data-alt="running shoe thumbnail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmL6RU7oWwoJqbJiHod-9RUyp9B0MHU-fKa2TyxhbITRtkFFxN1tDEncNVnSEdchyQxX82Mvc8U0iLempUO70tDLzbzMZxEWRpg0qyErerv86-Y8Wn_jIQHWL6O36tFZntegFMBH87NnBFGw3L1XVdnM_i67YfTQ9GCBFR3yj36-Ewi0BBXvk2dOBsH-Gtq0w_8g2lM4w09_OAa3gNQLedBby9s6Vcv-j2jHSExkpuk4FULmyBUl8Ph84T5PMytg-29gNDuuzdyPQ"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="text-sm font-bold font-manrope">Crimson Runner Pro</h4>
+<p class="text-[10px] text-outline font-medium">$120.50 / unit</p>
+</div>
+<button class="text-error-dim hover:bg-error-container/20 p-1 rounded-md">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+<div class="flex justify-between items-center mt-2">
+<div class="flex items-center bg-surface-container rounded-lg px-2 py-1 gap-4">
+<button class="w-6 h-6 flex items-center justify-center bg-surface-container-lowest rounded-md shadow-sm">
+<span class="material-symbols-outlined text-sm">remove</span>
+</button>
+<span class="text-sm font-bold">2</span>
+<button class="w-6 h-6 flex items-center justify-center bg-surface-container-lowest rounded-md shadow-sm">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<span class="text-sm font-bold font-manrope">$241.00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Order Summary & Checkout -->
+<div class="p-6 bg-surface-container-highest/30 backdrop-blur-sm border-t border-outline-variant/10">
+<div class="space-y-2 mb-6">
+<div class="flex justify-between text-sm text-on-surface-variant font-medium">
+<span>Subtotal</span>
+<span>$490.00</span>
+</div>
+<div class="flex justify-between text-sm text-on-surface-variant font-medium">
+<span>Tax (8.5%)</span>
+<span>$41.65</span>
+</div>
+<div class="flex justify-between pt-4 border-t border-outline-variant/20">
+<span class="font-manrope font-extrabold text-lg">Total Due</span>
+<span class="font-manrope font-extrabold text-2xl text-primary">$531.65</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3 mb-4">
+<button class="py-3 bg-secondary-container text-on-secondary-container rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-surface-container-high transition-colors text-sm">
+<span class="material-symbols-outlined">percent_discount</span>
+                        Promo
+                    </button>
+<button class="py-3 bg-secondary-container text-on-secondary-container rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-surface-container-high transition-colors text-sm">
+<span class="material-symbols-outlined">print</span>
+                        Hold Order
+                    </button>
+</div>
+<button class="w-full py-5 bg-gradient-to-r from-primary to-primary-container text-on-primary-container rounded-xl font-manrope font-extrabold text-lg shadow-xl shadow-primary/20 flex items-center justify-center gap-3 active:scale-95 transition-all transform uppercase tracking-widest">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">payments</span>
+                    Complete Sale
+                </button>
+</div>
+</aside>
+</main>
+<!-- Success Feedback Overlay (Hidden by default, shown conceptually for the system) -->
+<!-- The "Active Layer" glow and interactions are implemented through group-hover and active classes -->
+</body></html>
