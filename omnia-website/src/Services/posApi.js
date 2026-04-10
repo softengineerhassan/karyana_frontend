@@ -56,6 +56,7 @@ export const salesApi = {
     create: (payload) => Axios.post("/sales/customers", payload),
     update: (id, payload) => Axios.put(`/sales/customers/${id}`, payload),
     get: (id) => Axios.get(`/sales/customers/${id}`),
+    initWalkIn: () => Axios.post("/sales/customers/walk-in/init"),
   },
   sales: {
     list: (params = {}) => Axios.get("/sales/sales", { params }),

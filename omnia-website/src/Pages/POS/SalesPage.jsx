@@ -25,6 +25,9 @@ export default function SalesPage() {
   const [paidAmount, setPaidAmount] = useState(0);
   const [otherCharges, setOtherCharges] = useState(0);
   const [notes, setNotes] = useState("");
+  const [barcodeInput, setBarcodeInput] = useState("");
+  const [lastInvoice, setLastInvoice] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const loadData = async () => {
     const [productRes, customerRes, salesRes] = await Promise.all([
@@ -73,9 +76,33 @@ export default function SalesPage() {
     });
   }, [products, searchTerm, selectedCategory]);
 
-  const subtotal = cart.reduce((total, item) => total + item.quantity * item.unit_price, 0);
-  const taxAmount = cart.reduce((total, item) => total + item.quantity * item.unit_price * (item.tax_percent / 100), 0);
-  const grandTotal = subtotal + taxAmount + Number(otherCharges || 0);
+  const orderSummary = useMemo(() => {
+    return cart.reduce(
+      (acc, item) => {
+        const quantity = Number(item.quantity || 0);
+        const unitPrice = Number(item.unit_price || 0);
+        const base = quantity * unitPrice;
+        const discountValue = Number(item.discount_value || 0);
+        const discount =
+          item.discount_type === "percentage"
+            ? (base * Math.min(Math.max(discountValue, 0), 100)) / 100
+            : Math.min(Math.max(discountValue, 0), base);
+        const taxable = Math.max(base - discount, 0);
+        const tax = taxable * (Number(item.tax_percent || 0) / 100);
+
+        acc.subtotal += base;
+        acc.discountTotal += discount;
+        acc.taxAmount += tax;
+        return acc;
+      },
+      { subtotal: 0, discountTotal: 0, taxAmount: 0 }
+    );
+  }, [cart]);
+
+  const subtotal = orderSummary.subtotal;
+  const discountTotal = orderSummary.discountTotal;
+  const taxAmount = orderSummary.taxAmount;
+  const grandTotal = subtotal - discountTotal + taxAmount + Number(otherCharges || 0);
   const changeDue = Math.max(Number(paidAmount || 0) - grandTotal, 0);
 
   const addToCart = (product) => {
@@ -110,6 +137,25 @@ export default function SalesPage() {
     setCart((prev) => prev.filter((item) => item.product_id !== productId));
   };
 
+  const handleScanAdd = () => {
+    const normalized = barcodeInput.trim().toLowerCase();
+    if (!normalized) return;
+
+    const matched = products.find((product) => {
+      const barcode = (product.barcode || "").toLowerCase();
+      const sku = (product.sku || "").toLowerCase();
+      return barcode === normalized || sku === normalized;
+    });
+
+    if (!matched) {
+      toast.error("No product matched this barcode/SKU");
+      return;
+    }
+
+    addToCart(matched);
+    setBarcodeInput("");
+  };
+
   const submitSale = async () => {
     if (cart.length === 0) {
       toast.error("Add at least one item");
@@ -117,8 +163,17 @@ export default function SalesPage() {
     }
 
     try {
-      await salesApi.sales.create({
-        customer_id: customerId || null,
+      setIsSubmitting(true);
+      setLastInvoice(null);
+
+      let resolvedCustomerId = customerId || null;
+      if (!resolvedCustomerId) {
+        const walkInRes = await salesApi.customers.initWalkIn();
+        resolvedCustomerId = walkInRes?.data?.data?.id || null;
+      }
+
+      const saleRes = await salesApi.sales.create({
+        customer_id: resolvedCustomerId,
         sale_date: new Date().toISOString().slice(0, 10),
         invoice_number: `INV-${Date.now().toString().slice(-8)}`,
         payment_method: paymentMethod,
@@ -136,6 +191,13 @@ export default function SalesPage() {
           notes: item.notes || null,
         })),
       });
+
+      const saleId = saleRes?.data?.data?.id;
+      if (saleId) {
+        const invoiceRes = await salesApi.sales.invoice(saleId);
+        setLastInvoice(invoiceRes?.data?.data || null);
+      }
+
       toast.success("Sale created");
       setCart([]);
       setPaidAmount(0);
@@ -143,7 +205,11 @@ export default function SalesPage() {
       setNotes("");
       setCustomerId("");
       await loadData();
-    } catch {}
+    } catch {
+      toast.error("Could not create sale");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -153,8 +219,9 @@ export default function SalesPage() {
           <h2 className="font-headline text-3xl font-extrabold tracking-tight text-slate-900">POS Terminal</h2>
           <p className="mt-1 text-sm font-medium text-on-surface-variant">Search products, build the order, and complete the sale from one screen.</p>
         </div>
-        <div className="grid grid-cols-3 gap-3">
+        <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
           <SummaryStat label="Subtotal" value={formatPKR(subtotal)} />
+          <SummaryStat label="Discount" value={formatPKR(discountTotal)} />
           <SummaryStat label="Tax" value={formatPKR(taxAmount)} />
           <SummaryStat label="Total Due" value={formatPKR(grandTotal)} highlight />
         </div>
@@ -168,6 +235,23 @@ export default function SalesPage() {
                 <div className="relative w-full max-w-xl">
                   <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
                   <Input value={searchTerm} onChange={(e) => updateSearchQuery(e.target.value)} className="precision-input pl-10" placeholder="Search products, SKUs, or barcodes..." />
+                </div>
+                <div className="flex w-full max-w-xl gap-2">
+                  <Input
+                    value={barcodeInput}
+                    onChange={(e) => setBarcodeInput(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                        e.preventDefault();
+                        handleScanAdd();
+                      }
+                    }}
+                    className="precision-input"
+                    placeholder="Scan barcode/SKU and press Enter"
+                  />
+                  <Button type="button" className="precision-cta h-10" onClick={handleScanAdd}>
+                    Add
+                  </Button>
                 </div>
                 <button type="button" className="precision-chip">
                   <Tag className="h-4 w-4" />
@@ -323,6 +407,29 @@ export default function SalesPage() {
                     </div>
                     <div className="font-headline text-sm font-bold text-slate-900">{formatPKR(Number(item.quantity) * Number(item.unit_price))}</div>
                   </div>
+
+                  <div className="mt-3 grid gap-3 md:grid-cols-2">
+                    <Field label="Discount type">
+                      <select
+                        className="precision-input"
+                        value={item.discount_type || ""}
+                        onChange={(e) => updateCartItem(item.product_id, "discount_type", e.target.value)}
+                      >
+                        <option value="">None</option>
+                        <option value="amount">Amount</option>
+                        <option value="percentage">Percentage</option>
+                      </select>
+                    </Field>
+                    <Field label="Discount value">
+                      <Input
+                        type="number"
+                        className="precision-input"
+                        value={item.discount_value}
+                        onChange={(e) => updateCartItem(item.product_id, "discount_value", e.target.value)}
+                        placeholder={item.discount_type === "percentage" ? "e.g. 10" : "e.g. 50"}
+                      />
+                    </Field>
+                  </div>
                 </div>
               ))
             )}
@@ -333,6 +440,14 @@ export default function SalesPage() {
               <div className="rounded-2xl bg-white p-4 shadow-sm">
                 <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-500">Subtotal</p>
                 <p className="mt-1 font-headline text-xl font-bold text-slate-900">{formatPKR(subtotal)}</p>
+              </div>
+              <div className="rounded-2xl bg-white p-4 shadow-sm">
+                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-500">Discount</p>
+                <p className="mt-1 font-headline text-xl font-bold text-slate-900">{formatPKR(discountTotal)}</p>
+              </div>
+              <div className="rounded-2xl bg-white p-4 shadow-sm">
+                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-500">Tax</p>
+                <p className="mt-1 font-headline text-xl font-bold text-slate-900">{formatPKR(taxAmount)}</p>
               </div>
               <div className="rounded-2xl bg-white p-4 shadow-sm">
                 <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-500">Total Due</p>
@@ -374,9 +489,22 @@ export default function SalesPage() {
               </div>
             </div>
 
-            <Button type="button" className="h-12 w-full precision-cta" onClick={submitSale}>
+            <Button type="button" className="h-12 w-full precision-cta" onClick={submitSale} disabled={isSubmitting}>
               Complete Sale
             </Button>
+
+            {lastInvoice ? (
+              <div className="rounded-2xl border border-primary/20 bg-white p-4 shadow-sm">
+                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-500">Latest Receipt</p>
+                <p className="mt-1 font-headline text-base font-bold text-slate-900">{lastInvoice.invoice_number || lastInvoice.sale_number}</p>
+                <div className="mt-2 space-y-1 text-xs text-slate-600">
+                  <p>Cashier: {lastInvoice.cashier_name || "-"}</p>
+                  <p>Date/Time: {lastInvoice.transaction_datetime ? new Date(lastInvoice.transaction_datetime).toLocaleString() : "-"}</p>
+                  <p>Payment: {lastInvoice.payment_method || "-"}</p>
+                  <p>Total: {formatPKR(lastInvoice.grand_total)}</p>
+                </div>
+              </div>
+            ) : null}
           </div>
         </aside>
       </div>
