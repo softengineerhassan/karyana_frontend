@@ -1,6 +1,6 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import toast from "react-hot-toast";
-import { Minus, Plus, Search, ShoppingCart, Tag, Trash2 } from "lucide-react";
+import { CalendarDays, Minus, Plus, ShoppingCart, Tag, Trash2 } from "lucide-react";
 import { useSearchParams } from "react-router-dom";
 
 import { inventoryApi, salesApi } from "@/Services/posApi";
@@ -12,9 +12,29 @@ import { Label } from "@/components/ui/label";
 const paymentMethods = ["cash", "bank_transfer", "easypaisa", "jazzcash", "card", "credit"];
 
 const formatPKR = (value) => `PKR ${Number(value || 0).toFixed(2)}`;
+const getProductCategory = (item) => item?.category?.name || item?.category_name || item?.category || "Uncategorized";
+const getProductUnit = (item) =>
+  item?.unit?.name || item?.sales_unit?.name || item?.purchase_unit?.name || item?.unit_name || item?.sales_unit_name || item?.purchase_unit_name || "Unknown";
+const getProductPrice = (item) => Number(item.default_selling_price ?? item.selling_price ?? 0);
+
+const parseProductDate = (item) => {
+  const raw = item?.created_at || item?.createdAt || item?.date || item?.created_on || null;
+  if (!raw) return null;
+  const parsed = new Date(raw);
+  return Number.isNaN(parsed.getTime()) ? null : parsed;
+};
+
+function openNativeDatePicker(inputRef) {
+  if (!inputRef?.current) return;
+  if (typeof inputRef.current.showPicker === "function") {
+    inputRef.current.showPicker();
+  } else {
+    inputRef.current.focus();
+  }
+}
 
 export default function SalesPage() {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const [products, setProducts] = useState([]);
   const [customers, setCustomers] = useState([]);
   const [sales, setSales] = useState([]);
@@ -25,56 +45,73 @@ export default function SalesPage() {
   const [paidAmount, setPaidAmount] = useState(0);
   const [otherCharges, setOtherCharges] = useState(0);
   const [notes, setNotes] = useState("");
-  const [barcodeInput, setBarcodeInput] = useState("");
   const [lastInvoice, setLastInvoice] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [selectedUnit, setSelectedUnit] = useState("all");
+  const [priceMin, setPriceMin] = useState("");
+  const [priceMax, setPriceMax] = useState("");
+  const [dateFrom, setDateFrom] = useState("");
+  const [dateTo, setDateTo] = useState("");
+  const fromDateRef = useRef(null);
+  const toDateRef = useRef(null);
 
-  const loadData = async () => {
-    const [productRes, customerRes, salesRes] = await Promise.all([
-      inventoryApi.products.list(),
-      salesApi.customers.list(),
-      salesApi.sales.list({ limit: 50 }),
-    ]);
-    setProducts(productRes?.data?.data || []);
+  const loadBaseData = async () => {
+    const [customerRes, salesRes] = await Promise.all([salesApi.customers.list(), salesApi.sales.list({ limit: 50 })]);
     setCustomers(customerRes?.data?.data || []);
     setSales(salesRes?.data?.data || []);
   };
 
+  const loadProducts = async (params = {}) => {
+    const productRes = await inventoryApi.products.list(params);
+    setProducts(productRes?.data?.data || []);
+  };
+
   useEffect(() => {
-    loadData().catch(() => {});
+    loadBaseData().catch(() => {});
   }, []);
 
   const searchTerm = searchParams.get("q") || "";
 
-  const updateSearchQuery = (value) => {
-    const next = new URLSearchParams(searchParams);
-    if (value?.trim()) {
-      next.set("q", value);
-    } else {
-      next.delete("q");
-    }
-    setSearchParams(next, { replace: true });
-  };
-
   const categories = useMemo(() => {
-    const names = products
-      .map((item) => item?.category?.name || item?.category_name || item?.category || "Uncategorized")
-      .filter(Boolean);
+    const names = products.map((item) => getProductCategory(item)).filter(Boolean);
     return ["all", ...Array.from(new Set(names))];
   }, [products]);
 
-  const filteredProducts = useMemo(() => {
-    const normalized = searchTerm.trim().toLowerCase();
-    return products.filter((item) => {
-      const name = (item.name || "").toLowerCase();
-      const sku = (item.sku || "").toLowerCase();
-      const barcode = (item.barcode || "").toLowerCase();
-      const category = (item?.category?.name || item?.category_name || item?.category || "Uncategorized").toLowerCase();
-      const matchesSearch = !normalized || name.includes(normalized) || sku.includes(normalized) || barcode.includes(normalized);
-      const matchesCategory = selectedCategory === "all" || category === selectedCategory.toLowerCase();
-      return matchesSearch && matchesCategory;
+  const units = useMemo(() => {
+    const names = products.map((item) => getProductUnit(item)).filter(Boolean);
+    return ["all", ...Array.from(new Set(names))];
+  }, [products]);
+
+  const clearAdvancedFilters = () => {
+    setSelectedUnit("all");
+    setPriceMin("");
+    setPriceMax("");
+    setDateFrom("");
+    setDateTo("");
+  };
+
+  const productQueryParams = useMemo(
+    () => ({
+      search: searchTerm.trim() || undefined,
+      category: selectedCategory !== "all" ? selectedCategory : undefined,
+      unit: selectedUnit !== "all" ? selectedUnit : undefined,
+      min_price: priceMin !== "" ? Number(priceMin) : undefined,
+      max_price: priceMax !== "" ? Number(priceMax) : undefined,
+      start_date: dateFrom || undefined,
+      end_date: dateTo || undefined,
+      is_active: true,
+    }),
+    [searchTerm, selectedCategory, selectedUnit, priceMin, priceMax, dateFrom, dateTo]
+  );
+
+  useEffect(() => {
+    loadProducts(productQueryParams).catch(() => {
+      toast.error("Could not load products");
     });
-  }, [products, searchTerm, selectedCategory]);
+  }, [productQueryParams]);
+
+  const filteredProducts = useMemo(() => products, [products]);
 
   const orderSummary = useMemo(() => {
     return cart.reduce(
@@ -137,25 +174,6 @@ export default function SalesPage() {
     setCart((prev) => prev.filter((item) => item.product_id !== productId));
   };
 
-  const handleScanAdd = () => {
-    const normalized = barcodeInput.trim().toLowerCase();
-    if (!normalized) return;
-
-    const matched = products.find((product) => {
-      const barcode = (product.barcode || "").toLowerCase();
-      const sku = (product.sku || "").toLowerCase();
-      return barcode === normalized || sku === normalized;
-    });
-
-    if (!matched) {
-      toast.error("No product matched this barcode/SKU");
-      return;
-    }
-
-    addToCart(matched);
-    setBarcodeInput("");
-  };
-
   const submitSale = async () => {
     if (cart.length === 0) {
       toast.error("Add at least one item");
@@ -204,7 +222,7 @@ export default function SalesPage() {
       setOtherCharges(0);
       setNotes("");
       setCustomerId("");
-      await loadData();
+      await Promise.all([loadBaseData(), loadProducts(productQueryParams)]);
     } catch {
       toast.error("Could not create sale");
     } finally {
@@ -232,32 +250,70 @@ export default function SalesPage() {
           <Card className="precision-card p-4">
             <CardContent className="p-0">
               <div className="flex flex-wrap items-center justify-between gap-4">
-                <div className="relative w-full max-w-xl">
-                  <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
-                  <Input value={searchTerm} onChange={(e) => updateSearchQuery(e.target.value)} className="precision-input pl-10" placeholder="Search products, SKUs, or barcodes..." />
+                <div className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
+                  Using header search: {searchTerm ? `"${searchTerm}"` : "showing all products"}
                 </div>
-                <div className="flex w-full max-w-xl gap-2">
-                  <Input
-                    value={barcodeInput}
-                    onChange={(e) => setBarcodeInput(e.target.value)}
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter") {
-                        e.preventDefault();
-                        handleScanAdd();
-                      }
-                    }}
-                    className="precision-input"
-                    placeholder="Scan barcode/SKU and press Enter"
-                  />
-                  <Button type="button" className="precision-cta h-10" onClick={handleScanAdd}>
-                    Add
-                  </Button>
-                </div>
-                <button type="button" className="precision-chip">
+                <button type="button" className="precision-chip" onClick={() => setIsFilterOpen((prev) => !prev)}>
                   <Tag className="h-4 w-4" />
-                  Filter By
+                  {isFilterOpen ? "Hide Filters" : "Filter By"}
                 </button>
               </div>
+
+              {isFilterOpen ? (
+                <div className="mt-4 grid gap-3 rounded-2xl bg-surface-container-low p-3 md:grid-cols-2 xl:grid-cols-5">
+                  <Field label="Unit">
+                    <select className="precision-input" value={selectedUnit} onChange={(e) => setSelectedUnit(e.target.value)}>
+                      {units.map((unitName) => (
+                        <option key={unitName} value={unitName}>
+                          {unitName === "all" ? "All Units" : unitName}
+                        </option>
+                      ))}
+                    </select>
+                  </Field>
+
+                  <Field label="Min Price">
+                    <Input type="number" className="precision-input" value={priceMin} onChange={(e) => setPriceMin(e.target.value)} placeholder="0" />
+                  </Field>
+
+                  <Field label="Max Price">
+                    <Input type="number" className="precision-input" value={priceMax} onChange={(e) => setPriceMax(e.target.value)} placeholder="1000" />
+                  </Field>
+
+                  <Field label="From Date">
+                    <div className="relative">
+                      <Input ref={fromDateRef} type="date" className="precision-input pr-10" value={dateFrom} onChange={(e) => setDateFrom(e.target.value)} />
+                      <button
+                        type="button"
+                        className="absolute inset-y-0 right-2 flex items-center text-slate-500"
+                        onClick={() => openNativeDatePicker(fromDateRef)}
+                        aria-label="Open from date calendar"
+                      >
+                        <CalendarDays className="h-4 w-4" />
+                      </button>
+                    </div>
+                  </Field>
+
+                  <Field label="To Date">
+                    <div className="relative">
+                      <Input ref={toDateRef} type="date" className="precision-input pr-10" value={dateTo} onChange={(e) => setDateTo(e.target.value)} />
+                      <button
+                        type="button"
+                        className="absolute inset-y-0 right-2 flex items-center text-slate-500"
+                        onClick={() => openNativeDatePicker(toDateRef)}
+                        aria-label="Open to date calendar"
+                      >
+                        <CalendarDays className="h-4 w-4" />
+                      </button>
+                    </div>
+                  </Field>
+
+                  <div className="md:col-span-2 xl:col-span-5">
+                    <Button type="button" variant="outline" className="h-10" onClick={clearAdvancedFilters}>
+                      Clear Advanced Filters
+                    </Button>
+                  </div>
+                </div>
+              ) : null}
 
               <div className="mt-4 flex flex-wrap gap-2">
                 {categories.map((category) => (
@@ -286,7 +342,8 @@ export default function SalesPage() {
               </Card>
             ) : (
               filteredProducts.map((product) => {
-                const categoryName = product?.category?.name || product?.category_name || product?.category || "Uncategorized";
+                const categoryName = getProductCategory(product);
+                const productUnit = getProductUnit(product);
                 const stockLabel = product.track_inventory === false ? "Service" : product.minimum_stock_alert && product.minimum_stock_alert > 0 ? "Stocked" : "In Stock";
                 const initials = (product.name || "P")
                   .split(" ")
@@ -312,10 +369,13 @@ export default function SalesPage() {
                       <div className="mb-2 text-[10px] font-bold uppercase tracking-[0.18em] text-slate-400">{categoryName}</div>
                       <h3 className="font-headline text-base font-bold text-slate-900">{product.name}</h3>
                       <div className="mt-3 flex items-center justify-between">
-                        <span className="font-headline text-lg font-extrabold text-primary">{formatPKR(product.default_selling_price)}</span>
+                        <span className="font-headline text-lg font-extrabold text-primary">{formatPKR(getProductPrice(product))}</span>
                         <span className="rounded-full bg-secondary-container px-2 py-1 text-[10px] font-bold text-secondary">{stockLabel}</span>
                       </div>
-                      <div className="mt-2 text-[10px] uppercase tracking-[0.18em] text-slate-400">SKU: {product.sku || "N/A"}</div>
+                      <div className="mt-2 flex items-center justify-between text-[10px] uppercase tracking-[0.18em] text-slate-400">
+                        <span>SKU: {product.sku || "N/A"}</span>
+                        <span>Unit: {productUnit}</span>
+                      </div>
                     </div>
                     <div className="absolute inset-0 flex items-center justify-center bg-primary/8 opacity-0 transition group-hover:opacity-100">
                       <span className="rounded-full bg-primary p-3 text-white shadow-lg">

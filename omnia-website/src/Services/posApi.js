@@ -43,7 +43,7 @@ export const inventoryApi = {
     remove: (id) => Axios.delete(`/inventory/units/${id}`),
   },
   products: {
-    list: () => Axios.get("/inventory/products"),
+    list: (params = {}) => Axios.get("/inventory/products", { params }),
     create: (payload) => Axios.post("/inventory/products", payload),
     update: (id, payload) => Axios.put(`/inventory/products/${id}`, payload),
     remove: (id) => Axios.delete(`/inventory/products/${id}`),

@@ -1,6 +1,6 @@
 import { NavLink, Outlet, useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { Bell, ChevronDown, LayoutGrid, LogOut, Package2, ReceiptText, Search, Settings2, ShoppingCart, Store, Users } from "lucide-react";
+import { Bell, ChevronDown, LayoutGrid, LogOut, Package2, ReceiptText, Settings2, ShoppingCart, Store, Users } from "lucide-react";
 
 import { logout } from "@/store/slices/AuthSlice";
 
@@ -105,12 +105,9 @@ export default function POSLayout() {
         <header className="fixed right-0 top-0 z-30 flex h-16 w-[calc(100%-16rem)] items-center justify-between border-b border-slate-200 bg-white/80 px-8 backdrop-blur-md">
           <div className="flex items-center gap-6">
             <div className="font-headline text-lg font-extrabold text-slate-900">Precision Merchant</div>
-            <div className="relative hidden w-[28rem] lg:block">
-              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">
-                <Search className="h-4 w-4" />
-              </span>
+            <div className="relative w-[18rem] sm:w-[24rem] lg:w-[28rem]">
               <input
-                className="precision-input pl-10"
+                className="precision-input h-11 px-4"
                 placeholder="Search products, SKUs, or barcodes..."
                 value={globalQuery}
                 onChange={(e) => handleHeaderSearch(e.target.value)}
