@@ -26,8 +26,8 @@ export const userSignUp = createAsyncThunk(
     try {
       const res = await Axios.post("/auth/register", payload);
       if (res) {
-        toast.success("Sign up successful! Please verify OTP.");
-        navigate("/verify-otp", { state: { email: payload.email } });
+        toast.success(res?.data?.message || "Sign up successful! Please log in.");
+        navigate("/login");
       }
       return res?.data;
     } catch (error) {
@@ -45,8 +45,8 @@ export const sendOtp = createAsyncThunk(
       const res = await Axios.post("/auth/forgot-password", payload);
       if (res) {
         toast.success(res?.data?.message);
-        navigate("/verify-otp", {
-          state: { email: payload.email, isForgotPassword: true },
+        navigate("/verify-reset-otp", {
+          state: { email: payload.email },
         });
       }
       return res?.data;
@@ -65,7 +65,7 @@ export const verifyOtp = createAsyncThunk(
       const res = await Axios.post("/auth/verify-otp", payload);
       if (res) {
         toast.success(res?.data?.message);
-        navigate("/SignIn");
+        navigate("/pos/dashboard");
       }
       return res?.data;
     } catch (error) {
@@ -83,6 +83,23 @@ export const resendOtp = createAsyncThunk(
       const res = await Axios.post("/auth/resend-otp", payload);
       if (res) {
         toast.success(res?.data?.message || "OTP resent successfully!");
+      }
+      return res?.data;
+    } catch (error) {
+      toast.error(error?.response?.data?.message);
+      return thunkAPI.rejectWithValue(error);
+    }
+  }
+);
+
+// POST /auth/send-verification-otp
+export const sendVerificationOtp = createAsyncThunk(
+  "auth/sendVerificationOtp",
+  async (payload, thunkAPI) => {
+    try {
+      const res = await Axios.post("/auth/send-verification-otp", payload);
+      if (res) {
+        toast.success(res?.data?.message || "Verification code sent successfully!");
       }
       return res?.data;
     } catch (error) {
@@ -119,7 +136,7 @@ export const resetUserPass = createAsyncThunk(
       const res = await Axios.post("/auth/reset-password", payload);
       if (res) {
         toast.success(res?.data?.message || "Password reset successfully!");
-        navigate("/SignIn");
+        navigate("/login");
       }
       return res?.data;
     } catch (error) {
@@ -142,11 +159,27 @@ export const getProfile = createAsyncThunk(
   }
 );
 
+// PATCH /auth/me/profile
+export const updateOwnProfile = createAsyncThunk(
+  "auth/updateOwnProfile",
+  async (payload, thunkAPI) => {
+    try {
+      const res = await Axios.patch("/auth/me/profile", payload);
+      if (res) {
+        toast.success(res?.data?.message || "Profile updated successfully");
+      }
+      return res?.data;
+    } catch (error) {
+      toast.error(error?.response?.data?.detail || error?.response?.data?.message);
+      return thunkAPI.rejectWithValue(error);
+    }
+  }
+);
+
 const initialState = {
   isLoading: false,
   user: null,
   token: null,
-  refreshToken: null,
   roleData: null,
   permissions: [],
 };
@@ -159,7 +192,6 @@ const AuthSlice = createSlice({
       state.isLoading = false;
       state.user = null;
       state.token = null;
-      state.refreshToken = null;
       state.roleData = null;
       state.permissions = [];
     },
@@ -168,9 +200,6 @@ const AuthSlice = createSlice({
     },
     setTokens: (state, action) => {
       state.token = action.payload.token;
-      if (action.payload.refreshToken) {
-        state.refreshToken = action.payload.refreshToken;
-      }
     },
   },
   extraReducers: (builder) => {
@@ -180,7 +209,6 @@ const AuthSlice = createSlice({
         state.isLoading = false;
         state.user = action.payload?.data?.user;
         state.token = action.payload?.data?.access_token;
-        state.refreshToken = action.payload?.data?.refresh_token;
         state.permissions = action.payload?.data?.permissions || {};
         state.roleData = action.payload?.data?.Role;
       })
@@ -251,6 +279,16 @@ const AuthSlice = createSlice({
       .addCase(resendOtp.rejected, (state) => {
         state.isLoading = false;
       })
+      // Send Verification OTP
+      .addCase(sendVerificationOtp.fulfilled, (state) => {
+        state.isLoading = false;
+      })
+      .addCase(sendVerificationOtp.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(sendVerificationOtp.rejected, (state) => {
+        state.isLoading = false;
+      })
       // Get Profile
       .addCase(getProfile.fulfilled, (state, action) => {
         state.isLoading = false;
@@ -260,6 +298,17 @@ const AuthSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(getProfile.rejected, (state) => {
+        state.isLoading = false;
+      })
+      // Update Own Profile
+      .addCase(updateOwnProfile.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.user = action.payload?.data;
+      })
+      .addCase(updateOwnProfile.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(updateOwnProfile.rejected, (state) => {
         state.isLoading = false;
       });
   },

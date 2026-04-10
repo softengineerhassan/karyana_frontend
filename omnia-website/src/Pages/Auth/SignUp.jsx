@@ -1,86 +1,127 @@
-import React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { signupSchema } from "@/lib/validations";
-import { Mail, Lock, User, Phone } from "lucide-react";
-import { useTranslation } from "react-i18next";
-import { AppButton, FormField } from "@/Shared";
-import { AuthLayout } from "@/Layouts/AuthLayout";
-import { userSignUp } from "@/store/slices/AuthSlice";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { BadgeCheck, Users } from "lucide-react";
+
+import { signupSchema } from "@/lib/validations";
+import { AuthLayout } from "@/Layouts/AuthLayout";
+import { AppButton, FormField } from "@/Shared";
+import { userSignUp } from "@/store/slices/AuthSlice";
 
 export const SignUp = () => {
-  const { t } = useTranslation();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
-
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { errors },
   } = useForm({
     resolver: zodResolver(signupSchema),
+    defaultValues: {
+      employee_id: "",
+      full_name: "",
+      phone_number: "",
+      password: "",
+    },
   });
 
-  const dispatch = useDispatch();
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     const payload = {
-      email: data.email,
-      full_name: data.name,
+      employee_id: data.employee_id.trim(),
+      full_name: data.full_name?.trim() || null,
+      phone_number: data.phone_number?.trim() || null,
       password: data.password,
-      phone_number: data.phone,
-      role_id: "b4c8b079-8ad2-4a3f-91cf-92854e24043f"
     };
-    dispatch(userSignUp({ payload, navigate }));
+
+    await dispatch(userSignUp({ payload, navigate }));
   };
+
   return (
-    <AuthLayout title={t("Create Account")} subtitle={t("Join OMNIA today")}>
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+    <AuthLayout title="Create account" subtitle="Register with your employee ID and start using the POS">
+      <div className="mb-6 grid grid-cols-2 gap-3 text-xs font-medium text-on-surface-variant">
+        <div className="rounded-2xl border border-white/70 bg-white/85 p-3 shadow-sm">
+          <BadgeCheck className="mb-2 h-5 w-5 text-primary" />
+          Register once, then complete profile
+        </div>
+        <div className="rounded-2xl border border-white/70 bg-white/85 p-3 shadow-sm">
+          <Users className="mb-2 h-5 w-5 text-primary" />
+          Employee ID based login
+        </div>
+      </div>
+
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-5" autoComplete="off">
         <FormField
-          name="name"
-          placeholder={t("Full Name")}
-          icon={User}
+          name="employee_id"
+          label="Employee ID"
+          placeholder="Employee ID"
           register={register}
-          error={errors.name?.message}
+          error={errors.employee_id?.message}
+          inputProps={{
+            autoComplete: "off",
+            autoCapitalize: "none",
+            spellCheck: false,
+            "data-lpignore": "true",
+            "data-1p-ignore": "true",
+            "data-form-type": "other",
+          }}
         />
+
         <FormField
-          name="phone"
-          placeholder={t("Phone Number")}
-          icon={Phone}
+          name="full_name"
+          label="Full Name (Optional)"
+          placeholder="Full Name (Optional)"
           register={register}
-          error={errors.phone?.message}
+          error={errors.full_name?.message}
+          inputProps={{
+            autoComplete: "off",
+            autoCapitalize: "words",
+            spellCheck: false,
+            "data-lpignore": "true",
+            "data-1p-ignore": "true",
+            "data-form-type": "other",
+          }}
         />
+
         <FormField
-          name="email"
-          placeholder={t("Email Address")}
-          icon={Mail}
+          name="phone_number"
+          label="Phone Number"
+          placeholder="Phone Number"
           register={register}
-          error={errors.email?.message}
+          error={errors.phone_number?.message}
+          inputProps={{
+            autoComplete: "off",
+            inputMode: "tel",
+            spellCheck: false,
+            "data-lpignore": "true",
+            "data-1p-ignore": "true",
+            "data-form-type": "other",
+          }}
         />
+
         <FormField
           name="password"
+          label="Password"
           type="password"
-          placeholder={t("Password")}
-          icon={Lock}
+          placeholder="Password"
           register={register}
           error={errors.password?.message}
+          inputProps={{
+            autoComplete: "new-password",
+            "data-lpignore": "true",
+            "data-1p-ignore": "true",
+            "data-form-type": "other",
+          }}
         />
 
-        <AppButton loading={isSubmitting} className="h-[54px]">
-          {t("Sign Up")}
-        </AppButton>
+        <AppButton className="h-[54px] w-full">Create account</AppButton>
 
-        <p className="text-center text-luxury-text-dim text-sm pt-4">
-          {t("Already have an account?")}{" "}
-          <button
-            type="button"
-            onClick={() => navigate("/SignIn")}
-            className="text-gold-primary font-semibold hover:underline cursor-pointer"
-          >
-            {t("Sign In")}
-          </button>
+        <p className="pt-3 text-center text-sm text-on-surface-variant">
+          Already have an account?{" "}
+          <Link to="/login" className="font-semibold text-primary hover:underline">
+            Sign in
+          </Link>
         </p>
-
       </form>
     </AuthLayout>
   );

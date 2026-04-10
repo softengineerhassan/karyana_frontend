@@ -18,7 +18,7 @@ Removed from active routing:
 ## Backend Base URL
 
 Configured in src/config.js:
-- http://127.0.0.1:8069/api/v1
+- /api/v1 in dev, proxied by Vite to http://13.236.146.72:8000
 
 ## Auth Handling
 
@@ -45,6 +45,8 @@ Configured in src/config.js:
    npm run dev
 
 3. Ensure backend is running on port 8069
+
+For the live backend, Vite proxies /api requests to http://13.236.146.72:8000 so the browser does not hit CORS directly.
 
 ## Next Implementation Steps
 

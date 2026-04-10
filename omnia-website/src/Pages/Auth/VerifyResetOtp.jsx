@@ -1,13 +1,13 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Mail, ShieldCheck } from "lucide-react";
+import { KeyRound, ShieldCheck } from "lucide-react";
 
 import { AuthLayout } from "@/Layouts/AuthLayout";
 import { AppButton } from "@/Shared";
-import { resendOtp, verifyOtp } from "@/store/slices/AuthSlice";
+import { verifyResetOtp } from "@/store/slices/AuthSlice";
 
-export const VerifyOtp = () => {
+export const VerifyResetOtp = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
@@ -19,7 +19,7 @@ export const VerifyOtp = () => {
 
   useEffect(() => {
     if (!email) {
-      navigate("/login", { replace: true });
+      navigate("/forgot-password", { replace: true });
     }
   }, [email, navigate]);
 
@@ -47,40 +47,23 @@ export const VerifyOtp = () => {
     }
   };
 
-  const handlePaste = (event) => {
-    event.preventDefault();
-    const pasted = event.clipboardData.getData("text").trim();
-    if (/^\d{4}$/.test(pasted)) {
-      setOtp(pasted.split(""));
-      inputRefs.current[3]?.focus();
-    }
-  };
-
   const handleVerify = async () => {
-    await dispatch(verifyOtp({ payload: { email, code }, navigate }));
-  };
-
-  const handleResend = async () => {
-    if (countdown > 0) return;
-    await dispatch(resendOtp({ email }));
-    setCountdown(60);
-    setOtp(["", "", "", ""]);
-    inputRefs.current[0]?.focus();
+    await dispatch(verifyResetOtp({ payload: { email, code }, navigate }));
   };
 
   const maskedEmail = email
-    ? email.replace(/(.{2})(.*)(@.*)/, (_, start, middle, end) => `${start}${"*".repeat(middle.length)}${end}`)
+    ? `${email.slice(0, 2)}${"*".repeat(Math.max(email.length - 4, 1))}${email.slice(-2)}`
     : "";
 
   return (
-    <AuthLayout title="Verify email" subtitle={`Enter the 4-digit code sent to ${maskedEmail}`}>
+    <AuthLayout title="Verify reset code" subtitle={`Enter the 4-digit code for ${maskedEmail}`}>
       <div className="mb-6 rounded-2xl border border-gold-primary/15 bg-white/80 p-4 text-sm text-luxury-text-dim shadow-sm">
         <ShieldCheck className="mb-2 h-5 w-5 text-gold-primary" />
-        This code confirms your updated profile email.
+        After verification, you can set a new password.
       </div>
 
       <div className="space-y-6">
-        <div className="flex justify-center gap-3" onPaste={handlePaste}>
+        <div className="flex justify-center gap-3">
           {otp.map((digit, index) => (
             <input
               key={index}
@@ -91,7 +74,7 @@ export const VerifyOtp = () => {
               value={digit}
               onChange={(event) => handleChange(index, event.target.value)}
               onKeyDown={(event) => handleKeyDown(index, event)}
-              className="h-16 w-16 rounded-2xl border border-gold-primary/20 bg-white text-center text-3xl font-bold text-foreground shadow-sm outline-none transition focus:border-gold-primary focus:ring-4 focus:ring-gold-primary/10"
+              className="h-14 w-14 rounded-2xl border border-gold-primary/20 bg-white text-center text-2xl font-semibold text-foreground shadow-sm outline-none transition focus:border-gold-primary focus:ring-4 focus:ring-gold-primary/10"
             />
           ))}
         </div>
@@ -102,17 +85,17 @@ export const VerifyOtp = () => {
 
         <div className="text-center text-sm text-luxury-text-dim">
           {countdown > 0 ? (
-            <p>Resend available in {countdown}s</p>
+            <p>Try again in {countdown}s</p>
           ) : (
-            <button type="button" onClick={handleResend} className="font-semibold text-gold-primary hover:underline">
-              Resend code
-            </button>
+            <p className="text-xs text-luxury-text-dim">
+              Go back to request a new code.
+            </p>
           )}
         </div>
 
         <p className="pt-2 text-center text-sm text-luxury-text-dim">
-          <Link to="/login" className="font-semibold text-gold-primary hover:underline">
-            Back to sign in
+          <Link to="/forgot-password" className="font-semibold text-gold-primary hover:underline">
+            Back to forgot password
           </Link>
         </p>
       </div>

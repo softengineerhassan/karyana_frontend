@@ -204,7 +204,7 @@
     "from": "From",
     "max": "Max",
     "players": "players",
-    "aed_hr": "AED/hr"
+    "aed_hr": "PKR/hr"
   },
 
   "resort": {
@@ -720,7 +720,7 @@
     "max": "Max",
     "players": "players",
     "from": "FROM",
-    "aed_hr": "AED/HR",
+    "aed_hr": "PKR/HR",
     "choose_first": "Choose First, Book Later!",
     "choose_first_desc": "Select your preferred court now, then we'll show you its real-time availability on the next step.",
     "when_play": "When Would You Like to Play?",

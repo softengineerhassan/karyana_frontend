@@ -69,19 +69,8 @@ export default function AppButton({
     <ShadButton
       disabled={loading || props.disabled}
       className={cn(
-        `
-        w-full
-        px-7 py-4
-        rounded-2xl
-        bg-gradient-to-r from-[#D4AF37] to-[#CD7F32]
-        text-white
-        font-semibold tracking-wide
-        shadow-md
-        hover:shadow-[0_10px_30px_rgba(212,175,55,0.35)]
-        hover:-translate-y-0.5
-        transition-all duration-300
-        disabled:opacity-50 disabled:pointer-events-none
-        `,
+        "w-full rounded-2xl px-7 py-4 font-semibold tracking-wide transition-all duration-300 hover:-translate-y-0.5 disabled:pointer-events-none disabled:opacity-50",
+        "precision-cta shadow-[0_12px_30px_rgba(0,106,50,0.18)]",
         className
       )}
       {...props}

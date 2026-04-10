@@ -1,281 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-gold-primary: #d4af37;
-  --color-gold-secondary: #cd7f32;
-  --color-gold-danger: #b85450;
-  --color-gold-light: rgba(212, 175, 55, 0.1);
-  --color-luxury-success: #4a7c2c;
-  --color-luxury-warning: #c49a3a;
-  --color-luxury-neutral: #c8c3b8;
-  --color-luxury-text-dim: #5c5850;
-  --color-luxury-gray: #8b8680;
-  --color-border: var(--border-color);
-  --color-background: var(--bg-color);
-  --color-foreground: var(--text-color);
-  --color-luxury-card: var(--card-color);
-  --color-luxury-border: var(--border-color);
-
-  /* Resort/Beach Theme Colors */
-  --color-resort-primary: #b8956a;
-  --color-resort-secondary: #d4b896;
-  --color-resort-light: #f8f6f1;
-
-  /* Sports Theme Colors */
-  --color-padel-primary: #4a7c2c;
-  --color-padel-secondary: #5c9234;
-  --color-basketball-primary: #e85d04;
-  --color-basketball-secondary: #d56f3e;
-  --color-football-primary: #1e40af;
-  --color-football-secondary: #2563eb;
-
-  /* Urgency Colors */
-  --color-urgency-critical: #c77b7b;
-  --color-urgency-warning: #ff8c42;
-  --color-urgency-active: #d4af37;
-
-  --background-image-gold-gradient: linear-gradient(to right, #d4af37, #cd7f32);
-  --background-image-resort-gradient: linear-gradient(to right, #b8956a, #d4af37);
-  --background-image-gold-faded-line: linear-gradient(to right,
-      transparent,
-      var(--color-gold-primary),
-      transparent);
-  --animate-float: float 20s ease-in-out infinite;
-  --animate-float-delayed: float-delayed 25s ease-in-out infinite;
+  --color-surface: #f4f6ff;
+  --color-surface-bright: #f7f9ff;
+  --color-surface-dim: #c3d5f8;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #ecf1ff;
+  --color-surface-container: #dee8ff;
+  --color-surface-container-high: #d5e3ff;
+  --color-surface-container-highest: #cdddfe;
+  --color-outline: #6c778c;
+  --color-outline-variant: #a2adc4;
+  --color-on-surface: #242f41;
+  --color-on-surface-variant: #515c70;
+  --color-primary: #006a32;
+  --color-primary-dim: #005d2b;
+  --color-primary-container: #50fa8c;
+  --color-primary-fixed: #50fa8c;
+  --color-primary-fixed-dim: #3deb80;
+  --color-on-primary: #cdffd3;
+  --color-on-primary-container: #005b2a;
+  --color-secondary: #4e5c71;
+  --color-secondary-dim: #425065;
+  --color-secondary-container: #d5e3fd;
+  --color-secondary-fixed: #d5e3fd;
+  --color-secondary-fixed-dim: #c7d5ee;
+  --color-on-secondary: #eef3ff;
+  --color-on-secondary-container: #455367;
+  --color-tertiary: #883c93;
+  --color-tertiary-container: #f39cfb;
+  --color-error: #b31b25;
+  --color-error-container: #fb5151;
+  --color-on-error: #ffefee;
+  --color-on-error-container: #570008;
+  --color-background: #f4f6ff;
+  --color-foreground: #242f41;
+  --font-sans: "Inter", sans-serif;
+  --font-headline: "Manrope", sans-serif;
 }
 
 :root {
-  --bg-color: #fdfbf7;
-  --text-color: #1a1a1c;
-  --card-color: #ffffff;
-  --border-color: rgba(212, 175, 55, 0.2);
-}
-
-.dark {
-  --bg-color: #0f0f10;
-  --text-color: #fdfbf7;
-  --card-color: #1a1a1c;
-  --border-color: rgba(212, 175, 55, 0.3);
+  color-scheme: light;
 }
 
 @layer base {
   * {
-    @apply border-border outline-none;
+    border-color: rgba(162, 173, 196, 0.3);
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: "Inter", sans-serif;
   }
 
-  @keyframes float {
-
-    0%,
-    100% {
-      transform: translate(0, 0) scale(1);
-    }
-
-    50% {
-      transform: translate(30px, -30px) scale(1.1);
-    }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .font-manrope,
+  .font-headline {
+    font-family: "Manrope", sans-serif;
   }
 
-  @keyframes float-delayed {
-
-    0%,
-    100% {
-      transform: translate(0, 0) scale(1);
-    }
-
-    50% {
-      transform: translate(-30px, 30px) scale(1.1);
-    }
-  }
-
-  * {
-    outline: none;
-  }
-
-  input:focus,
-  input:focus-visible {
-    outline: none;
-    box-shadow: none;
+  *:focus-visible {
+    outline: 2px solid rgba(0, 106, 50, 0.35);
+    outline-offset: 2px;
   }
 }
 
 @layer utilities {
-
-  /* Hide scrollbar but keep functionality */
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
+  .precision-bg {
+    background:
+      radial-gradient(circle at top left, rgba(213, 227, 253, 0.95), transparent 42%),
+      radial-gradient(circle at bottom right, rgba(80, 250, 140, 0.08), transparent 30%),
+      linear-gradient(180deg, #f7f9ff 0%, #f4f6ff 100%);
   }
 
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  .precision-panel {
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 20px 40px rgba(36, 47, 65, 0.06);
   }
 
-  /* Scroll snap for horizontal scrolling */
-  .scroll-snap-x {
-    scroll-snap-type: x mandatory;
+  .precision-chip {
+    @apply inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold;
+    background: rgba(205, 227, 253, 0.65);
+    color: #455367;
   }
 
-  .scroll-snap-center {
-    scroll-snap-align: center;
+  .precision-input {
+    @apply w-full rounded-xl border-0 bg-surface-container-low px-4 py-3 text-sm text-on-surface placeholder:text-on-surface-variant/60;
+    box-shadow: inset 0 0 0 1px rgba(162, 173, 196, 0.2);
   }
 
-  .scroll-snap-start {
-    scroll-snap-align: start;
+  .precision-input:focus {
+    box-shadow: inset 0 0 0 2px rgba(0, 106, 50, 0.85);
   }
 
-  /* Smooth scrolling on mobile */
-  .scroll-smooth-mobile {
-    -webkit-overflow-scrolling: touch;
+  .precision-card {
+    @apply rounded-2xl border border-white/70 bg-white/90;
+    box-shadow: 0 20px 40px rgba(36, 47, 65, 0.06);
   }
 
-  /* 3D Card Flip Utilities */
-  .perspective-1000 {
-    perspective: 1000px;
+  .precision-soft-card {
+    @apply rounded-2xl border border-white/60 bg-surface-container-low shadow-sm;
   }
 
-  .preserve-3d {
-    transform-style: preserve-3d;
+  .precision-cta {
+    background: linear-gradient(90deg, #006a32 0%, #50fa8c 100%);
+    color: #cdffd3;
   }
 
-  .backface-hidden {
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-  }
-
-  .rotate-y-180 {
-    transform: rotateY(180deg);
-  }
-
-  /* Transition utilities */
-  .transition-luxury {
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .transition-luxury-fast {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  /* Gold gradient background */
-  .bg-gold-gradient {
-    background-image: linear-gradient(to right, #d4af37, #cd7f32);
-  }
-
-  /* ===== RTL Support Utilities ===== */
-  
-  /* Base RTL Direction */
-  [dir="rtl"] {
-    direction: rtl;
-  }
-
-  [dir="ltr"] {
-    direction: ltr;
-  }
-
-  /* RTL Text Alignment */
-  [dir="rtl"] .text-start {
-    text-align: right;
-  }
-
-  [dir="rtl"] .text-end {
-    text-align: left;
-  }
-
-  /* RTL Animations - Flip horizontal movements */
-  @keyframes slide-in-left-rtl {
-    from {
-      transform: translateX(100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-
-  @keyframes slide-in-right-rtl {
-    from {
-      transform: translateX(-100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-
-  [dir="rtl"] .animate-slide-in-left {
-    animation: slide-in-left-rtl 0.3s ease-out;
-  }
-
-  [dir="rtl"] .animate-slide-in-right {
-    animation: slide-in-right-rtl 0.3s ease-out;
-  }
-
-  /* RTL Float Animation */
-  [dir="rtl"] .float,
-  [dir="rtl"] .float-delayed {
-    animation-direction: reverse;
-  }
-
-  /* Icon Mirroring for RTL */
-  [dir="rtl"] .mirror-rtl {
-    transform: scaleX(-1);
-  }
-
-  /* Arrows and directional icons that should flip */
-  [dir="rtl"] .rtl-flip {
-    transform: scaleX(-1);
-  }
-
-  /* Flex direction reversal */
-  [dir="rtl"] .flex-row {
-    flex-direction: row-reverse;
-  }
-
-  /* Grid RTL Support */
-  [dir="rtl"] .grid {
-    direction: rtl;
-  }
-
-  /* Preserve LTR for certain elements (numbers, emails, etc.) */
-  .ltr-content {
-    direction: ltr !important;
-    text-align: left !important;
-  }
-
-  /* RTL-aware shadows */
-  [dir="rtl"] .shadow-left {
-    box-shadow: 4px 0 6px -1px rgb(0 0 0 / 0.1);
-  }
-
-  [dir="rtl"] .shadow-right {
-    box-shadow: -4px 0 6px -1px rgb(0 0 0 / 0.1);
-  }
-
-  /* RTL Card Positioning */
-  [dir="rtl"] .absolute.left-0 {
-    left: auto;
-    right: 0;
-  }
-
-  [dir="rtl"] .absolute.right-0 {
-    right: auto;
-    left: 0;
-  }
-
-  /* RTL Transforms */
-  [dir="rtl"] .translate-x-full {
-    transform: translateX(-100%);
-  }
-
-  [dir="rtl"] .-translate-x-full {
-    transform: translateX(100%);
+  .precision-cta:hover {
+    filter: brightness(1.03);
   }
 }

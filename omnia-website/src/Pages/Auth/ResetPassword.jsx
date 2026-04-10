@@ -1,28 +1,25 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { resetPasswordSchema } from "@/lib/validations";
-import { Lock } from "lucide-react";
-import { useTranslation } from "react-i18next";
-import { AppButton, FormField } from "@/Shared";
-import { AuthLayout } from "@/Layouts/AuthLayout";
-import { useNavigate, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { KeyRound } from "lucide-react";
+
+import { resetPasswordSchema } from "@/lib/validations";
+import { AuthLayout } from "@/Layouts/AuthLayout";
+import { AppButton, FormField } from "@/Shared";
 import { resetUserPass } from "@/store/slices/AuthSlice";
 
 export const ResetPassword = () => {
-  const { t } = useTranslation();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
-  const dispatch = useDispatch();
-  const { isLoading } = useSelector((state) => state.auth);
+  const isLoading = useSelector((state) => state?.auth?.isLoading);
+  const resetToken = location.state?.resetToken || "";
 
-  const resetToken = location.state?.resetToken;
-
-  // Redirect if no reset token
   useEffect(() => {
     if (!resetToken) {
-      navigate("/SignIn", { replace: true });
+      navigate("/forgot-password", { replace: true });
     }
   }, [resetToken, navigate]);
 
@@ -32,51 +29,55 @@ export const ResetPassword = () => {
     formState: { errors },
   } = useForm({
     resolver: zodResolver(resetPasswordSchema),
+    defaultValues: {
+      password: "",
+      confirmPassword: "",
+    },
   });
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     const payload = {
-      new_password: data.password,
       token: resetToken,
+      new_password: data.password,
     };
-    dispatch(resetUserPass({ payload, navigate }));
+
+    await dispatch(resetUserPass({ payload, navigate }));
   };
 
   return (
-    <AuthLayout
-      title={t("New Password")}
-      subtitle={t("Create your new password")}
-    >
+    <AuthLayout title="Create new password" subtitle="Set a new password for your account">
+      <div className="mb-6 rounded-2xl border border-gold-primary/15 bg-white/80 p-4 text-sm text-luxury-text-dim shadow-sm">
+        <KeyRound className="mb-2 h-5 w-5 text-gold-primary" />
+        Use a strong password you have not used before.
+      </div>
+
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
         <FormField
           name="password"
           type="password"
-          placeholder={t("New Password")}
-          icon={Lock}
+          placeholder="New Password"
+          icon={KeyRound}
           register={register}
           error={errors.password?.message}
         />
+
         <FormField
           name="confirmPassword"
           type="password"
-          placeholder={t("Confirm Password")}
-          icon={Lock}
+          placeholder="Confirm Password"
+          icon={KeyRound}
           register={register}
           error={errors.confirmPassword?.message}
         />
 
-        <AppButton loading={isLoading} className="h-[54px]">
-          {t("Reset Password")}
+        <AppButton loading={isLoading} className="h-[54px] w-full">
+          Reset password
         </AppButton>
 
-        <p className="text-center text-luxury-text-dim text-base pt-4">
-          <button
-            type="button"
-            onClick={() => navigate("/SignIn")}
-            className="font-semibold cursor-pointer"
-          >
-            {t("Back to Sign In")}
-          </button>
+        <p className="pt-3 text-center text-sm text-luxury-text-dim">
+          <Link to="/login" className="font-semibold text-gold-primary hover:underline">
+            Back to sign in
+          </Link>
         </p>
       </form>
     </AuthLayout>
