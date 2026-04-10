@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import toast from "react-hot-toast";
-import { CalendarDays, Minus, Plus, ShoppingCart, Tag, Trash2 } from "lucide-react";
+import { Minus, Plus, ShoppingCart, Tag, Trash2 } from "lucide-react";
 import { useSearchParams } from "react-router-dom";
 
 import { inventoryApi, salesApi } from "@/Services/posApi";
@@ -28,8 +28,6 @@ function openNativeDatePicker(inputRef) {
   if (!inputRef?.current) return;
   if (typeof inputRef.current.showPicker === "function") {
     inputRef.current.showPicker();
-  } else {
-    inputRef.current.focus();
   }
 }
 
@@ -280,31 +278,27 @@ export default function SalesPage() {
                   </Field>
 
                   <Field label="From Date">
-                    <div className="relative">
-                      <Input ref={fromDateRef} type="date" className="precision-input pr-10" value={dateFrom} onChange={(e) => setDateFrom(e.target.value)} />
-                      <button
-                        type="button"
-                        className="absolute inset-y-0 right-2 flex items-center text-slate-500"
-                        onClick={() => openNativeDatePicker(fromDateRef)}
-                        aria-label="Open from date calendar"
-                      >
-                        <CalendarDays className="h-4 w-4" />
-                      </button>
-                    </div>
+                    <Input
+                      ref={fromDateRef}
+                      type="date"
+                      className="precision-input"
+                      value={dateFrom}
+                      onClick={() => openNativeDatePicker(fromDateRef)}
+                      onFocus={() => openNativeDatePicker(fromDateRef)}
+                      onChange={(e) => setDateFrom(e.target.value)}
+                    />
                   </Field>
 
                   <Field label="To Date">
-                    <div className="relative">
-                      <Input ref={toDateRef} type="date" className="precision-input pr-10" value={dateTo} onChange={(e) => setDateTo(e.target.value)} />
-                      <button
-                        type="button"
-                        className="absolute inset-y-0 right-2 flex items-center text-slate-500"
-                        onClick={() => openNativeDatePicker(toDateRef)}
-                        aria-label="Open to date calendar"
-                      >
-                        <CalendarDays className="h-4 w-4" />
-                      </button>
-                    </div>
+                    <Input
+                      ref={toDateRef}
+                      type="date"
+                      className="precision-input"
+                      value={dateTo}
+                      onClick={() => openNativeDatePicker(toDateRef)}
+                      onFocus={() => openNativeDatePicker(toDateRef)}
+                      onChange={(e) => setDateTo(e.target.value)}
+                    />
                   </Field>
 
                   <div className="md:col-span-2 xl:col-span-5">
