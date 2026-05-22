@@ -119,7 +119,7 @@ export default function SalesPage() {
         const base = quantity * unitPrice;
         const discountValue = Number(item.discount_value || 0);
         const discount =
-          item.discount_type === "percentage"
+          item.discount_type === "percent" || item.discount_type === "percentage"
             ? (base * Math.min(Math.max(discountValue, 0), 100)) / 100
             : Math.min(Math.max(discountValue, 0), base);
         const taxable = Math.max(base - discount, 0);
@@ -329,58 +329,55 @@ export default function SalesPage() {
             </CardContent>
           </Card>
 
-          <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
-            {filteredProducts.length === 0 ? (
-              <Card className="precision-card p-8 sm:col-span-2 xl:col-span-3 2xl:col-span-4">
-                <CardContent className="p-0 text-sm text-on-surface-variant">No products found.</CardContent>
-              </Card>
-            ) : (
-              filteredProducts.map((product) => {
-                const categoryName = getProductCategory(product);
-                const productUnit = getProductUnit(product);
-                const stockLabel = product.track_inventory === false ? "Service" : product.minimum_stock_alert && product.minimum_stock_alert > 0 ? "Stocked" : "In Stock";
-                const initials = (product.name || "P")
-                  .split(" ")
-                  .filter(Boolean)
-                  .slice(0, 2)
-                  .map((part) => part[0])
-                  .join("")
-                  .toUpperCase();
+          <Card className="precision-card p-0">
+            <CardContent className="p-0">
+              {filteredProducts.length === 0 ? (
+                <div className="p-8 text-sm text-on-surface-variant">No products found.</div>
+              ) : (
+                <div className="overflow-x-auto">
+                  <table className="min-w-full border-collapse">
+                    <thead>
+                      <tr className="border-b border-slate-200 bg-surface-container-low text-left text-[11px] uppercase tracking-[0.14em] text-slate-500">
+                        <th className="px-4 py-3 font-bold">Product</th>
+                        <th className="px-4 py-3 font-bold">Category</th>
+                        <th className="px-4 py-3 font-bold">Unit</th>
+                        <th className="px-4 py-3 font-bold">SKU</th>
+                        <th className="px-4 py-3 font-bold">Price</th>
+                        <th className="px-4 py-3 font-bold">Type</th>
+                        <th className="px-4 py-3 font-bold text-right">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {filteredProducts.map((product) => {
+                        const categoryName = getProductCategory(product);
+                        const productUnit = getProductUnit(product);
+                        const stockLabel = product.track_inventory === false ? "Service" : "Stock Item";
 
-                return (
-                  <button
-                    key={product.id}
-                    type="button"
-                    onClick={() => addToCart(product)}
-                    className="group relative overflow-hidden rounded-2xl border border-slate-100 bg-white p-0 text-left transition hover:-translate-y-0.5 hover:shadow-sm"
-                  >
-                    <div className="flex aspect-square items-center justify-center bg-surface-container-low">
-                      <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-primary-container text-2xl font-bold text-primary">
-                        {initials}
-                      </div>
-                    </div>
-                    <div className="p-4">
-                      <div className="mb-2 text-[10px] font-bold uppercase tracking-[0.18em] text-slate-400">{categoryName}</div>
-                      <h3 className="font-headline text-base font-bold text-slate-900">{product.name}</h3>
-                      <div className="mt-3 flex items-center justify-between">
-                        <span className="font-headline text-lg font-extrabold text-primary">{formatPKR(getProductPrice(product))}</span>
-                        <span className="rounded-full bg-secondary-container px-2 py-1 text-[10px] font-bold text-secondary">{stockLabel}</span>
-                      </div>
-                      <div className="mt-2 flex items-center justify-between text-[10px] uppercase tracking-[0.18em] text-slate-400">
-                        <span>SKU: {product.sku || "N/A"}</span>
-                        <span>Unit: {productUnit}</span>
-                      </div>
-                    </div>
-                    <div className="absolute inset-0 flex items-center justify-center bg-primary/8 opacity-0 transition group-hover:opacity-100">
-                      <span className="rounded-full bg-primary p-3 text-white shadow-lg">
-                        <ShoppingCart className="h-4 w-4" />
-                      </span>
-                    </div>
-                  </button>
-                );
-              })
-            )}
-          </div>
+                        return (
+                          <tr key={product.id} className="border-b border-slate-100 text-sm text-slate-700 hover:bg-slate-50/70">
+                            <td className="px-4 py-3 font-semibold text-slate-900">{product.name}</td>
+                            <td className="px-4 py-3">{categoryName}</td>
+                            <td className="px-4 py-3 uppercase">{productUnit}</td>
+                            <td className="px-4 py-3 uppercase tracking-[0.12em] text-slate-500">{product.sku || "N/A"}</td>
+                            <td className="px-4 py-3 font-bold text-primary">{formatPKR(getProductPrice(product))}</td>
+                            <td className="px-4 py-3">
+                              <span className="rounded-full bg-secondary-container px-2 py-1 text-[10px] font-bold text-secondary">{stockLabel}</span>
+                            </td>
+                            <td className="px-4 py-3 text-right">
+                              <Button type="button" size="sm" className="precision-cta h-9" onClick={() => addToCart(product)}>
+                                <ShoppingCart className="mr-1 h-4 w-4" />
+                                Add
+                              </Button>
+                            </td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+            </CardContent>
+          </Card>
 
           <Card className="precision-card p-5">
             <CardContent className="p-0">
@@ -470,8 +467,8 @@ export default function SalesPage() {
                         onChange={(e) => updateCartItem(item.product_id, "discount_type", e.target.value)}
                       >
                         <option value="">None</option>
-                        <option value="amount">Amount</option>
-                        <option value="percentage">Percentage</option>
+                        <option value="flat">Amount</option>
+                        <option value="percent">Percentage</option>
                       </select>
                     </Field>
                     <Field label="Discount value">
@@ -480,7 +477,7 @@ export default function SalesPage() {
                         className="precision-input"
                         value={item.discount_value}
                         onChange={(e) => updateCartItem(item.product_id, "discount_value", e.target.value)}
-                        placeholder={item.discount_type === "percentage" ? "e.g. 10" : "e.g. 50"}
+                        placeholder={item.discount_type === "percent" ? "e.g. 10" : "e.g. 50"}
                       />
                     </Field>
                   </div>
